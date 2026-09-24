@@ -12,9 +12,16 @@
     <script>
       (function () {
         var stored = localStorage.getItem('m3-theme')
-        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
-        document.documentElement.dataset.theme =
-          stored === 'day' || stored === 'night' ? stored : system
+        var migrated = localStorage.getItem('m3-theme-default')
+        var theme = 'day'
+        if (!migrated) {
+          theme = stored === 'night' ? 'night' : 'day'
+        } else if (stored === 'day' || stored === 'night') {
+          theme = stored
+        } else if (stored === 'system') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
+        }
+        document.documentElement.dataset.theme = theme
       })()
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />

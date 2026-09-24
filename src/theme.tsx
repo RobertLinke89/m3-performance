@@ -4,17 +4,23 @@ export type Theme = 'day' | 'night'
 export type ThemeMode = 'day' | 'night' | 'system'
 
 const STORAGE_KEY = 'm3-theme'
+const DEFAULT_KEY = 'm3-theme-default'
 
 function systemTheme(): Theme {
-  if (typeof window === 'undefined') return 'night'
+  if (typeof window === 'undefined') return 'day'
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
 }
 
 function readMode(): ThemeMode {
-  if (typeof window === 'undefined') return 'system'
+  if (typeof window === 'undefined') return 'day'
   const stored = window.localStorage.getItem(STORAGE_KEY)
+  const migrated = window.localStorage.getItem(DEFAULT_KEY)
+  if (!migrated) {
+    if (stored === 'night') return 'night'
+    return 'day'
+  }
   if (stored === 'day' || stored === 'night' || stored === 'system') return stored
-  return 'system'
+  return 'day'
 }
 
 function resolve(mode: ThemeMode): Theme {
@@ -30,8 +36,8 @@ const ThemeContext = createContext<{
   mode: ThemeMode
   setMode: (mode: ThemeMode) => void
 }>({
-  theme: 'night',
-  mode: 'system',
+  theme: 'day',
+  mode: 'day',
   setMode: () => undefined,
 })
 
@@ -44,6 +50,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setTheme(next)
     applyTheme(next)
     window.localStorage.setItem(STORAGE_KEY, mode)
+    window.localStorage.setItem(DEFAULT_KEY, 'day')
 
     if (mode !== 'system') return
     const media = window.matchMedia('(prefers-color-scheme: dark)')
