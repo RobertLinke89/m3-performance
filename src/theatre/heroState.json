@@ -1,0 +1,173 @@
+{
+  "sheetsById": {
+    "Hero": {
+      "staticOverrides": { "byObject": {} },
+      "sequence": {
+        "type": "PositionalSequence",
+        "length": 4,
+        "subUnitsPerUnit": 30,
+        "tracksByObject": {
+          "Camera": {
+            "trackIdByPropPath": {
+              "[\"x\"]": "camx",
+              "[\"y\"]": "camy",
+              "[\"z\"]": "camz",
+              "[\"fov\"]": "camfov"
+            },
+            "trackData": {
+              "camx": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"x\"]",
+                "keyframes": [
+                  { "id": "camx0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                  { "id": "camx1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 }
+                ]
+              },
+              "camy": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"y\"]",
+                "keyframes": [
+                  { "id": "camy0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 8 },
+                  { "id": "camy1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.15 }
+                ]
+              },
+              "camz": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"z\"]",
+                "keyframes": [
+                  { "id": "camz0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 22 },
+                  { "id": "camz1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 7.4 }
+                ]
+              },
+              "camfov": {
+                "type": "BasicKeyframedTrack",
+                "__debugName": "Camera:[\"fov\"]",
+                "keyframes": [
+                  { "id": "camf0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 38 },
+                  { "id": "camf1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 40 }
+                ]
+              }
+            }
+          },
+          "M1": {
+            "trackIdByPropPath": {
+              "[\"x\"]": "m1x",
+              "[\"y\"]": "m1y",
+              "[\"z\"]": "m1z",
+              "[\"scale\"]": "m1s",
+              "[\"glow\"]": "m1g"
+            },
+            "trackData": {
+              "m1x": { "type": "BasicKeyframedTrack", "__debugName": "M1:[\"x\"]", "keyframes": [
+                { "id": "m1x0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -8 },
+                { "id": "m1x1", "position": 2.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -1.55 }
+              ]},
+              "m1y": { "type": "BasicKeyframedTrack", "__debugName": "M1:[\"y\"]", "keyframes": [
+                { "id": "m1y0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 6 },
+                { "id": "m1y1", "position": 2.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.85 }
+              ]},
+              "m1z": { "type": "BasicKeyframedTrack", "__debugName": "M1:[\"z\"]", "keyframes": [
+                { "id": "m1z0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -6 },
+                { "id": "m1z1", "position": 2.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 }
+              ]},
+              "m1s": { "type": "BasicKeyframedTrack", "__debugName": "M1:[\"scale\"]", "keyframes": [
+                { "id": "m1s0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.15 },
+                { "id": "m1s1", "position": 2.2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1 }
+              ]},
+              "m1g": { "type": "BasicKeyframedTrack", "__debugName": "M1:[\"glow\"]", "keyframes": [
+                { "id": "m1g0", "position": 1.6, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "m1g1", "position": 3.2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.2 }
+              ]}
+            }
+          },
+          "M2": {
+            "trackIdByPropPath": {
+              "[\"x\"]": "m2x",
+              "[\"y\"]": "m2y",
+              "[\"z\"]": "m2z",
+              "[\"scale\"]": "m2s",
+              "[\"glow\"]": "m2g"
+            },
+            "trackData": {
+              "m2x": { "type": "BasicKeyframedTrack", "__debugName": "M2:[\"x\"]", "keyframes": [
+                { "id": "m2x0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 8 },
+                { "id": "m2x1", "position": 2.5, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.55 }
+              ]},
+              "m2y": { "type": "BasicKeyframedTrack", "__debugName": "M2:[\"y\"]", "keyframes": [
+                { "id": "m2y0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -5 },
+                { "id": "m2y1", "position": 2.5, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.85 }
+              ]},
+              "m2z": { "type": "BasicKeyframedTrack", "__debugName": "M2:[\"z\"]", "keyframes": [
+                { "id": "m2z0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -4 },
+                { "id": "m2z1", "position": 2.5, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 }
+              ]},
+              "m2s": { "type": "BasicKeyframedTrack", "__debugName": "M2:[\"scale\"]", "keyframes": [
+                { "id": "m2s0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.15 },
+                { "id": "m2s1", "position": 2.3, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1 }
+              ]},
+              "m2g": { "type": "BasicKeyframedTrack", "__debugName": "M2:[\"glow\"]", "keyframes": [
+                { "id": "m2g0", "position": 1.7, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "m2g1", "position": 3.2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.2 }
+              ]}
+            }
+          },
+          "M3": {
+            "trackIdByPropPath": {
+              "[\"x\"]": "m3x",
+              "[\"y\"]": "m3y",
+              "[\"z\"]": "m3z",
+              "[\"scale\"]": "m3s",
+              "[\"glow\"]": "m3g"
+            },
+            "trackData": {
+              "m3x": { "type": "BasicKeyframedTrack", "__debugName": "M3:[\"x\"]", "keyframes": [
+                { "id": "m3x0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "m3x1", "position": 2.6, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 }
+              ]},
+              "m3y": { "type": "BasicKeyframedTrack", "__debugName": "M3:[\"y\"]", "keyframes": [
+                { "id": "m3y0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -7 },
+                { "id": "m3y1", "position": 2.6, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": -1.35 }
+              ]},
+              "m3z": { "type": "BasicKeyframedTrack", "__debugName": "M3:[\"z\"]", "keyframes": [
+                { "id": "m3z0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 6 },
+                { "id": "m3z1", "position": 2.6, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.2 }
+              ]},
+              "m3s": { "type": "BasicKeyframedTrack", "__debugName": "M3:[\"scale\"]", "keyframes": [
+                { "id": "m3s0", "position": 0, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0.15 },
+                { "id": "m3s1", "position": 2.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1 }
+              ]},
+              "m3g": { "type": "BasicKeyframedTrack", "__debugName": "M3:[\"glow\"]", "keyframes": [
+                { "id": "m3g0", "position": 1.8, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "m3g1", "position": 3.2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.2 }
+              ]}
+            }
+          },
+          "Core": {
+            "trackIdByPropPath": { "[\"scale\"]": "cs", "[\"glow\"]": "cg" },
+            "trackData": {
+              "cs": { "type": "BasicKeyframedTrack", "__debugName": "Core:[\"scale\"]", "keyframes": [
+                { "id": "cs0", "position": 1.8, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "cs1", "position": 3.2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1 }
+              ]},
+              "cg": { "type": "BasicKeyframedTrack", "__debugName": "Core:[\"glow\"]", "keyframes": [
+                { "id": "cg0", "position": 2, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "cg1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1.6 }
+              ]}
+            }
+          },
+          "Links": {
+            "trackIdByPropPath": { "[\"opacity\"]": "lo" },
+            "trackData": {
+              "lo": { "type": "BasicKeyframedTrack", "__debugName": "Links:[\"opacity\"]", "keyframes": [
+                { "id": "lo0", "position": 2.1, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 0 },
+                { "id": "lo1", "position": 3.4, "connectedRight": true, "handles": [0.5, 1, 0.5, 0], "type": "bezier", "value": 1 }
+              ]}
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitionVersion": "0.4.0",
+  "revisionHistory": ["m3-hero-v1"]
+}
