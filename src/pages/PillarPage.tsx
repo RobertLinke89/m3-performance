@@ -32,7 +32,7 @@ export function PillarPage() {
               </Link>
             </div>
           </div>
-          <Img className="page-photo" src={pillar.image} alt={pillar.title} priority />
+          <Img className="page-photo" src={pillar.image} alt={pillar.title} priority max />
         </div>
       </section>
 
@@ -43,7 +43,7 @@ export function PillarPage() {
           <div className="proof-list">
             {pillar.science.map((item, i) => (
               <article className={`proof-row${i % 2 ? ' flip' : ''}`} key={item.title}>
-                <Img className="proof-photo" src={item.image} alt="" />
+                <Img className="proof-photo" src={item.image} alt="" max />
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -56,7 +56,7 @@ export function PillarPage() {
 
       <section className="section">
         <div className="wrap page-split">
-          <Img className="page-photo" src={pillar.experience.image} alt="" />
+          <Img className="page-photo" src={pillar.experience.image} alt="" max />
           <div>
             <p className="eyebrow">{t.experienceEyebrow}</p>
             <h2>{pillar.experience.title}</h2>
@@ -148,7 +148,7 @@ export function PillarPage() {
       )}
 
       <section className="section">
-        <div className="wrap card card-highlight" style={{ textAlign: 'center', padding: 48 }}>
+        <div className="wrap card card-highlight card-cta">
           <h2>
             {t.ctaBefore}
             <em className="gold">{t.ctaGold}</em>

@@ -32,7 +32,7 @@ export function ModulePage() {
               </a>
             </div>
           </div>
-          <Img className="page-photo" src={mod.image} alt={mod.title} priority />
+          <Img className="page-photo" src={mod.image} alt={mod.title} priority max />
         </div>
       </section>
 
@@ -95,7 +95,7 @@ export function ModulePage() {
       </section>
 
       <section className="section">
-        <div className="wrap card card-highlight" style={{ textAlign: 'center', padding: 48 }}>
+        <div className="wrap card card-highlight card-cta">
           <h2>{mod.outcome}</h2>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
             <a className="btn btn-gold" href={mod.wa}>

@@ -55,6 +55,8 @@ export function Sitemap() {
             <p><Link to="/katalog">{t.footerWaCat}</Link></p>
             <p><Link to="/ueber-mich">{t.footerAboutMichel}</Link></p>
             <p><Link to="/#faq">{t.smFaq}</Link></p>
+            <p><Link to="/impressum">{t.imprint}</Link></p>
+            <p><Link to="/datenschutz">{t.privacy}</Link></p>
           </article>
         </div>
       </section>

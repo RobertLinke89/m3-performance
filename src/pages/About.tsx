@@ -20,7 +20,7 @@ export function About() {
               {t.firstTalk}
             </a>
           </div>
-          <Img className="portrait" src="/images/michel-portrait.jpg" alt={t.aboutPortrait} priority />
+          <Img className="portrait" src="/images/michel-portrait.jpg" alt={t.aboutPortrait} priority max />
         </div>
       </section>
       <section className="section">

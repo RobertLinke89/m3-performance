@@ -34,7 +34,7 @@ export function Article() {
             {formatDate(post.date, lang)} · {post.minutes} {t.blogMin}
           </p>
           <p className="lead">{post.excerpt}</p>
-          <Img className="article-photo" src={post.image} alt="" priority />
+          <Img className="article-photo" src={post.image} alt="" priority max />
         </div>
       </section>
 
@@ -81,7 +81,7 @@ export function Article() {
       )}
 
       <section className="section">
-        <div className="wrap card card-highlight" style={{ textAlign: 'center', padding: 48 }}>
+        <div className="wrap card card-highlight card-cta">
           <h2>
             {t.ctaBefore}
             <em className="gold">{t.ctaGold}</em>

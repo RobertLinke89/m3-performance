@@ -20,7 +20,7 @@ export function SystemStart() {
             <h1>{t.ssH}</h1>
             <p className="lead">{t.ssLead}</p>
           </div>
-          <Img className="page-photo" src="/images/system-start.jpg" alt={t.ssH} priority />
+          <Img className="page-photo" src="/images/system-start.jpg" alt={t.ssH} priority max />
         </div>
       </section>
 
@@ -31,7 +31,7 @@ export function SystemStart() {
           <div className="proof-list">
             {startProof.map((item, i) => (
               <article className={`proof-row${i % 2 ? ' flip' : ''}`} key={item.title}>
-                <Img className="proof-photo" src={item.image} alt="" />
+                <Img className="proof-photo" src={item.image} alt="" max />
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -114,7 +114,7 @@ export function SystemStart() {
       )}
 
       <section className="section">
-        <div className="wrap card card-highlight" style={{ textAlign: 'center', padding: 48 }}>
+        <div className="wrap card card-highlight card-cta">
           <h2>
             {t.ctaBefore}
             <em className="gold">{t.ctaGold}</em>

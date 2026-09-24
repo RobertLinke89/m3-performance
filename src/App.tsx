@@ -7,6 +7,7 @@ import { Catalog } from './pages/Catalog'
 import { Contact } from './pages/Contact'
 import { Home } from './pages/Home'
 import { ResolvePage } from './pages/ResolvePage'
+import { Imprint, Privacy } from './pages/Legal'
 import { Sitemap } from './pages/Sitemap'
 import { SystemStart } from './pages/SystemStart'
 
@@ -23,6 +24,8 @@ export default function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<Article />} />
           <Route path="sitemap" element={<Sitemap />} />
+          <Route path="impressum" element={<Imprint />} />
+          <Route path="datenschutz" element={<Privacy />} />
           <Route path=":slug" element={<ResolvePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

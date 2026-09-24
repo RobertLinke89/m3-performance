@@ -28,7 +28,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-board">
           <div className="board-tile board-thesis">
-            <Img src="/images/hero-food.jpg" alt="" priority />
+            <Img src="/images/hero-food.jpg" alt="" priority max />
             <div className="board-thesis-copy">
               <div className="board-copy-box">
                 <h1>
@@ -53,7 +53,7 @@ export function Home() {
       <section className="section" id="start">
         <div className="wrap grid-2">
           <div>
-            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} />
+            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} max />
             <p className="eyebrow">{t.startEyebrow}</p>
             <h2>{t.startH}</h2>
             <p className="lead">{t.startLead}</p>
@@ -200,7 +200,7 @@ export function Home() {
       </section>
 
       <section className="section">
-        <div className="wrap card card-highlight" style={{ textAlign: 'center', padding: 48 }}>
+        <div className="wrap card card-highlight card-cta">
           <h2>
             {t.ctaBefore}
             <em className="gold">{t.ctaGold}</em>
