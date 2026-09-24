@@ -4,3 +4,4 @@ dist
 *.local
 .snapshots
 *.tsbuildinfo
+.vercel

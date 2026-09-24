@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
 import { useContent } from '../useContent'
@@ -33,7 +34,7 @@ export function Article() {
             {formatDate(post.date, lang)} · {post.minutes} {t.blogMin}
           </p>
           <p className="lead">{post.excerpt}</p>
-          <img className="article-photo" src={post.image} alt="" />
+          <Img className="article-photo" src={post.image} alt="" priority />
         </div>
       </section>
 
@@ -68,7 +69,7 @@ export function Article() {
             <div className="grid-3" style={{ marginTop: 28 }}>
               {related.map((item) => (
                 <article className="card" key={item.slug}>
-                  <img className="card-media" src={item.image} alt="" />
+                  <Img className="card-media" src={item.image} alt="" />
                   <h3>{item.title}</h3>
                   <p>{item.excerpt}</p>
                   <Link to={`/blog/${item.slug}`}>{t.blogRead}</Link>

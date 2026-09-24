@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -44,7 +45,7 @@ export function Catalog() {
                 <div className="grid-3" style={{ marginTop: 28 }}>
                   {group.map((m) => (
                     <article className="card" key={m.slug}>
-                      <img className="card-media" src={m.image} alt="" />
+                      <Img className="card-media" src={m.image} alt="" />
                       <div className="mark">{m.badge}</div>
                       <h3>{m.title}</h3>
                       <p>{m.kicker}</p>

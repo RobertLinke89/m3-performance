@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -31,7 +32,7 @@ export function ModulePage() {
               </a>
             </div>
           </div>
-          <img className="page-photo" src={mod.image} alt={mod.title} />
+          <Img className="page-photo" src={mod.image} alt={mod.title} priority />
         </div>
       </section>
 
@@ -65,7 +66,7 @@ export function ModulePage() {
           <div className="grid-2" style={{ marginTop: 28 }}>
             {audience.map((a) => (
               <article className="card" key={a.title}>
-                <img className="card-media card-media-face" src={a.image} alt="" />
+                <Img className="card-media card-media-face" src={a.image} alt="" />
                 <h3>{a.title}</h3>
                 <p>{a.text}</p>
               </article>
@@ -130,7 +131,7 @@ export function ModulePage() {
             <div className="grid-3" style={{ marginTop: 28 }}>
               {related.map((m) => (
                 <article className="card" key={m.slug}>
-                  <img className="card-media" src={m.image} alt="" />
+                  <Img className="card-media" src={m.image} alt="" />
                   <h3>{m.title}</h3>
                   <p>{m.kicker}</p>
                   <Link to={`/${m.slug}`}>{t.detailsArrow}</Link>

@@ -588,6 +588,10 @@ a.board-tile:hover {
   container-type: inline-size;
 }
 
+picture {
+  display: contents;
+}
+
 .board-fade {
   position: absolute;
   inset: 0;

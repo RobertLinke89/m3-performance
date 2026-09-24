@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
 import { useContent } from '../useContent'
@@ -44,7 +45,7 @@ export function Blog() {
               <div className="grid-3" style={{ marginTop: 28 }}>
                 {group.map((post) => (
                   <article className="card" key={post.slug}>
-                    <img className="card-media" src={post.image} alt="" />
+                    <Img className="card-media" src={post.image} alt="" />
                     <p className="blog-meta">
                       {formatDate(post.date, lang)} · {post.minutes} {t.blogMin}
                     </p>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Img } from './Img'
 
 type Props = {
   images: readonly string[]
@@ -18,11 +19,22 @@ export function BoardFade({ images, alt = '', interval = 3800 }: Props) {
     return () => window.clearInterval(id)
   }, [images, interval])
 
+  const prev = index === 0 ? 0 : index - 1
+
   return (
     <div className="board-fade" aria-hidden={alt ? undefined : true}>
-      {images.map((src, i) => (
-        <img key={src} src={src} alt={i === index ? alt : ''} className={i === index ? 'on' : undefined} />
-      ))}
+      {images.map((src, i) => {
+        if (i !== index && i !== prev) return null
+        return (
+          <Img
+            key={src}
+            src={src}
+            alt={i === index ? alt : ''}
+            className={i === index ? 'on' : undefined}
+            priority={i === 0}
+          />
+        )
+      })}
     </div>
   )
 }

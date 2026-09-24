@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -31,7 +32,7 @@ export function PillarPage() {
               </Link>
             </div>
           </div>
-          <img className="page-photo" src={pillar.image} alt={pillar.title} />
+          <Img className="page-photo" src={pillar.image} alt={pillar.title} priority />
         </div>
       </section>
 
@@ -42,7 +43,7 @@ export function PillarPage() {
           <div className="proof-list">
             {pillar.science.map((item, i) => (
               <article className={`proof-row${i % 2 ? ' flip' : ''}`} key={item.title}>
-                <img className="proof-photo" src={item.image} alt="" />
+                <Img className="proof-photo" src={item.image} alt="" />
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -55,7 +56,7 @@ export function PillarPage() {
 
       <section className="section">
         <div className="wrap page-split">
-          <img className="page-photo" src={pillar.experience.image} alt="" />
+          <Img className="page-photo" src={pillar.experience.image} alt="" />
           <div>
             <p className="eyebrow">{t.experienceEyebrow}</p>
             <h2>{pillar.experience.title}</h2>
@@ -106,7 +107,7 @@ export function PillarPage() {
             <div className="grid-3" style={{ marginTop: 28 }}>
               {relatedPosts.map((post) => (
                 <article className="card" key={post.slug}>
-                  <img className="card-media" src={post.image} alt="" />
+                  <Img className="card-media" src={post.image} alt="" />
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
                   <Link to={`/blog/${post.slug}`}>{t.blogRead}</Link>
@@ -124,7 +125,7 @@ export function PillarPage() {
             <div className="grid-3" style={{ marginTop: 28 }}>
               {related.map((m) => (
                 <article className="card" key={m.slug}>
-                  <img className="card-media" src={m.image} alt="" />
+                  <Img className="card-media" src={m.image} alt="" />
                   <h3>{m.title}</h3>
                   <p>{m.kicker}</p>
                   <Link to={`/${m.slug}`}>{t.detailsArrow}</Link>

@@ -1,3 +1,4 @@
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -19,7 +20,7 @@ export function About() {
               {t.firstTalk}
             </a>
           </div>
-          <img className="portrait" src="/images/michel-portrait.jpg" alt={t.aboutPortrait} />
+          <Img className="portrait" src="/images/michel-portrait.jpg" alt={t.aboutPortrait} priority />
         </div>
       </section>
       <section className="section">

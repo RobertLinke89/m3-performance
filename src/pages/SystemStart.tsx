@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -19,7 +20,7 @@ export function SystemStart() {
             <h1>{t.ssH}</h1>
             <p className="lead">{t.ssLead}</p>
           </div>
-          <img className="page-photo" src="/images/system-start.jpg" alt={t.ssH} />
+          <Img className="page-photo" src="/images/system-start.jpg" alt={t.ssH} priority />
         </div>
       </section>
 
@@ -30,7 +31,7 @@ export function SystemStart() {
           <div className="proof-list">
             {startProof.map((item, i) => (
               <article className={`proof-row${i % 2 ? ' flip' : ''}`} key={item.title}>
-                <img className="proof-photo" src={item.image} alt="" />
+                <Img className="proof-photo" src={item.image} alt="" />
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
@@ -46,7 +47,7 @@ export function SystemStart() {
           <div className="grid-3">
             {pillars.map((p) => (
               <Link className="card" key={p.id} to={`/${p.slug}`}>
-                <img className="card-media" src={p.image} alt="" />
+                <Img className="card-media" src={p.image} alt="" />
                 <p className="mark" style={{ color: p.color }}>
                   {p.mark} · {p.name}
                 </p>
@@ -74,7 +75,7 @@ export function SystemStart() {
                   type="button"
                   onClick={() => setPick(c.id)}
                 >
-                  <img src={c.image} alt="" />
+                  <Img src={c.image} alt="" />
                   <span>
                     <strong>{c.title}</strong>
                     <div style={{ color: 'var(--muted)', marginTop: 6 }}>{c.text}</div>
@@ -100,7 +101,7 @@ export function SystemStart() {
               <div className="grid-3" style={{ marginTop: 28 }}>
                 {next.map((m) => (
                   <article className="card" key={m.slug}>
-                    <img className="card-media" src={m.image} alt="" />
+                    <Img className="card-media" src={m.image} alt="" />
                     <h3>{m.title}</h3>
                     <p>{m.text}</p>
                     <Link to={`/${m.slug}`}>{t.detailsArrow}</Link>

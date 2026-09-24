@@ -1,6 +1,7 @@
 import { useRef, useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { BoardFade } from '../components/BoardFade'
+import { Img } from '../components/Img'
 import { MichelShow } from '../components/MichelShow'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
@@ -27,7 +28,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-board">
           <div className="board-tile board-thesis">
-            <img src="/images/hero-food.jpg" alt="" />
+            <Img src="/images/hero-food.jpg" alt="" priority />
             <div className="board-thesis-copy">
               <div className="board-copy-box">
                 <h1>
@@ -52,7 +53,7 @@ export function Home() {
       <section className="section" id="start">
         <div className="wrap grid-2">
           <div>
-            <img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} />
+            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} />
             <p className="eyebrow">{t.startEyebrow}</p>
             <h2>{t.startH}</h2>
             <p className="lead">{t.startLead}</p>
@@ -109,7 +110,7 @@ export function Home() {
           <div className="carousel-track" ref={moduleTrack}>
             {modules.map((m) => (
               <article className="card" key={m.slug}>
-                <img className="card-media" src={m.image} alt="" />
+                <Img className="card-media" src={m.image} alt="" />
                 <div className="mark">{m.badge}</div>
                 <h3>{m.title}</h3>
                 <p>{m.kicker}</p>
@@ -145,7 +146,7 @@ export function Home() {
               const pillar = pillars.find((p) => p.id === post.pillar)
               return (
                 <article className="card" key={post.slug}>
-                  <img className="card-media" src={post.image} alt="" />
+                  <Img className="card-media" src={post.image} alt="" />
                   {pillar && (
                     <div className="mark" style={{ color: pillar.color }}>
                       {pillar.mark} · {pillar.name}
