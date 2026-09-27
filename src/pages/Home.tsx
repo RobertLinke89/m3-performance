@@ -53,7 +53,7 @@ export function Home() {
       <section className="section" id="start">
         <div className="wrap grid-2">
           <div>
-            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} max />
+            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} />
             <p className="eyebrow">{t.startEyebrow}</p>
             <h2>{t.startH}</h2>
             <p className="lead">{t.startLead}</p>

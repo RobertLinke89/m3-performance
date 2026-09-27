@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useContent } from '../useContent'
+import { Img } from './Img'
 
 const HOLD_MS = 1600
 const MORPH_MS = 1800
@@ -142,7 +143,70 @@ function buildParticles() {
   return data
 }
 
+function useFineMotion() {
+  const [fine, setFine] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia(
+      '(min-width: 861px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)',
+    )
+    const apply = () => setFine(mq.matches)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+
+  return fine
+}
+
+function MichelFade() {
+  const { michelSlides } = useContent()
+  const [index, setIndex] = useState(0)
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const visible = useRef(true)
+
+  useEffect(() => {
+    const el = wrapRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible.current = entry.isIntersecting
+      },
+      { threshold: 0.15 },
+    )
+    io.observe(el)
+    const id = window.setInterval(() => {
+      if (!visible.current) return
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+      setIndex((n) => (n + 1) % michelSlides.length)
+    }, 3200)
+    return () => {
+      io.disconnect()
+      window.clearInterval(id)
+    }
+  }, [michelSlides.length])
+
+  return (
+    <div className="michel-show michel-fade" ref={wrapRef} aria-label="Michél Meier">
+      {michelSlides.map((slide, i) => (
+        <Img
+          key={slide.src}
+          src={slide.src}
+          alt={i === index ? slide.label : ''}
+          className={i === index ? 'on' : undefined}
+        />
+      ))}
+    </div>
+  )
+}
+
 export function MichelShow() {
+  const fine = useFineMotion()
+  if (!fine) return <MichelFade />
+  return <MichelShowGL />
+}
+
+function MichelShowGL() {
   const { michelSlides } = useContent()
   const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -402,7 +466,7 @@ export function MichelShow() {
       window.cancelAnimationFrame(raf)
       gl?.getExtension('WEBGL_lose_context')?.loseContext()
     }
-  }, [])
+  }, [michelSlides])
 
   return (
     <div

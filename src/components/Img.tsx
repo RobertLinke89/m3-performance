@@ -19,7 +19,6 @@ function webpFor(src: string) {
 export function Img({ src, alt = '', priority, max, loading, decoding, fetchPriority, ...rest }: Props) {
   const eager = Boolean(priority) || loading === 'eager'
   const raster = typeof src === 'string' && /\.(jpe?g|png)$/i.test(src)
-  const useWebp = Boolean(raster && src && !max)
 
   const image = (
     <img
@@ -27,16 +26,25 @@ export function Img({ src, alt = '', priority, max, loading, decoding, fetchPrio
       alt={alt}
       loading={eager ? 'eager' : 'lazy'}
       decoding={decoding ?? 'async'}
-      fetchPriority={priority ? 'high' : fetchPriority}
+      fetchPriority={priority ? 'high' : (fetchPriority ?? 'low')}
       {...rest}
     />
   )
 
-  if (!useWebp) return image
+  if (!raster || !src) return image
+
+  if (max) {
+    return (
+      <picture>
+        <source media="(max-width: 860px)" type="image/webp" srcSet={webpFor(src)} />
+        {image}
+      </picture>
+    )
+  }
 
   return (
     <picture>
-      <source type="image/webp" srcSet={webpFor(src as string)} />
+      <source type="image/webp" srcSet={webpFor(src)} />
       {image}
     </picture>
   )
