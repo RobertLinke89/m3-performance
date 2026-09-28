@@ -68,8 +68,6 @@ const ui = {
     mentalScienceH: 'Was den Kopf wirklich bremst.',
     mentalSignalsH: 'Alarmzeichen — nicht Soft-Skills.',
     mentalPrinciplesH: 'Arbeitsregeln unter Druck.',
-    mentalNoModules:
-      'M³ ist kein separates Produkt. Es schließt das System — Einstieg über den System Start.',
     back: 'Zurück',
     backHome: 'Zur Startseite',
     michelEyebrow: 'Authentizität',
@@ -228,8 +226,6 @@ const ui = {
     mentalScienceH: 'What actually brakes the mind.',
     mentalSignalsH: 'Alarm signs — not soft skills.',
     mentalPrinciplesH: 'Working rules under pressure.',
-    mentalNoModules:
-      'M³ is not a separate product. It closes the system — entry via System Start.',
     back: 'Back',
     backHome: 'To homepage',
     michelEyebrow: 'Authenticity',

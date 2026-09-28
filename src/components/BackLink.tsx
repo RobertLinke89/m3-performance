@@ -4,9 +4,10 @@ import { useUi } from '../copy'
 type Props = {
   fallback?: string
   label?: string
+  home?: boolean
 }
 
-export function BackLink({ fallback = '/', label }: Props) {
+export function BackLink({ fallback = '/', label, home = true }: Props) {
   const t = useUi()
   const navigate = useNavigate()
   const text = label ?? t.back
@@ -26,9 +27,11 @@ export function BackLink({ fallback = '/', label }: Props) {
       >
         ← {text}
       </button>
-      <Link className="back-link-home" to={fallback}>
-        {t.backHome}
-      </Link>
+      {home ? (
+        <Link className="back-link-home" to={fallback}>
+          {t.backHome}
+        </Link>
+      ) : null}
     </p>
   )
 }

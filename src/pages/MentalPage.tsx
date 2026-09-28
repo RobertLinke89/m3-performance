@@ -14,10 +14,12 @@ export function MentalPage() {
   return (
     <main className="mental-page">
       <section className="mental-hero">
-          <Img className="mental-hero-media" src={pillar.image} alt="" priority />
+        <Img className="mental-hero-media" src={pillar.image} alt="" priority />
         <div className="mental-hero-shade" aria-hidden />
+        <div className="wrap mental-hero-top">
+          <BackLink fallback="/#start" home={false} />
+        </div>
         <div className="wrap mental-hero-copy">
-          <BackLink fallback="/#start" />
           <p className="eyebrow" style={{ color: pillar.color }}>
             {pillar.mark} · {pillar.name}
           </p>
@@ -78,8 +80,8 @@ export function MentalPage() {
 
       <section className="section">
         <div className="wrap page-split mental-experience">
-          <Img className="page-photo" src={pillar.experience.image} alt="" max />
-          <div>
+          <Img className="page-photo" src={pillar.experience.image} alt="" />
+          <div className="mental-experience-copy">
             <p className="eyebrow">{t.experienceEyebrow}</p>
             <h2>{pillar.experience.title}</h2>
             <p className="prose">{pillar.experience.text}</p>
@@ -139,17 +141,6 @@ export function MentalPage() {
           </div>
         </section>
       )}
-
-      <section className="section">
-        <div className="wrap">
-          <p className="lead" style={{ maxWidth: '52ch' }}>
-            {t.mentalNoModules}
-          </p>
-          <Link className="btn btn-ghost" to="/system-start" style={{ marginTop: 18 }}>
-            {t.systemStart}
-          </Link>
-        </div>
-      </section>
 
       <section className="section">
         <div className="wrap card card-highlight card-cta">

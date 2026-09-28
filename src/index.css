@@ -1940,6 +1940,19 @@ picture {
   pointer-events: none;
 }
 
+.mental-hero-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding-top: calc(var(--nav-height) + 14px);
+}
+
+.mental-hero-top .back-link {
+  margin: 0;
+}
+
 .mental-hero-copy {
   position: relative;
   z-index: 1;
@@ -1948,13 +1961,11 @@ picture {
 }
 
 .mental-hero .back-link,
-.mental-hero .back-link-btn,
-.mental-hero .back-link-home {
+.mental-hero .back-link-btn {
   color: color-mix(in srgb, #f4f0e8 78%, transparent);
 }
 
-.mental-hero .back-link-btn:hover,
-.mental-hero .back-link-home:hover {
+.mental-hero .back-link-btn:hover {
   color: #f4f0e8;
 }
 
@@ -2154,6 +2165,54 @@ picture {
 .mental-rules article {
   border-left: 2px solid color-mix(in srgb, var(--mental) 45%, var(--line));
   padding-left: 14px;
+}
+
+.mental-experience {
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.mental-experience .page-photo,
+.mental-experience picture:has(.page-photo) {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+
+.mental-experience .page-photo {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.mental-experience picture:has(.page-photo) img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.mental-experience-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mental-experience-copy .eyebrow,
+.mental-experience-copy h2,
+.mental-experience-copy .prose,
+.mental-experience-copy .quote {
+  margin: 0;
+}
+
+.mental-experience-copy .prose {
+  margin-top: 4px;
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .mental-experience .quote {
