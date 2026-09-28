@@ -1,5 +1,6 @@
 import { Img } from '../components/Img'
 import { BackLink } from '../components/BackLink'
+import { ValueIcon } from '../components/ValueIcon'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -35,23 +36,29 @@ export function About() {
       <section className="section">
         <div className="wrap">
           <h2>{t.aboutYears}</h2>
-          <div className="grid-2" style={{ marginTop: 28 }}>
-            {about.stations.map((s) => (
-              <article className="card" key={s.years}>
-                <div className="mark">{s.years}</div>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </article>
+          <ol className="life-timeline">
+            {about.stations.map((s, i) => (
+              <li className={`life-timeline-item${i % 2 ? ' flip' : ''}`} key={s.years}>
+                <div className="life-timeline-marker" aria-hidden>
+                  <span className="life-timeline-dot" />
+                </div>
+                <article className="life-timeline-card">
+                  <p className="life-timeline-years">{s.years}</p>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
       <section className="section">
         <div className="wrap">
           <h2>{t.aboutValues}</h2>
-          <div className="grid-2" style={{ marginTop: 28 }}>
+          <div className="value-grid">
             {about.values.map((v) => (
-              <article className="card" key={v.title}>
+              <article className="value-card" key={v.title}>
+                <ValueIcon name={v.icon} />
                 <h3>{v.title}</h3>
                 <p>{v.text}</p>
               </article>

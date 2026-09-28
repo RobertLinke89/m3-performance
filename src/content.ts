@@ -645,18 +645,22 @@ export const about = {
   ],
   values: [
     {
+      icon: 'autonomy',
       title: '100% Selbstständigkeit',
       text: 'Wir begleiten dich eng — mit dem klaren Ziel deiner Unabhängigkeit. Du lernst, Körper, Stoffwechsel und Alltag selbst zu steuern.',
     },
     {
+      icon: 'system',
       title: 'System statt Zufall',
       text: 'Keine Experimente. Wir analysieren die Ausgangslage und bauen einen logischen, messbaren Fahrplan mit klaren Prioritäten.',
     },
     {
+      icon: 'honesty',
       title: 'Ehrlichkeit vor Verkauf',
       text: 'Klare Worte ohne Schönfärberei. Lebenssituation, Beruf und Belastungen fließen ein — mit ehrlicher Führung.',
     },
     {
+      icon: 'practice',
       title: 'Praxis vor Trend',
       text: 'Aus 30+ Jahren Bewegung und 15 Jahren professionellem Tanz: Nur Maßnahmen mit physiologischem Anspruch.',
     },
@@ -673,7 +677,6 @@ export const nav = [
 export const michelSlides = [
   { src: '/images/michel-trainer.png', label: 'Trainer' },
   { src: '/images/michel-politik.png', label: 'Politik' },
-  { src: '/images/michel-goofy.png', label: 'Goofy' },
 ] as const
 
 export const problemSlides = [

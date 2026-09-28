@@ -37,17 +37,17 @@ export function Home() {
               <source
                 media="(max-width: 860px)"
                 type="image/webp"
-                srcSet="/images/hero-system-mobile.webp?v=23"
+                srcSet="/images/hero-system-mobile.webp?v=25"
               />
               <source
                 media="(max-width: 860px)"
-                srcSet="/images/hero-system-mobile-1x.jpg?v=23 1x, /images/hero-system-mobile.jpg?v=23 2x"
+                srcSet="/images/hero-system-mobile-1x.jpg?v=25 1x, /images/hero-system-mobile.jpg?v=25 2x"
               />
-              <source type="image/webp" srcSet="/images/hero-system.webp?v=23" />
-              <source srcSet="/images/hero-system-1x.jpg?v=23 1x, /images/hero-system.jpg?v=23 2x" />
+              <source type="image/webp" srcSet="/images/hero-system.webp?v=25" />
+              <source srcSet="/images/hero-system-1x.jpg?v=25 1x, /images/hero-system.jpg?v=25 2x" />
               <img
                 className="board-merged-hero"
-                src="/images/hero-system.jpg?v=23"
+                src="/images/hero-system.jpg?v=25"
                 alt={t.problemAlt}
                 loading="eager"
                 decoding="async"
@@ -164,8 +164,10 @@ export function Home() {
       </section>
 
       <section className="section">
-        <div className="wrap grid-2">
-          <MichelShow />
+        <div className="wrap michel-split">
+          <div className="michel-visual">
+            <MichelShow />
+          </div>
           <div className="michel-copy">
             <p className="eyebrow">{t.michelEyebrow}</p>
             <h2>{t.michelH}</h2>

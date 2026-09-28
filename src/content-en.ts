@@ -577,18 +577,22 @@ export const about = {
   ],
   values: [
     {
+      icon: 'autonomy',
       title: '100% independence',
       text: 'We stay close — with the clear goal of your independence. You learn to steer body, metabolism and daily life yourself.',
     },
     {
+      icon: 'system',
       title: 'System instead of chance',
       text: 'No experiments. We analyse the baseline and build a logical, measurable plan with clear priorities.',
     },
     {
+      icon: 'honesty',
       title: 'Honesty before sales',
       text: 'Clear words without sugarcoating. Life situation, work and load are part of it — with honest leadership.',
     },
     {
+      icon: 'practice',
       title: 'Practice before trend',
       text: 'From 30+ years of movement and 15 years of professional dance: only measures with a physiological claim.',
     },
@@ -605,5 +609,4 @@ export const nav = [
 export const michelSlides = [
   { src: '/images/michel-trainer.png', label: 'Trainer' },
   { src: '/images/michel-politik.png', label: 'Politics' },
-  { src: '/images/michel-goofy.png', label: 'Goofy' },
 ] as const

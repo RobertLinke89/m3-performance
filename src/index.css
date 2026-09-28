@@ -1405,13 +1405,19 @@ picture {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 7px 12px;
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 30px;
+  padding: 0;
   border-radius: 999px;
   cursor: pointer;
+}
+
+.theme-glyph {
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 .theme-switch button.on {
@@ -1714,6 +1720,142 @@ picture {
   margin-top: 18px;
 }
 
+.life-timeline {
+  position: relative;
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.life-timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--gold) 55%, var(--line)) 8%,
+    color-mix(in srgb, var(--gold) 55%, var(--line)) 92%,
+    transparent 100%
+  );
+}
+
+.life-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  gap: 0 18px;
+  align-items: start;
+  padding: 18px 0;
+}
+
+.life-timeline-marker {
+  grid-column: 2;
+  display: grid;
+  place-items: center;
+  padding-top: 6px;
+}
+
+.life-timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 16%, transparent);
+}
+
+.life-timeline-card {
+  grid-column: 1;
+  justify-self: end;
+  width: min(100%, 440px);
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  text-align: right;
+}
+
+.life-timeline-item.flip .life-timeline-card {
+  grid-column: 3;
+  justify-self: start;
+  text-align: left;
+}
+
+.life-timeline-years {
+  margin: 0;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.life-timeline-card h3 {
+  margin: 8px 0 0;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.life-timeline-card p:last-child {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.value-card {
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+}
+
+.value-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--gold) 28%, var(--line));
+}
+
+.value-icon-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.value-card h3 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: -0.02em;
+}
+
+.value-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
 .about-copy {
   display: flex;
   flex-direction: column;
@@ -1775,6 +1917,41 @@ picture {
   overflow: hidden;
   border-radius: 18px;
   background: color-mix(in srgb, var(--gold) 8%, var(--bg-2));
+}
+
+.michel-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px 36px;
+  align-items: stretch;
+}
+
+.michel-visual {
+  position: relative;
+  min-height: 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.michel-visual .michel-show {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+}
+
+.michel-visual .michel-fade img {
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.michel-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .michel-show canvas {
@@ -2046,6 +2223,46 @@ picture {
     gap: 24px;
   }
 
+  .michel-split {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .life-timeline::before {
+    left: 11px;
+    transform: none;
+  }
+
+  .life-timeline-item,
+  .life-timeline-item.flip {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0 14px;
+    padding: 14px 0;
+  }
+
+  .life-timeline-marker {
+    grid-column: 1;
+  }
+
+  .life-timeline-card,
+  .life-timeline-item.flip .life-timeline-card {
+    grid-column: 2;
+    justify-self: stretch;
+    width: 100%;
+    text-align: left;
+  }
+
+  .value-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .michel-visual {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+  }
+
   .framework-visual {
     order: -1;
     min-height: 260px;
@@ -2070,8 +2287,13 @@ picture {
   }
 
   .theme-switch button {
-    padding: 6px 10px;
-    font-size: 11px;
+    width: 32px;
+    height: 28px;
+  }
+
+  .theme-glyph {
+    width: 15px;
+    height: 15px;
   }
 
   .article-photo {
