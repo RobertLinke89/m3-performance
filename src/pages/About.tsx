@@ -8,23 +8,28 @@ export function About() {
   const { about, wa } = useContent()
 
   return (
-    <main>
-      <section className="page-hero">
+    <main className="about-page">
+      <section className="page-hero about-hero">
         <div className="wrap">
-          <BackLink fallback="/" />
+          <BackLink fallback="/" home={false} />
         </div>
-        <div className="wrap grid-2">
-          <div>
+        <div className="wrap about-split">
+          <div className="about-copy">
             <p className="eyebrow">Michél Meier</p>
             <h1>{about.headline}</h1>
             <p className="lead">{about.intro}</p>
             <p className="quote">„{about.quote}“</p>
             <p className="prose">{about.bio}</p>
-            <a className="btn btn-gold" href={wa.talk} style={{ marginTop: 20 }}>
+            <a className="btn btn-gold" href={wa.talk} style={{ marginTop: 8 }}>
               {t.firstTalk}
             </a>
           </div>
-          <Img className="portrait-cutout" src="/images/michel-portrait.png" alt={t.aboutPortrait} priority max />
+          <Img
+            className="about-portrait"
+            src="/images/michel-portrait.jpg"
+            alt={t.aboutPortrait}
+            priority
+          />
         </div>
       </section>
       <section className="section">

@@ -36,17 +36,17 @@ export function Home() {
               <source
                 media="(max-width: 860px)"
                 type="image/webp"
-                srcSet="/images/hero-system-mobile.webp?v=13"
+                srcSet="/images/hero-system-mobile.webp?v=23"
               />
               <source
                 media="(max-width: 860px)"
-                srcSet="/images/hero-system-mobile-1x.jpg?v=13 1x, /images/hero-system-mobile.jpg?v=13 2x"
+                srcSet="/images/hero-system-mobile-1x.jpg?v=23 1x, /images/hero-system-mobile.jpg?v=23 2x"
               />
-              <source type="image/webp" srcSet="/images/hero-system.webp?v=13" />
-              <source srcSet="/images/hero-system-1x.jpg?v=13 1x, /images/hero-system.jpg?v=13 2x" />
+              <source type="image/webp" srcSet="/images/hero-system.webp?v=23" />
+              <source srcSet="/images/hero-system-1x.jpg?v=23 1x, /images/hero-system.jpg?v=23 2x" />
               <img
                 className="board-merged-hero"
-                src="/images/hero-system.jpg?v=13"
+                src="/images/hero-system.jpg?v=23"
                 alt={t.problemAlt}
                 loading="eager"
                 decoding="async"
@@ -227,14 +227,14 @@ export function Home() {
       </section>
 
       <section className="section" id="faq">
-        <div className="wrap">
+        <div className="wrap faq-wrap">
           <p className="eyebrow">{t.faqEyebrow}</p>
           <h2>{t.faqH}</h2>
-          <div style={{ marginTop: 20 }}>
+          <div className="faq-list">
             {faqs.map((f, i) => (
               <button
                 key={f.q}
-                className="faq-item"
+                className={`faq-item${openFaq === i ? ' open' : ''}`}
                 type="button"
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
               >
