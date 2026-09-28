@@ -14,6 +14,7 @@ export function Home() {
     .map((p) => posts.filter((post) => post.pillar === p.id).at(-1))
     .filter((post): post is (typeof posts)[number] => Boolean(post))
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openPillar, setOpenPillar] = useState<string | null>(null)
   const m1 = modules.filter((m) => m.pillar === 'm1')
   const m2 = modules.filter((m) => m.pillar === 'm2')
   const m3Pillar = pillars.find((p) => p.id === 'm3')
@@ -73,25 +74,37 @@ export function Home() {
             <h2>{t.frameworkH}</h2>
             <p className="lead">{t.frameworkLead}</p>
             <div className="framework">
-              {pillars.map((p) => (
-                <Link
-                  key={p.id}
-                  className="framework-item"
-                  to={`/${p.slug}`}
-                  style={{ '--orb': p.color } as CSSProperties}
-                >
-                  <span className="mark" style={{ color: p.color }}>
-                    {p.mark}
-                  </span>
-                  <span>
-                    <span className="framework-label">
-                      {p.name} · {p.label}
+              {pillars.map((p) => {
+                const open = openPillar === p.id
+                return (
+                  <article
+                    key={p.id}
+                    className={`framework-item${open ? ' open' : ''}`}
+                    style={{ '--orb': p.color } as CSSProperties}
+                  >
+                    <span className="mark" style={{ color: p.color }}>
+                      {p.mark}
                     </span>
-                    <h3>{p.title}</h3>
-                    <p>{p.lead}</p>
-                  </span>
-                </Link>
-              ))}
+                    <div className="framework-item-body">
+                      <Link className="framework-item-link" to={`/${p.slug}`}>
+                        <span className="framework-label">
+                          {p.name} · {p.label}
+                        </span>
+                        <h3>{p.title}</h3>
+                      </Link>
+                      <button
+                        type="button"
+                        className="framework-toggle"
+                        aria-expanded={open}
+                        onClick={() => setOpenPillar(open ? null : p.id)}
+                      >
+                        {open ? t.lessLearn : t.moreLearn}
+                      </button>
+                      {open ? <p className="framework-lead">{p.lead}</p> : null}
+                    </div>
+                  </article>
+                )
+              })}
             </div>
           </div>
           <div className="framework-visual">
