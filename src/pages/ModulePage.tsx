@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
@@ -6,15 +7,19 @@ import { useContent } from '../useContent'
 export function ModulePage() {
   const { slug } = useParams()
   const t = useUi()
-  const { audience, modules, pillars, process, wa } = useContent()
+  const { modules, pillars, process, wa } = useContent()
   const mod = modules.find((m) => m.slug === slug)
   if (!mod) return <Navigate to="/" replace />
   const pillar = pillars.find((p) => p.id === mod.pillar)
   const related = modules.filter((m) => m.pillar === mod.pillar && m.slug !== mod.slug).slice(0, 3)
+  const fallback = pillar ? `/${pillar.slug}` : '/#module'
 
   return (
     <main>
       <section className="page-hero">
+        <div className="wrap">
+          <BackLink fallback={fallback} />
+        </div>
         <div className="wrap page-split">
           <div>
             <p className="eyebrow">
@@ -22,7 +27,7 @@ export function ModulePage() {
             </p>
             <h1>{mod.title}</h1>
             <p className="lead">{mod.kicker}</p>
-            <p>{mod.text}</p>
+            <p className="prose">{mod.text}</p>
             <div className="cta-row">
               <a className="btn btn-gold" href={mod.wa}>
                 {t.writeMe}
@@ -56,25 +61,6 @@ export function ModulePage() {
               ))}
             </ul>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap">
-          <p className="eyebrow">{t.audienceEyebrow}</p>
-          <h2>{t.audienceH}</h2>
-          <div className="grid-2" style={{ marginTop: 28 }}>
-            {audience.map((a) => (
-              <article className="card" key={a.title}>
-                <Img className="card-media card-media-face" src={a.image} alt="" />
-                <h3>{a.title}</h3>
-                <p>{a.text}</p>
-              </article>
-            ))}
-          </div>
-          <p className="lead" style={{ marginTop: 24 }}>
-            {t.audienceLead}
-          </p>
         </div>
       </section>
 

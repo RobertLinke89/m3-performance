@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
@@ -26,6 +27,7 @@ export function Article() {
     <main>
       <section className="page-hero">
         <div className="wrap article-hero">
+          <BackLink fallback="/blog" />
           <p className="eyebrow" style={pillar ? { color: pillar.color } : undefined}>
             {pillar ? `${pillar.mark} · ${pillar.name}` : t.blog}
           </p>

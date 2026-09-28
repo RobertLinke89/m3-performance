@@ -23,7 +23,7 @@ uniform sampler2D u_tex;
 uniform float u_alpha;
 void main() {
   vec4 c = texture2D(u_tex, v_uv);
-  gl_FragColor = vec4(c.rgb, u_alpha);
+  gl_FragColor = vec4(c.rgb, c.a * u_alpha);
 }
 `
 
@@ -66,13 +66,12 @@ void main() {
   float soft = smoothstep(0.5, 0.22, d);
   vec4 a = texture2D(u_a, v_uv);
   vec4 b = texture2D(u_b, v_uv);
-  float la = dot(a.rgb, vec3(0.299, 0.587, 0.114));
-  float lb = dot(b.rgb, vec3(0.299, 0.587, 0.114));
-  if (max(la, lb) < 0.04) discard;
+  float alpha = max(a.a, b.a);
+  if (alpha < 0.08) discard;
   float amt = smoothstep(0.1, 0.9, u_t);
   vec3 col = mix(a.rgb, b.rgb, amt);
   col += vec3(0.05, 0.03, 0.01) * v_wave;
-  gl_FragColor = vec4(col, soft * mix(0.82, 0.95, v_wave));
+  gl_FragColor = vec4(col, soft * alpha * mix(0.82, 0.95, v_wave));
 }
 `
 
@@ -109,12 +108,13 @@ function coverDraw(
 ) {
   const iw = img.naturalWidth
   const ih = img.naturalHeight
-  const scale = Math.max(dw / iw, dh / ih)
-  const sw = dw / scale
-  const sh = dh / scale
-  const sx = (iw - sw) / 2
-  const sy = Math.max(0, Math.min(ih - sh, ih * 0.12 - sh * 0.08))
-  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, dw, dh)
+  const scale = Math.min(dw / iw, dh / ih)
+  const sw = iw * scale
+  const sh = ih * scale
+  const dx = (dw - sw) / 2
+  const dy = dh - sh
+  ctx.clearRect(0, 0, dw, dh)
+  ctx.drawImage(img, dx, dy, sw, sh)
 }
 
 function loadImage(src: string) {
@@ -228,15 +228,15 @@ function MichelShowGL() {
       if (dead) return
 
       gl = canvas.getContext('webgl', {
-        alpha: false,
+        alpha: true,
         antialias: true,
         premultipliedAlpha: false,
       })
-      const ctx2d = !gl ? canvas.getContext('2d') : null
+      const ctx2d = !gl ? canvas.getContext('2d', { alpha: true }) : null
       if (!gl && !ctx2d) return
 
       const scratch = document.createElement('canvas')
-      const scratchCtx = scratch.getContext('2d', { willReadFrequently: true })
+      const scratchCtx = scratch.getContext('2d', { willReadFrequently: true, alpha: true })
       if (!scratchCtx) return
 
       const count = COLS * ROWS
@@ -283,13 +283,14 @@ function MichelShowGL() {
         }
 
         gl.enable(gl.BLEND)
-        gl.clearColor(0.04, 0.04, 0.05, 1)
+        gl.clearColor(0, 0, 0, 0)
       }
 
       const upload = (tex: WebGLTexture | null, img: HTMLImageElement) => {
         if (!gl || !tex) return
         scratch.width = canvas.width
         scratch.height = canvas.height
+        scratchCtx.clearRect(0, 0, scratch.width, scratch.height)
         coverDraw(scratchCtx, img, scratch.width, scratch.height)
         gl.bindTexture(gl.TEXTURE_2D, tex)
         gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1)
@@ -335,8 +336,7 @@ function MichelShowGL() {
 
       const paint2d = (t: number, from: number, to: number) => {
         if (!ctx2d) return
-        ctx2d.fillStyle = '#0a0a0c'
-        ctx2d.fillRect(0, 0, canvas.width, canvas.height)
+        ctx2d.clearRect(0, 0, canvas.width, canvas.height)
         if (t <= 0.02) {
           coverDraw(ctx2d, imgs[from], canvas.width, canvas.height)
           return

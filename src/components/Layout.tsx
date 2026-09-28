@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+import { BrandMark } from './BrandMark'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
 import { useContent } from '../useContent'
@@ -73,8 +74,8 @@ export function Layout() {
       <ScrollToTop />
       <header className="nav">
         <LangSwitch />
-        <Link className="brand" to="/">
-          M³ Performance
+        <Link className="brand" to="/" aria-label="M³ Performance">
+          <BrandMark />
         </Link>
         <div className="nav-actions">
           <a className="btn btn-gold" href={wa.talk}>
@@ -86,7 +87,9 @@ export function Layout() {
       <footer className="footer">
         <div className="wrap footer-grid">
           <div>
-            <div className="brand">M³ Performance</div>
+            <div className="brand" aria-label="M³ Performance">
+              <BrandMark />
+            </div>
             <p>{t.footerLine}</p>
             <p>{t.footerAbout}</p>
           </div>

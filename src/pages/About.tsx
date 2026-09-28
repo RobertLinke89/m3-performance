@@ -1,4 +1,5 @@
 import { Img } from '../components/Img'
+import { BackLink } from '../components/BackLink'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -9,18 +10,21 @@ export function About() {
   return (
     <main>
       <section className="page-hero">
+        <div className="wrap">
+          <BackLink fallback="/" />
+        </div>
         <div className="wrap grid-2">
           <div>
             <p className="eyebrow">Michél Meier</p>
             <h1>{about.headline}</h1>
             <p className="lead">{about.intro}</p>
             <p className="quote">„{about.quote}“</p>
-            <p>{about.bio}</p>
+            <p className="prose">{about.bio}</p>
             <a className="btn btn-gold" href={wa.talk} style={{ marginTop: 20 }}>
               {t.firstTalk}
             </a>
           </div>
-          <Img className="portrait" src="/images/michel-portrait.jpg" alt={t.aboutPortrait} priority max />
+          <Img className="portrait-cutout" src="/images/michel-portrait.png" alt={t.aboutPortrait} priority max />
         </div>
       </section>
       <section className="section">

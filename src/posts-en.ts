@@ -21,12 +21,12 @@ export const posts = [
         p: 'Bloat after ordinary meals. An afternoon crash despite coffee. Restless sleep. Joints that take longer to recover than they used to. These are not soft topics. They show the immune system and metabolism running a quiet alarm. Harder sessions then add load to a system that is already compensating.',
       },
       {
-        h: 'The order in the M³ framework',
+        h: 'The order in the M³ system',
         p: 'M¹ comes first because it decides whether M² can carry. Status first: digestion, energy curve, prior attempts. Then a time-boxed intervention — not twenty biohacks in parallel. What stays is a meal logic and a baseline that carry work and family. Load only after that.',
       },
       {
         h: 'What Michél learned from it',
-        p: 'After the C6/C7 incident, more discipline did not bring the body back. The path ran through gut, microbiome and supply. That is why M¹ in the framework is not a wellness intro. It is the condition for training to build something again.',
+        p: 'After the C6/C7 incident, more discipline did not bring the body back. The path ran through gut, microbiome and supply. That is why M¹ in the system is not a wellness intro. It is the condition for training to build something again.',
       },
     ],
   },
@@ -157,7 +157,7 @@ export const posts = [
       },
       {
         h: 'The C6/C7 cut',
-        p: 'Numbness, misdiagnoses, a body that no longer obeyed. Michél did not come back by waiting. Precise paths, mobility, a dosed stimulus. The old hardness from performance sport was exactly the reflex that no longer carried. That is why the framework says: intensity comes once technique carries. Not before.',
+        p: 'Numbness, misdiagnoses, a body that no longer obeyed. Michél did not come back by waiting. Precise paths, mobility, a dosed stimulus. The old hardness from performance sport was exactly the reflex that no longer carried. That is why the system says: intensity comes once technique carries. Not before.',
       },
       {
         h: 'What you take from it',
@@ -215,7 +215,7 @@ export const posts = [
       },
       {
         h: 'What that has to do with training',
-        p: 'A clean session on poor sleep is an expensive stimulus. The path gets less precise, recovery longer. That is why sleep belongs in the framework, not in the appendix. Those who clean this up often notice: M¹ gets quieter, M² more load-ready — without the plan getting more aggressive.',
+        p: 'A clean session on poor sleep is an expensive stimulus. The path gets less precise, recovery longer. That is why sleep belongs in the system, not in the appendix. Those who clean this up often notice: M¹ gets quieter, M² more load-ready — without the plan getting more aggressive.',
       },
     ],
   },
@@ -242,7 +242,7 @@ export const posts = [
       },
       {
         h: 'The thread',
-        p: 'If M¹ or M² land and fall apart again in daily life, M³ is not “mental coaching on top”. It is the missing layer. Few routines. Sleep and stress first. Then what was measured stays. The framework is the order. This journal is the reasoning.',
+        p: 'If M¹ or M² land and fall apart again in daily life, M³ is not “mental coaching on top”. It is the missing layer. Few routines. Sleep and stress first. Then what was measured stays. The system is the order. This journal is the reasoning.',
       },
     ],
   },

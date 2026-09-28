@@ -14,19 +14,19 @@ export const posts = [
       },
       {
         h: 'Energie wird nicht verhandelt',
-        p: 'Muskeln arbeiten mit ATP. ATP entsteht in den Zellen — abhängig von Mikronährstoffen, Schlaf, Entzündungsstatus und der Frage, ob der Darm überhaupt aufnimmt, was auf dem Teller liegt. Wenn diese Schicht rauscht, bleibt vom Training nur der Reiz. Die Anpassung bleibt aus.',
+        p: 'Muskeln brauchen Energie. Diese entsteht in den Zellen als ATP — dem Treibstoff der Zelle — abhängig von Mikronährstoffen, Schlaf, Entzündungsstatus und der Frage, ob der Darm überhaupt aufnimmt, was auf dem Teller liegt. Wenn diese Schicht rauscht, bleibt vom Training nur der Reiz. Die Anpassung bleibt aus.',
       },
       {
         h: 'Was „Fundament brennt“ konkret heißt',
         p: 'Blähbauch nach normalen Mahlzeiten. Nachmittagstief trotz Kaffee. Unruhiger Schlaf. Gelenke, die sich nach Belastung länger erholen als früher. Das sind keine Soft-Themen. Sie zeigen, dass Immunsystem und Stoffwechsel im stillen Alarm laufen. Härtere Einheiten erhöhen dann die Last auf ein System, das schon kompensiert.',
       },
       {
-        h: 'Die Reihenfolge im M³-Framework',
+        h: 'Die Reihenfolge im M³-System',
         p: 'M¹ kommt zuerst, weil sie entscheidet, ob M² tragen kann. Erst Status: Verdauung, Energieverlauf, bisherige Versuche. Dann ein zeitlich klarer Eingriff — nicht zwanzig Biohacks parallel. Was bleibt, ist eine Mahlzeitenlogik und eine Grundversorgung, die Beruf und Familie trägt. Danach erst Last.',
       },
       {
         h: 'Was Michél daran gelernt hat',
-        p: 'Nach dem C6/C7-Vorfall hat mehr Disziplin den Körper nicht zurückgeholt. Der Weg führte über Darm, Mikrobiom und Versorgung. Deshalb ist M¹ im Framework keine Wellness-Einleitung. Es ist die Bedingung dafür, dass Training wieder etwas aufbaut.',
+        p: 'Nach dem Bandscheibenvorfall im Halswirbelbereich (C6/C7) hat mehr Disziplin den Körper nicht zurückgeholt. Der Weg führte über Darm, Mikrobiom und Versorgung. Deshalb ist M¹ im System keine Wellness-Einleitung. Es ist die Bedingung dafür, dass Training wieder etwas aufbaut.',
       },
     ],
   },
@@ -37,7 +37,7 @@ export const posts = [
     minutes: 5,
     title: 'Blutzucker im Alltag: das Nachmittagstief ist Physiologie',
     excerpt:
-      'Starke Glukoseausschläge erzeugen Cravings, unruhigen Schlaf und leere Einheiten. Stabilität kommt von Protein, Ballaststoffen und Timing — nicht von Verboten.',
+      'Starke Glukoseausschläge erzeugen Heißhunger, unruhigen Schlaf und leere Einheiten. Stabilität kommt von Protein, Ballaststoffen und Timing — nicht von Verboten.',
     image: '/images/blog-blutzucker.jpg',
     sections: [
       {
@@ -80,7 +80,7 @@ export const posts = [
       },
       {
         h: 'Nahrung bleibt die Grundlage',
-        p: 'Dosen ersetzen keinen Rhythmus. Mikronährstoffe nur, wenn sie einen klaren Hebel haben — Eisen, B-Vitamine, Magnesium, Vitamin D sind Cofaktoren der ATP-Produktion, kein Lifestyle-Stack. Die 90-Tage-Arbeit und die Mikrobiom-Sanierung, die Michél selbst durchlaufen hat, sitzen genau hier: erst das Fundament, dann Last.',
+        p: 'Dosen ersetzen keinen Rhythmus. Mikronährstoffe nur, wenn sie einen klaren Hebel haben — Eisen, B-Vitamine, Magnesium, Vitamin D sind Cofaktoren der Energieproduktion der Zellen (ATP), kein Lifestyle-Stack. Die 90-Tage-Arbeit und die Mikrobiom-Sanierung, die Michél selbst durchlaufen hat, sitzen genau hier: erst das Fundament, dann Last.',
       },
     ],
   },
@@ -107,7 +107,7 @@ export const posts = [
       },
       {
         h: 'Aus 30 Jahren Bewegung',
-        p: 'Breakdance, Bühne, Weltmeisterschaft: hohe motorische Dichte, Wiederholung unter Druck. Der C6/C7-Vorfall hat gezeigt, wie schnell das System kippt, wenn Technik und Gewebe nicht mehr tragen. „Technik schlägt Gewicht“ ist deshalb keine Trainerfloskel. Es ist der Unterschied zwischen weitermachen und ausfallen.',
+        p: 'Breakdance, Bühne, Weltmeisterschaft: hohe motorische Dichte, Wiederholung unter Druck. Der Bandscheibenvorfall im Halswirbelbereich hat gezeigt, wie schnell das System kippt, wenn Technik und Gewebe nicht mehr tragen. „Technik schlägt Gewicht“ ist deshalb keine Trainerfloskel. Es ist der Unterschied zwischen weitermachen und ausfallen.',
       },
     ],
   },
@@ -156,8 +156,8 @@ export const posts = [
         p: 'Gewebe passt sich an Last an, wenn die Last unter der aktuellen Tragfähigkeit liegt und wiederholt wird. Zu wenig Reiz erhält die Empfindlichkeit. Zu viel Reiz erzeugt den nächsten Rückschlag. Dazwischen sitzt die Arbeit: Bahn säubern, Wiederholung halten, dann steigern.',
       },
       {
-        h: 'Der C6/C7-Schnitt',
-        p: 'Taubheit, Fehldiagnosen, ein Körper der nicht mehr gehorchte. Michél ist nicht durch Warten zurückgekommen. Präzise Bahnen, Mobilität, dosierter Reiz. Die alte Härte aus dem Leistungssport war genau der Reflex, der nicht mehr trug. Deshalb steht im Framework: Intensität kommt, sobald die Technik trägt. Nicht vorher.',
+        h: 'Der Schnitt am Halswirbel',
+        p: 'Taubheit, Fehldiagnosen, ein Körper der nicht mehr gehorchte. Michél ist nicht durch Warten zurückgekommen. Präzise Bahnen, Mobilität, dosierter Reiz. Die alte Härte aus dem Leistungssport war genau der Reflex, der nicht mehr trug. Deshalb steht im System: Intensität kommt, sobald die Technik trägt. Nicht vorher.',
       },
       {
         h: 'Was du davon mitnimmst',
@@ -207,7 +207,7 @@ export const posts = [
       },
       {
         h: 'Zwei Phasen, zwei Jobs',
-        p: 'Tiefschlaf treibt Gewebereparatur und Insulinsensitivität. REM sortiert Emotion und Lernen. Fragmentierter Schlaf — Alkohol, späte schwere Mahlzeiten, Bildschirm, unruhiger Cortisolverlauf — erhöht Schmerzempfindlichkeit und Cravings. Das Nachmittagstief vom Vortag wird zum Muster.',
+        p: 'Tiefschlaf treibt Gewebereparatur und Insulinsensitivität. REM sortiert Emotion und Lernen. Fragmentierter Schlaf — Alkohol, späte schwere Mahlzeiten, Bildschirm, unruhiger Cortisolverlauf — erhöht Schmerzempfindlichkeit und Heißhunger. Das Nachmittagstief vom Vortag wird zum Muster.',
       },
       {
         h: 'Stressachse und Abend',
@@ -215,7 +215,7 @@ export const posts = [
       },
       {
         h: 'Was das mit Training zu tun hat',
-        p: 'Eine saubere Einheit auf schlechtem Schlaf ist ein teurer Reiz. Die Bahn wird ungenauer, die Erholung länger. Deshalb gehört Schlaf ins Framework, nicht in den Anhang. Wer hier aufräumt, merkt oft: M¹ wird ruhiger, M² wird tragfähiger — ohne dass der Plan aggressiver wurde.',
+        p: 'Eine saubere Einheit auf schlechtem Schlaf ist ein teurer Reiz. Die Bahn wird ungenauer, die Erholung länger. Deshalb gehört Schlaf ins System, nicht in den Anhang. Wer hier aufräumt, merkt oft: M¹ wird ruhiger, M² wird tragfähiger — ohne dass der Plan aggressiver wurde.',
       },
     ],
   },
@@ -242,7 +242,7 @@ export const posts = [
       },
       {
         h: 'Der rote Faden',
-        p: 'Wenn M¹ oder M² greifen und im Alltag wieder auseinanderfallen, ist M³ nicht „Mental-Coaching dazu“. Es ist die fehlende Schicht. Wenige Routinen. Schlaf und Stress zuerst. Dann bleibt, was gemessen wurde. Das Framework ist die Reihenfolge. Der Blog hier ist die Begründung.',
+        p: 'Wenn M¹ oder M² greifen und im Alltag wieder auseinanderfallen, ist M³ nicht „Mental-Coaching dazu“. Es ist die fehlende Schicht. Wenige Routinen. Schlaf und Stress zuerst. Dann bleibt, was gemessen wurde. Das System ist die Reihenfolge. Der Blog hier ist die Begründung.',
       },
     ],
   },

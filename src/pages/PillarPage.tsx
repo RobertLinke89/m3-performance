@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
+import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
@@ -15,6 +16,9 @@ export function PillarPage() {
   return (
     <main>
       <section className="page-hero">
+        <div className="wrap">
+          <BackLink fallback="/#start" />
+        </div>
         <div className="wrap page-split">
           <div>
             <p className="eyebrow" style={{ color: pillar.color }}>

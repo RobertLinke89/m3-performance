@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Img } from '../components/Img'
+import { OfferCard } from '../components/OfferCard'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -44,21 +44,7 @@ export function Catalog() {
               {group.length > 0 ? (
                 <div className="grid-3" style={{ marginTop: 28 }}>
                   {group.map((m) => (
-                    <article className="card" key={m.slug}>
-                      <Img className="card-media" src={m.image} alt="" />
-                      <div className="mark">{m.badge}</div>
-                      <h3>{m.title}</h3>
-                      <p>{m.kicker}</p>
-                      <p style={{ color: 'var(--muted)' }}>{m.text}</p>
-                      <div className="cta-row">
-                        <Link className="btn btn-ghost" to={`/${m.slug}`}>
-                          {t.details}
-                        </Link>
-                        <a className="btn btn-gold" href={m.wa}>
-                          {t.whatsapp}
-                        </a>
-                      </div>
-                    </article>
+                    <OfferCard key={m.slug} offer={m} />
                   ))}
                 </div>
               ) : (

@@ -1,22 +1,26 @@
-import { useRef, useState, type CSSProperties } from 'react'
+import { useRef, useState, type CSSProperties, type RefObject } from 'react'
 import { Link } from 'react-router-dom'
-import { BoardFade } from '../components/BoardFade'
 import { Img } from '../components/Img'
 import { MichelShow } from '../components/MichelShow'
+import { OfferCard } from '../components/OfferCard'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
 export function Home() {
   const t = useUi()
-  const { faqs, modules, pillars, posts, problemSlides, wa } = useContent()
+  const { audience, faqs, modules, pillars, posts, wa } = useContent()
   const featured = pillars
     .map((p) => posts.filter((post) => post.pillar === p.id).at(-1))
     .filter((post): post is (typeof posts)[number] => Boolean(post))
   const [openFaq, setOpenFaq] = useState<number | null>(0)
-  const moduleTrack = useRef<HTMLDivElement>(null)
+  const m1 = modules.filter((m) => m.pillar === 'm1')
+  const m2 = modules.filter((m) => m.pillar === 'm2')
+  const m3Pillar = pillars.find((p) => p.id === 'm3')
+  const m1Track = useRef<HTMLDivElement>(null)
+  const m2Track = useRef<HTMLDivElement>(null)
 
-  const scrollModules = (dir: -1 | 1) => {
-    const track = moduleTrack.current
+  const scrollTrack = (trackRef: RefObject<HTMLDivElement | null>, dir: -1 | 1) => {
+    const track = trackRef.current
     if (!track) return
     const card = track.querySelector('article')
     const step = card ? card.getBoundingClientRect().width + 16 : 340
@@ -27,102 +31,160 @@ export function Home() {
     <main>
       <section className="hero">
         <div className="hero-board">
-          <div className="board-tile board-thesis">
-            <Img src="/images/hero-food.jpg" alt="" priority max />
-            <div className="board-thesis-copy">
+          <article className="board-tile board-merged">
+            <picture className="board-merged-hero">
+              <source
+                media="(max-width: 860px)"
+                type="image/webp"
+                srcSet="/images/hero-system-mobile.webp?v=13"
+              />
+              <source
+                media="(max-width: 860px)"
+                srcSet="/images/hero-system-mobile-1x.jpg?v=13 1x, /images/hero-system-mobile.jpg?v=13 2x"
+              />
+              <source type="image/webp" srcSet="/images/hero-system.webp?v=13" />
+              <source srcSet="/images/hero-system-1x.jpg?v=13 1x, /images/hero-system.jpg?v=13 2x" />
+              <img
+                className="board-merged-hero"
+                src="/images/hero-system.jpg?v=13"
+                alt={t.problemAlt}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+              />
+            </picture>
+            <div className="board-merged-copy">
               <div className="board-copy-box">
                 <h1>
-                  {t.h1a}
-                  <span>{t.h1b}</span>
-                  <em className="gold">{t.h1c}</em>
+                  {t.h1a} <span>{t.h1b}</span> <em className="gold">{t.h1c}</em>
                 </h1>
+                <p className="board-pitch">{t.heroPitch}</p>
               </div>
-            </div>
-          </div>
-
-          <article className="board-tile board-problem">
-            <BoardFade images={problemSlides} alt={t.problemAlt} />
-            <div className="board-problem-copy">
-              <h2>{t.problemH}</h2>
-              <p>{t.problemP}</p>
             </div>
           </article>
         </div>
       </section>
 
       <section className="section" id="start">
-        <div className="wrap grid-2">
-          <div>
-            <Img className="card-media card-media-lg" src="/images/system-start.jpg" alt={t.startEyebrow} />
-            <p className="eyebrow">{t.startEyebrow}</p>
-            <h2>{t.startH}</h2>
-            <p className="lead">{t.startLead}</p>
-            <Link className="btn btn-ghost" to="/system-start" style={{ marginTop: 18 }}>
-              {t.moreLearn}
-            </Link>
-          </div>
-          <div>
-            <p className="eyebrow">{t.frameworkEyebrow}</p>
-            <h2>{t.frameworkH}</h2>
-            <p className="lead">{t.frameworkLead}</p>
-            <div className="framework">
-              {pillars.map((p) => (
-                <Link
-                  key={p.id}
-                  className="framework-item"
-                  to={`/${p.slug}`}
-                  style={{ '--orb': p.color } as CSSProperties}
-                >
-                  <span className="mark" style={{ color: p.color }}>
-                    {p.mark}
+        <div className="wrap">
+          <p className="eyebrow">{t.frameworkEyebrow}</p>
+          <h2>{t.frameworkH}</h2>
+          <p className="lead">{t.frameworkLead}</p>
+          <div className="framework">
+            {pillars.map((p) => (
+              <Link
+                key={p.id}
+                className="framework-item"
+                to={`/${p.slug}`}
+                style={{ '--orb': p.color } as CSSProperties}
+              >
+                <span className="mark" style={{ color: p.color }}>
+                  {p.mark}
+                </span>
+                <span>
+                  <span className="framework-label">
+                    {p.name} · {p.label}
                   </span>
-                  <span>
-                    <span className="framework-label">
-                      {p.name} · {p.label}
-                    </span>
-                    <h3>{p.title}</h3>
-                    <p>{p.lead}</p>
-                  </span>
-                </Link>
-              ))}
-            </div>
+                  <h3>{p.title}</h3>
+                  <p>{p.lead}</p>
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="section" id="module">
         <div className="wrap">
-          <div className="carousel-head">
-            <div>
-              <p className="eyebrow">{t.modulesEyebrow}</p>
-              <h2>{t.modulesH}</h2>
-              <p className="lead">{t.modulesLead}</p>
+          <p className="eyebrow">{t.modulesEyebrow}</p>
+          <h2>{t.modulesH}</h2>
+          <p className="lead">{t.modulesLead}</p>
+
+          <div className="module-group">
+            <div className="carousel-head module-group-head">
+              <p className="eyebrow" style={{ color: '#e8a14a' }}>
+                M¹ · Metabolism
+              </p>
+              <div className="carousel-nav">
+                <button type="button" aria-label={t.prevOffer} onClick={() => scrollTrack(m1Track, -1)}>
+                  ←
+                </button>
+                <button type="button" aria-label={t.nextOffer} onClick={() => scrollTrack(m1Track, 1)}>
+                  →
+                </button>
+              </div>
             </div>
-            <div className="carousel-nav">
-              <button type="button" aria-label={t.prevOffer} onClick={() => scrollModules(-1)}>
-                ←
-              </button>
-              <button type="button" aria-label={t.nextOffer} onClick={() => scrollModules(1)}>
-                →
-              </button>
+            <div className="carousel-track module-track" ref={m1Track}>
+              {m1.map((m) => (
+                <OfferCard key={m.slug} offer={m} />
+              ))}
             </div>
           </div>
-          <div className="carousel-track" ref={moduleTrack}>
-            {modules.map((m) => (
-              <article className="card" key={m.slug}>
-                <Img className="card-media" src={m.image} alt="" />
-                <div className="mark">{m.badge}</div>
-                <h3>{m.title}</h3>
-                <p>{m.kicker}</p>
-                <p style={{ color: 'var(--muted)' }}>{m.text}</p>
-                <div className="cta-row">
-                  <Link className="btn btn-ghost" to={`/${m.slug}`}>
-                    {t.details}
-                  </Link>
-                  <a className="btn btn-gold" href={m.wa}>
-                    {t.whatsapp}
-                  </a>
-                </div>
+
+          <div className="module-group">
+            <div className="carousel-head module-group-head">
+              <p className="eyebrow" style={{ color: '#3dba8a' }}>
+                M² · Movement
+              </p>
+              <div className="carousel-nav">
+                <button type="button" aria-label={t.prevOffer} onClick={() => scrollTrack(m2Track, -1)}>
+                  ←
+                </button>
+                <button type="button" aria-label={t.nextOffer} onClick={() => scrollTrack(m2Track, 1)}>
+                  →
+                </button>
+              </div>
+            </div>
+            <div className="carousel-track module-track" ref={m2Track}>
+              {m2.map((m) => (
+                <OfferCard key={m.slug} offer={m} />
+              ))}
+            </div>
+          </div>
+
+          {m3Pillar && (
+            <div className="module-group">
+              <article className="card module-m3-card">
+                <p className="eyebrow">M³ · Mental Performance</p>
+                <h3>{m3Pillar.title}</h3>
+                <p>{t.modulesM3Note}</p>
+                <Link className="btn btn-ghost" to={`/${m3Pillar.slug}`} style={{ marginTop: 16 }}>
+                  {t.modulesM3Cta}
+                </Link>
+              </article>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap grid-2">
+          <MichelShow />
+          <div>
+            <p className="eyebrow">{t.michelEyebrow}</p>
+            <h2>{t.michelH}</h2>
+            <p className="lead">{t.michelLead}</p>
+            <p className="lead">{t.michelLead2}</p>
+            <p className="quote">„{t.michelQuote}“</p>
+            <p className="michel-meta">{t.michelMeta}</p>
+            <Link className="btn btn-ghost" to="/ueber-mich" style={{ marginTop: 18 }}>
+              {t.moreAbout}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="audience">
+        <div className="wrap">
+          <p className="eyebrow">{t.audienceEyebrow}</p>
+          <h2>{t.audienceH}</h2>
+          <p className="lead">{t.audienceLead}</p>
+          <div className="grid-2" style={{ marginTop: 28 }}>
+            {audience.map((a) => (
+              <article className="card" key={a.title}>
+                <Img className="card-media card-media-face" src={a.image} alt="" />
+                <h3>{a.title}</h3>
+                <p>{a.text}</p>
               </article>
             ))}
           </div>
@@ -158,23 +220,6 @@ export function Home() {
                 </article>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="wrap grid-2">
-          <MichelShow />
-          <div>
-            <p className="eyebrow">{t.michelEyebrow}</p>
-            <h2>{t.michelH}</h2>
-            <p className="lead">{t.michelLead}</p>
-            <p className="lead">{t.michelLead2}</p>
-            <p className="quote">„{t.michelQuote}“</p>
-            <p className="michel-meta">{t.michelMeta}</p>
-            <Link className="btn btn-ghost" to="/ueber-mich" style={{ marginTop: 18 }}>
-              {t.moreAbout}
-            </Link>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
@@ -14,6 +15,9 @@ export function SystemStart() {
   return (
     <main>
       <section className="page-hero">
+        <div className="wrap">
+          <BackLink fallback="/#start" />
+        </div>
         <div className="wrap page-split">
           <div>
             <p className="eyebrow">{t.ssEyebrow}</p>
