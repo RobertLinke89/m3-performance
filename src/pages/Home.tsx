@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Img } from '../components/Img'
 import { MichelShow } from '../components/MichelShow'
 import { OfferCard } from '../components/OfferCard'
+import { SystemMolecule } from '../components/SystemMolecule'
 import { useUi } from '../copy'
 import { useContent } from '../useContent'
 
@@ -66,30 +67,35 @@ export function Home() {
       </section>
 
       <section className="section" id="start">
-        <div className="wrap">
-          <p className="eyebrow">{t.frameworkEyebrow}</p>
-          <h2>{t.frameworkH}</h2>
-          <p className="lead">{t.frameworkLead}</p>
-          <div className="framework">
-            {pillars.map((p) => (
-              <Link
-                key={p.id}
-                className="framework-item"
-                to={`/${p.slug}`}
-                style={{ '--orb': p.color } as CSSProperties}
-              >
-                <span className="mark" style={{ color: p.color }}>
-                  {p.mark}
-                </span>
-                <span>
-                  <span className="framework-label">
-                    {p.name} · {p.label}
+        <div className="wrap framework-split">
+          <div className="framework-copy">
+            <p className="eyebrow">{t.frameworkEyebrow}</p>
+            <h2>{t.frameworkH}</h2>
+            <p className="lead">{t.frameworkLead}</p>
+            <div className="framework">
+              {pillars.map((p) => (
+                <Link
+                  key={p.id}
+                  className="framework-item"
+                  to={`/${p.slug}`}
+                  style={{ '--orb': p.color } as CSSProperties}
+                >
+                  <span className="mark" style={{ color: p.color }}>
+                    {p.mark}
                   </span>
-                  <h3>{p.title}</h3>
-                  <p>{p.lead}</p>
-                </span>
-              </Link>
-            ))}
+                  <span>
+                    <span className="framework-label">
+                      {p.name} · {p.label}
+                    </span>
+                    <h3>{p.title}</h3>
+                    <p>{p.lead}</p>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="framework-visual">
+            <SystemMolecule />
           </div>
         </div>
       </section>

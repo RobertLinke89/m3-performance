@@ -931,6 +931,180 @@ picture {
   line-height: 1.55;
 }
 
+.framework-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+  gap: 36px 48px;
+  align-items: center;
+}
+
+.framework-copy .lead {
+  max-width: 42ch;
+}
+
+.framework-visual {
+  position: relative;
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+}
+
+.system-molecule {
+  width: min(100%, 420px);
+  aspect-ratio: 340 / 320;
+  margin: 0 auto;
+  contain: layout paint;
+}
+
+.system-molecule-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.mol-orbit ellipse {
+  fill: none;
+  stroke: color-mix(in srgb, var(--gold) 22%, transparent);
+  stroke-width: 1;
+  stroke-dasharray: 4 10;
+}
+
+.mol-bond {
+  stroke-width: 1.6;
+  stroke-opacity: 0.55;
+  stroke-linecap: round;
+}
+
+.mol-bond-glow {
+  stroke-width: 6;
+  stroke-opacity: 0.18;
+  stroke-linecap: round;
+}
+
+.mol-halo {
+  opacity: 0.16;
+}
+
+.mol-label {
+  fill: #14110c;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+[data-theme='night'] .mol-label {
+  fill: #f4f0e8;
+}
+
+.mol-nucleus-ring {
+  fill: none;
+  stroke: color-mix(in srgb, var(--gold) 45%, transparent);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 7;
+}
+
+.system-molecule.is-running .mol-orbit-a,
+.system-molecule.is-running .mol-orbit-b,
+.system-molecule.is-running .mol-nucleus,
+.system-molecule.is-running .mol-nucleus-ring,
+.system-molecule.is-running .mol-node-0,
+.system-molecule.is-running .mol-node-1,
+.system-molecule.is-running .mol-node-2 {
+  transform-box: view-box;
+}
+
+.system-molecule.is-running .mol-orbit-a {
+  transform-origin: 170px 160px;
+  animation: mol-spin 28s linear infinite;
+}
+
+.system-molecule.is-running .mol-orbit-b {
+  transform-origin: 170px 160px;
+  animation: mol-spin 38s linear infinite reverse;
+}
+
+.system-molecule.is-running .mol-node-0 {
+  transform-origin: 118px 92px;
+  animation: mol-breathe 3.6s ease-in-out infinite;
+}
+
+.system-molecule.is-running .mol-node-1 {
+  transform-origin: 248px 188px;
+  animation: mol-breathe 3.6s ease-in-out infinite 0.45s;
+}
+
+.system-molecule.is-running .mol-node-2 {
+  transform-origin: 92px 228px;
+  animation: mol-breathe 3.6s ease-in-out infinite 0.9s;
+}
+
+.system-molecule.is-running .mol-nucleus {
+  transform-origin: 168px 168px;
+  animation: mol-pulse 2.8s ease-in-out infinite;
+}
+
+.system-molecule.is-running .mol-nucleus-ring {
+  transform-origin: 168px 168px;
+  animation: mol-spin 16s linear infinite;
+}
+
+.system-molecule.is-running .mol-bond {
+  stroke-dasharray: 6 10;
+  animation: mol-dash 2.2s linear infinite;
+}
+
+.system-molecule.is-running .mol-halo {
+  animation: mol-glow 3.6s ease-in-out infinite;
+}
+
+@keyframes mol-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mol-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes mol-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes mol-dash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+@keyframes mol-glow {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.28;
+  }
+}
+
 .framework {
   display: grid;
   margin-top: 28px;
@@ -1867,6 +2041,20 @@ picture {
     gap: 8px 12px;
   }
 
+  .framework-split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .framework-visual {
+    order: -1;
+    min-height: 260px;
+  }
+
+  .system-molecule {
+    width: min(100%, 340px);
+  }
+
   .proof-row {
     gap: 16px;
     padding: 24px 0;
@@ -2369,6 +2557,18 @@ picture {
 
   .mental-prompt:hover {
     transform: none;
+  }
+
+  .system-molecule.is-running .mol-orbit-a,
+  .system-molecule.is-running .mol-orbit-b,
+  .system-molecule.is-running .mol-node-0,
+  .system-molecule.is-running .mol-node-1,
+  .system-molecule.is-running .mol-node-2,
+  .system-molecule.is-running .mol-nucleus,
+  .system-molecule.is-running .mol-nucleus-ring,
+  .system-molecule.is-running .mol-bond,
+  .system-molecule.is-running .mol-halo {
+    animation: none;
   }
 }
 
