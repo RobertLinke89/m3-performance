@@ -160,13 +160,15 @@ export function Home() {
       <section className="section">
         <div className="wrap grid-2">
           <MichelShow />
-          <div>
+          <div className="michel-copy">
             <p className="eyebrow">{t.michelEyebrow}</p>
             <h2>{t.michelH}</h2>
-            <p className="lead">{t.michelLead}</p>
-            <p className="lead">{t.michelLead2}</p>
-            <p className="quote">„{t.michelQuote}“</p>
-            <p className="michel-meta">{t.michelMeta}</p>
+            <div className="michel-block">
+              <p>{t.michelLead}</p>
+              <p>{t.michelLead2}</p>
+              <p>„{t.michelQuote}“</p>
+              <p className="michel-meta">{t.michelMeta}</p>
+            </div>
             <Link className="btn btn-ghost" to="/ueber-mich" style={{ marginTop: 18 }}>
               {t.moreAbout}
             </Link>

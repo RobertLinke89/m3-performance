@@ -5,7 +5,7 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & {
   max?: boolean
 }
 
-const ASSET_V = '13'
+const ASSET_V = '15'
 
 function withVersion(src: string) {
   if (src.includes('?')) return src

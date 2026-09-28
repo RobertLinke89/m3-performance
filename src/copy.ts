@@ -59,8 +59,17 @@ const ui = {
     modulesLead:
       'Zuerst M¹ Metabolism, dann M² Movement. M³ Mental begleitet beides — kein separates Einzelangebot.',
     modulesM3Note:
-      'M³ ist die schließende Säule: Schlaf, Stress und Routinen — damit du am Ende der begleiteten Phase selbstverantwortlich weitergehst. Kein Extra-Angebot. Der Halt, wenn Michél nicht mehr neben dir steht.',
+      'M³ ist Entscheidungsökonomie: weniger offene Fragen, Schlaf und Stress als Leistungsfaktoren — damit du am Ende selbstverantwortlich weitergehst. Kein Extra-Angebot. Der Halt, wenn Michél nicht mehr neben dir steht.',
     modulesM3Cta: 'Zur Säule M³',
+    mentalDrillEyebrow: 'Schnelltest',
+    mentalDrillH: 'Drei Fragen. Kein Nachdenken erlaubt.',
+    mentalDrillLead: 'Zehn Sekunden pro Frage. Die erste Antwort zählt.',
+    mentalScienceEyebrow: 'Leistungsfaktoren',
+    mentalScienceH: 'Was den Kopf wirklich bremst.',
+    mentalSignalsH: 'Alarmzeichen — nicht Soft-Skills.',
+    mentalPrinciplesH: 'Arbeitsregeln unter Druck.',
+    mentalNoModules:
+      'M³ ist kein separates Produkt. Es schließt das System — Einstieg über den System Start.',
     back: 'Zurück',
     backHome: 'Zur Startseite',
     michelEyebrow: 'Authentizität',
@@ -210,8 +219,17 @@ const ui = {
     modulesLead:
       'First M¹ Metabolism, then M² Movement. M³ Mental supports both — not a separate paid offer.',
     modulesM3Note:
-      'M³ is the closing pillar: sleep, stress and routines — so you continue on your own once the accompanied phase ends. Not an extra offer. The hold when Michél is no longer beside you.',
+      'M³ is decision economy: fewer open questions, sleep and stress as performance factors — so you continue on your own. Not an extra offer. The hold when Michél is no longer beside you.',
     modulesM3Cta: 'To pillar M³',
+    mentalDrillEyebrow: 'Speed check',
+    mentalDrillH: 'Three questions. No overthinking allowed.',
+    mentalDrillLead: 'Ten seconds per question. First answer counts.',
+    mentalScienceEyebrow: 'Performance factors',
+    mentalScienceH: 'What actually brakes the mind.',
+    mentalSignalsH: 'Alarm signs — not soft skills.',
+    mentalPrinciplesH: 'Working rules under pressure.',
+    mentalNoModules:
+      'M³ is not a separate product. It closes the system — entry via System Start.',
     back: 'Back',
     backHome: 'To homepage',
     michelEyebrow: 'Authenticity',
