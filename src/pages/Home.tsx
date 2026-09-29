@@ -5,6 +5,7 @@ import { MichelShow } from '../components/MichelShow'
 import { OfferCard } from '../components/OfferCard'
 import { SystemMolecule } from '../components/SystemMolecule'
 import { useUi } from '../copy'
+import { byTier } from '../tierSort'
 import { useContent } from '../useContent'
 
 export function Home() {
@@ -15,11 +16,12 @@ export function Home() {
     .filter((post): post is (typeof posts)[number] => Boolean(post))
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const [openPillar, setOpenPillar] = useState<string | null>(null)
-  const m1 = modules.filter((m) => m.pillar === 'm1')
-  const m2 = modules.filter((m) => m.pillar === 'm2')
-  const m3Pillar = pillars.find((p) => p.id === 'm3')
+  const m1 = modules.filter((m) => m.pillar === 'm1').slice().sort(byTier)
+  const m2 = modules.filter((m) => m.pillar === 'm2').slice().sort(byTier)
+  const m3 = modules.filter((m) => m.pillar === 'm3').slice().sort(byTier)
   const m1Track = useRef<HTMLDivElement>(null)
   const m2Track = useRef<HTMLDivElement>(null)
+  const m3Track = useRef<HTMLDivElement>(null)
 
   const scrollTrack = (trackRef: RefObject<HTMLDivElement | null>, dir: -1 | 1) => {
     const track = trackRef.current
@@ -161,18 +163,26 @@ export function Home() {
             </div>
           </div>
 
-          {m3Pillar && (
-            <div className="module-group">
-              <article className="card module-m3-card">
-                <p className="eyebrow">M³ · Mental Performance</p>
-                <h3>{m3Pillar.title}</h3>
-                <p>{t.modulesM3Note}</p>
-                <Link className="btn btn-ghost" to={`/${m3Pillar.slug}`} style={{ marginTop: 16 }}>
-                  {t.modulesM3Cta}
-                </Link>
-              </article>
+          <div className="module-group">
+            <div className="carousel-head module-group-head">
+              <p className="eyebrow" style={{ color: '#6b8cff' }}>
+                M³ · Mental Performance
+              </p>
+              <div className="carousel-nav">
+                <button type="button" aria-label={t.prevOffer} onClick={() => scrollTrack(m3Track, -1)}>
+                  ←
+                </button>
+                <button type="button" aria-label={t.nextOffer} onClick={() => scrollTrack(m3Track, 1)}>
+                  →
+                </button>
+              </div>
             </div>
-          )}
+            <div className="carousel-track module-track" ref={m3Track}>
+              {m3.map((m) => (
+                <OfferCard key={m.slug} offer={m} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

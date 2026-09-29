@@ -57,9 +57,9 @@ const ui = {
     modulesEyebrow: 'Angebote nach Säule',
     modulesH: 'Deine Möglichkeiten mit M³',
     modulesLead:
-      'Zuerst M¹ Metabolism, dann M² Movement. M³ Mental begleitet beides — kein separates Einzelangebot.',
+      'Ein Baukasten von kostenlos bis High Ticket. Einstieg leicht, Vertiefung klar — in M¹, M² und M³.',
     modulesM3Note:
-      'M³ ist Entscheidungsökonomie: weniger offene Fragen, Schlaf und Stress als Leistungsfaktoren — damit du am Ende selbstverantwortlich weitergehst. Kein Extra-Angebot. Der Halt, wenn Michél nicht mehr neben dir steht.',
+      'M³ hält Stoffwechsel und Bewegung: Entscheidungsökonomie, Schlaf und Stress — vom kostenlosen Check bis zur System-Begleitung.',
     modulesM3Cta: 'Zur Säule M³',
     mentalDrillEyebrow: 'Schnelltest',
     mentalDrillH: 'Drei Fragen. Kein Nachdenken erlaubt.',
@@ -109,7 +109,7 @@ const ui = {
     signalsEyebrow: 'Einordnung',
     signalsH: 'Wann diese Säule zuerst kommt.',
     pillarCtaLead: '20 Minuten. Einordnung, Priorität, nächster Schritt.',
-    noModules: 'M³ ist der Halt des Systems — kein separates Angebot. Der Einstieg läuft über den System Start.',
+    noModules: 'Für diese Säule sind gerade keine Module gelistet. Der Einstieg läuft über den System Start.',
     aboutPortrait: 'Michél Meier – Gründer & Personal Trainer',
     aboutYears: '30+ Jahre Bewegung & Performance',
     aboutValues: 'Werte & Haltung',
@@ -156,7 +156,7 @@ const ui = {
     catalogEyebrow: 'Katalog',
     catalogH: 'Alle Module. Eine Übersicht.',
     catalogLead:
-      'Sieben Bausteine unter M¹ und M². M³ ist der Halt des Systems — kein separates Angebot.',
+      'Baukasten über alle drei Säulen: von kostenlosen Einstiegen bis High Ticket — klar gestaffelt.',
     catalogWa: 'WhatsApp-Katalog',
   },
   en: {
@@ -215,9 +215,9 @@ const ui = {
     modulesEyebrow: 'Offers by pillar',
     modulesH: 'Your options with M³',
     modulesLead:
-      'First M¹ Metabolism, then M² Movement. M³ Mental supports both — not a separate paid offer.',
+      'A modular system from free to high ticket. Easy entry, clear depth — across M¹, M² and M³.',
     modulesM3Note:
-      'M³ is decision economy: fewer open questions, sleep and stress as performance factors — so you continue on your own. Not an extra offer. The hold when Michél is no longer beside you.',
+      'M³ holds metabolism and movement: decision economy, sleep and stress — from a free check to system support.',
     modulesM3Cta: 'To pillar M³',
     mentalDrillEyebrow: 'Speed check',
     mentalDrillH: 'Three questions. No overthinking allowed.',
@@ -267,7 +267,7 @@ const ui = {
     signalsEyebrow: 'Read',
     signalsH: 'When this pillar comes first.',
     pillarCtaLead: '20 minutes. Orientation, priority, next step.',
-    noModules: 'M³ is the hold of the system — not a separate offer. Entry runs through System Start.',
+    noModules: 'No modules listed for this pillar right now. Entry runs through System Start.',
     aboutPortrait: 'Michél Meier — founder & personal trainer',
     aboutYears: '30+ years of movement & performance',
     aboutValues: 'Values & stance',
@@ -314,7 +314,7 @@ const ui = {
     catalogEyebrow: 'Catalog',
     catalogH: 'Every module. One overview.',
     catalogLead:
-      'Seven building blocks under M¹ and M². M³ is the hold of the system — not a separate offer.',
+      'A modular system across all three pillars: from free entry points to high ticket — clearly tiered.',
     catalogWa: 'WhatsApp catalog',
   },
 } as const

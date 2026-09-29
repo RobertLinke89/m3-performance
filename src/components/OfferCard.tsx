@@ -10,6 +10,8 @@ type Offer = {
   kicker: string
   text: string
   image: string
+  tier?: string
+  priceLabel?: string
 }
 
 export function OfferCard({ offer }: { offer: Offer }) {
@@ -20,7 +22,12 @@ export function OfferCard({ offer }: { offer: Offer }) {
   return (
     <article className={`card offer-card${open ? ' is-open' : ''}`}>
       <Img className="card-media" src={offer.image} alt="" />
-      <div className="mark">{offer.badge}</div>
+      <div className="offer-card-meta">
+        <div className="mark">{offer.badge}</div>
+        {offer.priceLabel ? (
+          <span className={`offer-tier offer-tier-${offer.tier ?? 'core'}`}>{offer.priceLabel}</span>
+        ) : null}
+      </div>
       <h3>{offer.title}</h3>
       <p>{offer.kicker}</p>
       {open && (

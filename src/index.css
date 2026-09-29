@@ -278,6 +278,10 @@ h3 {
   object-position: 50% 18%;
 }
 
+img.card-media[src*='michel-trainer'] {
+  object-position: 50% 8%;
+}
+
 .card-media-lg {
   width: 100%;
   height: 240px;
@@ -1268,6 +1272,59 @@ picture {
   color: var(--gold);
   font-weight: 800;
 }
+
+.offer-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+
+.offer-card-meta .mark {
+  margin: 0;
+}
+
+.offer-tier {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 9px;
+  line-height: 1.2;
+}
+
+.offer-tier-free {
+  color: #2f7a4a;
+  border-color: color-mix(in srgb, #2f7a4a 35%, var(--line));
+  background: color-mix(in srgb, #2f7a4a 10%, transparent);
+}
+
+.offer-tier-entry {
+  color: #8a6a2a;
+  border-color: color-mix(in srgb, #c9a227 40%, var(--line));
+  background: color-mix(in srgb, #c9a227 12%, transparent);
+}
+
+.offer-tier-core {
+  color: var(--text);
+}
+
+.offer-tier-premium {
+  color: var(--gold);
+  border-color: color-mix(in srgb, var(--gold) 45%, var(--line));
+}
+
+.offer-tier-high {
+  color: #8b3a2a;
+  border-color: color-mix(in srgb, #8b3a2a 40%, var(--line));
+  background: color-mix(in srgb, #8b3a2a 10%, transparent);
+}
+
 
 .compass-opt {
   display: grid;

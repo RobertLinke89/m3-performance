@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { OfferCard } from '../components/OfferCard'
 import { useUi } from '../copy'
+import { byTier } from '../tierSort'
 import { useContent } from '../useContent'
 
 export function Catalog() {
@@ -26,7 +27,7 @@ export function Catalog() {
       </section>
 
       {pillars.map((pillar) => {
-        const group = modules.filter((m) => m.pillar === pillar.id)
+        const group = modules.filter((m) => m.pillar === pillar.id).slice().sort(byTier)
         return (
           <section className="section" key={pillar.id}>
             <div className="wrap">

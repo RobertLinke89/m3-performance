@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
+import { byTier } from '../tierSort'
 import { useContent } from '../useContent'
 
 export function PillarPage() {
@@ -10,7 +11,7 @@ export function PillarPage() {
   const { modules, pillars, posts, wa } = useContent()
   const pillar = pillars.find((p) => p.slug === slug)
   if (!pillar) return <Navigate to="/" replace />
-  const related = modules.filter((m) => m.pillar === pillar.id)
+  const related = modules.filter((m) => m.pillar === pillar.id).slice().sort(byTier)
   const relatedPosts = posts.filter((p) => p.pillar === pillar.id)
 
   return (

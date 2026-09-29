@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { BackLink } from '../components/BackLink'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
+import { byTier } from '../tierSort'
 import { useContent } from '../useContent'
 
 export function ModulePage() {
@@ -11,7 +12,11 @@ export function ModulePage() {
   const mod = modules.find((m) => m.slug === slug)
   if (!mod) return <Navigate to="/" replace />
   const pillar = pillars.find((p) => p.id === mod.pillar)
-  const related = modules.filter((m) => m.pillar === mod.pillar && m.slug !== mod.slug).slice(0, 3)
+  const related = modules
+    .filter((m) => m.pillar === mod.pillar && m.slug !== mod.slug)
+    .slice()
+    .sort(byTier)
+    .slice(0, 3)
   const fallback = pillar ? `/${pillar.slug}` : '/#module'
 
   return (
@@ -24,6 +29,7 @@ export function ModulePage() {
           <div>
             <p className="eyebrow">
               {pillar?.mark} · {mod.badge}
+              {'priceLabel' in mod && mod.priceLabel ? ` · ${mod.priceLabel}` : ''}
             </p>
             <h1>{mod.title}</h1>
             <p className="lead">{mod.kicker}</p>
