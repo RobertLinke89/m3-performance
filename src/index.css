@@ -3582,6 +3582,130 @@ picture.bento-bg img,
   color: var(--muted);
 }
 
+/* ==========================================================================
+   SYSTEM START BENTO EXPANSIONS
+   ========================================================================== */
+
+.bento-card--audit-step {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  color: var(--text);
+  min-height: auto;
+  padding: clamp(20px, 2.5cqi, 28px);
+}
+
+.bento-card--audit-step .bento-title {
+  color: var(--text);
+  text-shadow: none;
+}
+
+.bento-card--audit-step .bento-desc {
+  color: var(--muted);
+  text-shadow: none;
+}
+
+.bento-audit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.bento-audit-points {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bento-audit-points li {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bento-audit-points li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+/* Compass Interactive Items */
+.bento-compass-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .bento-compass-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-compass-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background: #0f1115;
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  transition: border-color 0.24s ease, box-shadow 0.24s ease;
+  min-height: 240px;
+  justify-content: flex-end;
+  color: #ffffff;
+}
+
+.bento-compass-card:hover {
+  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.25));
+}
+
+.bento-compass-card.selected {
+  border-color: var(--gold, #fbbf24) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent);
+}
+
+.bento-result-box {
+  margin-top: 20px;
+  padding: 24px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--gold) 8%, var(--bg-2));
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, var(--line));
+  width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.bento-result-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive Breakpoints */
 @media (max-width: 1120px) {
   .bento-span-8,
