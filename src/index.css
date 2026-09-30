@@ -2944,32 +2944,50 @@ picture {
 .bento-card {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0f1115;
-  min-height: 230px;
+  min-height: clamp(340px, 38vh, 420px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(16px, 2cqi, 24px);
+  padding: clamp(20px, 2.8cqi, 32px);
   text-decoration: none;
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.24s ease,
-    box-shadow 0.24s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
   container-type: inline-size;
 }
 
 .bento-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.2));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.25));
 }
 
-/* Hero card specific height */
-.bento-card--hero {
-  min-height: 290px;
+/* Hero & System Start top row height */
+.bento-card--hero,
+.bento-card--start {
+  min-height: clamp(440px, 50vh, 540px);
+}
+
+/* 3-Pillar Cards Height */
+.bento-card--pillar {
+  min-height: clamp(380px, 42vh, 460px);
+}
+
+/* Story / Michél & Catalog Cards */
+.bento-card--michel,
+.bento-card--catalog {
+  min-height: clamp(380px, 42vh, 460px);
+}
+
+/* Molecule & Contact Cards */
+.bento-card--molecule,
+.bento-card--contact {
+  min-height: clamp(360px, 40vh, 440px);
 }
 
 /* Background Image - Clean, 100% Full Bleed, No Gaps or Margins */
@@ -3546,24 +3564,27 @@ picture.bento-bg img,
 
 /* Responsive Breakpoints */
 @media (max-width: 1120px) {
-  .bento-span-8 {
-    grid-column: span 12;
-  }
-  .bento-span-7 {
-    grid-column: span 12;
-  }
+  .bento-span-8,
+  .bento-span-7,
+  .bento-span-6,
   .bento-span-5 {
     grid-column: span 12;
   }
   .bento-span-4 {
     grid-column: span 6;
   }
+  .bento-card--hero {
+    grid-column: span 12;
+  }
+  .bento-card--start {
+    grid-column: span 12;
+  }
 }
 
 @media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
   }
   .bento-span-12,
   .bento-span-8,
@@ -3574,11 +3595,16 @@ picture.bento-bg img,
     grid-column: span 1;
   }
   .bento-card {
-    min-height: 200px;
-    padding: 16px;
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 20px;
   }
-  .bento-card--hero {
-    min-height: 240px;
+  .bento-card--hero,
+  .bento-card--start {
+    min-height: 380px;
+  }
+  .bento-card--pillar {
+    min-height: 320px;
   }
 }
 

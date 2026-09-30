@@ -24,7 +24,7 @@ export function Home() {
         {/* Bento Grid Master Universe */}
         <section className="bento-grid" aria-label="M³ Performance System Bento Grid">
           
-          {/* 1. HERO BENTO CARD (Span 8) */}
+          {/* 1. HERO BENTO CARD (Span 8 - The Vision & Core Promise) */}
           <article className="bento-card bento-card--hero bento-span-8">
             <picture className="bento-bg">
               <source
@@ -55,12 +55,20 @@ export function Home() {
             <div className="bento-overlay" />
             <div className="bento-content bento-content--hero">
               <span className="bento-tag bento-tag--gold">
-                {isEn ? 'M¹–M³ PERFORMANCE SYSTEM' : 'M¹–M³ SYSTEM'}
+                {isEn ? 'M¹–M³ PERFORMANCE SYSTEM' : 'M¹ · M² · M³ PERFORMANCE SYSTEM'}
               </span>
               <h1 className="bento-hero-h1">
-                {t.h1a} <span>{t.h1b}</span> <em className="gold">{t.h1c}</em>
+                {isEn ? (
+                  <>Holistic <span>Performance.</span> <em className="gold">Pain-Free & Sharp.</em></>
+                ) : (
+                  <>Ganzheitliche <span>Performance.</span> <em className="gold">Schmerzfrei & Klar.</em></>
+                )}
               </h1>
-              <p className="bento-lead">{t.heroPitch}</p>
+              <p className="bento-lead">
+                {isEn
+                  ? 'For leaders, entrepreneurs & high performers: We link metabolism, biomechanics, and mindset into one biologically proven system.'
+                  : 'Für Unternehmer, Macher & High-Performer: Wir verbinden Stoffwechsel, Biomechanik und Mindset zu einem biologisch fundierten System – nachhaltig & messbar.'}
+              </p>
 
               {/* Minimalistic Transparent Showreel CTA */}
               <Link to="/ueber-mich" className="hero-btn-showreel">
@@ -69,7 +77,7 @@ export function Home() {
             </div>
           </article>
 
-          {/* 2. SYSTEM START BENTO CARD (Span 4 - The Front Door) */}
+          {/* 2. SYSTEM START BENTO CARD (Span 4 - Chapter 1: The Status Quo & Assessment) */}
           <Link
             to="/system-start"
             className="bento-card bento-card--start bento-span-4"
@@ -94,19 +102,23 @@ export function Home() {
             <div className="bento-overlay" />
             <div className="bento-content">
               <span className="bento-tag bento-tag--gold">
-                {isEn ? 'FRONT DOOR · SYSTEM START' : 'EINGANGSTÜR · SYSTEM START'}
+                {isEn ? 'CHAPTER 01 · ASSESSMENT' : 'SCHRITT 01 · STANDORTBESTIMMUNG'}
               </span>
               <h2 className="bento-title">
-                {isEn ? 'Your Assessment.' : 'Deine Standortbestimmung.'}
+                {isEn ? 'Where do you lose energy?' : 'Wo stehst du heute?'}
               </h2>
-              <p className="bento-desc">{t.startLead}</p>
+              <p className="bento-desc">
+                {isEn
+                  ? 'The 360° audit of your capacity: metabolic markers, movement patterns, and mental reserves.'
+                  : 'Die 360°-Analyse deiner Leistungsfähigkeit – Stoffwechsel-Marker, Bewegungsanalyse und neuronale Ressourcen.'}
+              </p>
               <div className="bento-arrow-btn">
-                <span>{t.detailsView}</span>
+                <span>{isEn ? 'Start assessment →' : 'Standort analysieren →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 3. PILLAR M¹: METABOLISM (Span 4) */}
+          {/* 3. PILLAR M¹: METABOLISM (Span 4 - Chapter 2A: The Internal Foundation) */}
           <Link
             to="/metabolism"
             className="bento-card bento-card--pillar bento-card--m1 bento-span-4"
@@ -133,23 +145,23 @@ export function Home() {
             <div className="bento-content">
               <div className="bento-pillar-header">
                 <span className="bento-pillar-mark" style={{ color: '#e8a14a' }}>M¹</span>
-                <span className="bento-tag">METABOLISM · {isEn ? 'FOUNDATION' : 'FUNDAMENT'}</span>
+                <span className="bento-tag">SÄULE 01 · METABOLISMUS</span>
               </div>
               <h2 className="bento-title">
-                {isEn ? 'Health from Within.' : 'Gesundheit von innen.'}
+                {isEn ? 'Cellular Energy & Gut.' : 'Zellenergie & Mikrobiom.'}
               </h2>
               <p className="bento-desc">
                 {isEn
-                  ? 'Gut microbiome, blood sugar and cellular vitality.'
-                  : 'Darm, Mikrobiom & Blutzucker als Energie-Fundament.'}
+                  ? 'Stable blood sugar, gut health, and cellular nutrient absorption for sustained drive.'
+                  : 'Stabiler Blutzucker, Darmgesundheit und optimale Nährstoffverwertung für konstante Tagesenergie.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{t.openPillar}</span>
+                <span>{isEn ? 'Explore M¹ →' : 'Säule M¹ entdecken →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 4. PILLAR M²: BIOMECHANICS (Span 4) */}
+          {/* 4. PILLAR M²: BIOMECHANICS (Span 4 - Chapter 2B: The Physical Freedom) */}
           <Link
             to="/biomechanics"
             className="bento-card bento-card--pillar bento-card--m2 bento-span-4"
@@ -176,23 +188,23 @@ export function Home() {
             <div className="bento-content">
               <div className="bento-pillar-header">
                 <span className="bento-pillar-mark" style={{ color: '#2f9a72' }}>M²</span>
-                <span className="bento-tag">BIOMECHANICS · {isEn ? 'PAIN-FREE' : 'SCHMERZFREI'}</span>
+                <span className="bento-tag">SÄULE 02 · BIOMECHANIK</span>
               </div>
               <h2 className="bento-title">
-                {isEn ? 'Athletic Mobility.' : 'Athletische Schmerzfreiheit.'}
+                {isEn ? 'Athletic Freedom from Pain.' : 'Athletische Schmerzfreiheit.'}
               </h2>
               <p className="bento-desc">
                 {isEn
-                  ? 'Full range of motion and functional body control.'
-                  : 'Maximale Bewegungsfreiheit & funktionale Belastbarkeit.'}
+                  ? 'Joint stability, functional mobility, and full physical resilience under high demand.'
+                  : 'Gelenkstabilität, funktionelle Mobilität und maximale Belastbarkeit im Alltag und Sport.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{t.openPillar}</span>
+                <span>{isEn ? 'Explore M² →' : 'Säule M² entdecken →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 5. PILLAR M³: MINDSET (Span 4) */}
+          {/* 5. PILLAR M³: MINDSET (Span 4 - Chapter 2C: The Mental Clarity) */}
           <Link
             to="/mental"
             className="bento-card bento-card--pillar bento-card--m3 bento-span-4"
@@ -219,23 +231,43 @@ export function Home() {
             <div className="bento-content">
               <div className="bento-pillar-header">
                 <span className="bento-pillar-mark" style={{ color: '#4f6fd6' }}>M³</span>
-                <span className="bento-tag">MINDSET · {isEn ? 'ROUTINES' : 'ROUTINEN'}</span>
+                <span className="bento-tag">SÄULE 03 · MINDSET</span>
               </div>
               <h2 className="bento-title">
-                {isEn ? 'Focus Under Pressure.' : 'Fokus unter Druck.'}
+                {isEn ? 'Focus & Neural Clarity.' : 'Fokus & neuronale Klarheit.'}
               </h2>
               <p className="bento-desc">
                 {isEn
-                  ? 'Decision economy, deep sleep and nervous system balance.'
-                  : 'Entscheidungsökonomie, Schlaf & neuronale Klarheit.'}
+                  ? 'Decision economy, deep restorative sleep, and nervous system control under pressure.'
+                  : 'Entscheidungsökonomie, tiefer Schlaf und Stressresilienz – trainiert wie ein Muskel.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{t.openPillar}</span>
+                <span>{isEn ? 'Explore M³ →' : 'Säule M³ entdecken →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 6. AUTHENTICITY & WORLD CHAMPION CODEX BENTO CARD (Span 7) */}
+          {/* 6. INTERACTIVE SYSTEM MOLECULE (Span 5 - Chapter 3A: The Synergy Law) */}
+          <article className="bento-card bento-card--molecule bento-span-5">
+            <div className="bento-molecule-visual">
+              <SystemMolecule />
+            </div>
+            <div className="bento-molecule-content">
+              <span className="bento-tag bento-tag--gold">
+                {isEn ? 'THE M³ SYNERGY' : 'DIE METHODIK · DIE M³ SYNERGIE'}
+              </span>
+              <h2 className="bento-title">
+                {isEn ? 'Why isolated fixes fail.' : 'Warum Einzellösungen scheitern.'}
+              </h2>
+              <p className="bento-desc">
+                {isEn
+                  ? 'Training without metabolic foundation exhausts you. Diet without mindset never sticks. True performance requires all three in synergy.'
+                  : 'Training ohne Stoffwechsel verbrennt dich. Ernährung ohne mentale Klarheit hält nicht. Nur das vernetzte Zusammenspiel erzeugt dauerhafte Höchstleistung.'}
+              </p>
+            </div>
+          </article>
+
+          {/* 7. AUTHENTICITY & WORLD CHAMPION CODEX (Span 7 - Chapter 3B: The Origin) */}
           <Link
             to="/ueber-mich"
             className="bento-card bento-card--michel bento-span-7"
@@ -261,28 +293,28 @@ export function Home() {
             <div className="bento-content">
               <div className="bento-tag-row">
                 <span className="bento-tag bento-tag--gold">
-                  🏆 IDO WORLD CHAMPION 2006/07
+                  🏆 IDO BREAKDANCE WELTMEISTER 2006/07
                 </span>
-                <span className="bento-tag">30+ {isEn ? 'YEARS MOVEMENT' : 'JAHRE BEWEGUNG'}</span>
+                <span className="bento-tag">30+ {isEn ? 'YEARS PRACTICE' : 'JAHRE BEWEGUNG'}</span>
               </div>
               <h2 className="bento-title">
-                {t.michelH}
+                {isEn ? 'From World Champion to a Proven System.' : 'Vom Weltmeistertitel zum krisenfesten System.'}
               </h2>
               <p className="bento-desc">
                 {isEn
-                  ? 'From world champion stage to everyday fatherhood and disc herniation: No dogma. No show. A system that works.'
-                  : 'Vom Weltmeistertitel über Bandscheibenvorfall bis Alleinerzieher-Alltag: Kein Dogma. Keine Show. Ein System das hält.'}
+                  ? 'From top-tier world dance stages through disc herniation to everyday solo fatherhood: No dogma. No hype. A system built on real resilience.'
+                  : 'Vom Weltmeistertitel über Bandscheibenvorfall bis Alleinerzieher-Alltag: Kein Dogma. Keine leeren Versprechungen. Ein System aus der Praxis für die Praxis.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{t.moreAbout} →</span>
+                <span>{isEn ? 'Read Michél’s Codex →' : 'Michéls Story & Codex →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 7. MODULAR CATALOG BENTO CARD (Span 5) */}
+          {/* 8. MODULAR CATALOG (Span 6 - Chapter 4A: The Custom Roadmap) */}
           <Link
             to="/catalog"
-            className="bento-card bento-card--catalog bento-span-5"
+            className="bento-card bento-card--catalog bento-span-6"
             aria-label={t.modulesH}
           >
             <picture className="bento-bg">
@@ -304,39 +336,23 @@ export function Home() {
             <div className="bento-overlay" />
             <div className="bento-content">
               <span className="bento-tag bento-tag--gold">
-                {isEn ? 'MODULAR CATALOG' : 'ANGEBOTS-BAUKASTEN'}
+                {isEn ? 'MODULAR CATALOG' : 'DER FAHRPLAN · MODULBAUKASTEN'}
               </span>
               <h2 className="bento-title">
-                {isEn ? 'From Free to High-Ticket.' : 'Von Free bis High-Ticket.'}
+                {isEn ? 'Customized to your bottleneck.' : 'Individuell statt 0815-Standard.'}
               </h2>
-              <p className="bento-desc">{t.modulesLead}</p>
+              <p className="bento-desc">
+                {isEn
+                  ? 'From targeted self-learning modules to exclusive 1:1 executive coaching: Choose the exact lever that fits your schedule and goals.'
+                  : 'Vom gezielten Einzelmodul bis zur exklusiven 1:1 Executive-Betreuung: Wähle genau die Bausteine, die zu deinem Alltag und Engpass passen.'}
+              </p>
               <div className="bento-arrow-btn">
-                <span>{isEn ? 'Explore all modules →' : 'Alle Module ansehen →'}</span>
+                <span>{isEn ? 'Explore modules →' : 'Modul-Katalog ansehen →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 8. INTERACTIVE SYSTEM MOLECULE BENTO CARD (Span 6) */}
-          <article className="bento-card bento-card--molecule bento-span-6">
-            <div className="bento-molecule-visual">
-              <SystemMolecule />
-            </div>
-            <div className="bento-molecule-content">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? 'INTERACTIVE CORE' : 'M³ INTERAKTION'}
-              </span>
-              <h2 className="bento-title">
-                {isEn ? 'Three Pillars. One Linked System.' : 'Drei Säulen. Ein vernetztes System.'}
-              </h2>
-              <p className="bento-desc">
-                {isEn
-                  ? 'Metabolism, movement, and mindset condition each other in a fixed sequence.'
-                  : 'Stoffwechsel, Bewegung und Mindset greifen wie Zahnräder ineinander.'}
-              </p>
-            </div>
-          </article>
-
-          {/* 9. 1:1 DIRECT CONSULTATION / CONVERSION BENTO CARD (Span 6) */}
+          {/* 9. 1:1 DIRECT CONSULTATION (Span 6 - Chapter 4B: The Next Step) */}
           <article className="bento-card bento-card--contact bento-span-6">
             <picture className="bento-bg">
               <source
@@ -357,15 +373,15 @@ export function Home() {
             <div className="bento-overlay" />
             <div className="bento-content">
               <span className="bento-tag bento-tag--gold">
-                {isEn ? '1:1 ORIENTATION' : '1:1 ERSTGESPRÄCH'}
+                {isEn ? '1:1 ORIENTATION' : 'DEIN NÄCHSTER SCHRITT'}
               </span>
               <h2 className="bento-title">
-                {isEn ? 'Ready to restructure your health?' : '20 Min. Orientierung mit Michél.'}
+                {isEn ? '20-min strategy call with Michél.' : '20 Min. Orientierung mit Michél.'}
               </h2>
               <p className="bento-desc">
                 {isEn
-                  ? 'We honestly check whether M³ is the right lever. No pressure.'
-                  : 'Wir prüfen ehrlich, wo dein größter Hebel liegt. Unverbindlich & direkt.'}
+                  ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation.'
+                  : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
               </p>
               <div className="bento-cta-row">
                 <a
