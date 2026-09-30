@@ -30,16 +30,21 @@ export function Home() {
               <source
                 media="(max-width: 860px)"
                 type="image/webp"
-                srcSet="/images/hero-system-mobile.webp?v=25"
+                srcSet="/images/hero-system-mobile.webp 1x, /images/hero-system-mobile.webp 2x"
               />
               <source
                 media="(max-width: 860px)"
-                srcSet="/images/hero-system-mobile-1x.jpg?v=25 1x, /images/hero-system-mobile.jpg?v=25 2x"
+                srcSet="/images/hero-system-mobile-1x.jpg 1x, /images/hero-system-mobile.jpg 2x"
               />
-              <source type="image/webp" srcSet="/images/hero-system.webp?v=25" />
-              <source srcSet="/images/hero-system-1x.jpg?v=25 1x, /images/hero-system.jpg?v=25 2x" />
+              <source
+                type="image/webp"
+                srcSet="/images/hero-system.webp 1x, /images/hero-system.webp 2x"
+              />
+              <source
+                srcSet="/images/hero-system-1x.jpg 1x, /images/hero-system.jpg 2x"
+              />
               <img
-                src="/images/hero-system.jpg?v=25"
+                src="/images/hero-system.jpg"
                 alt={t.problemAlt}
                 loading="eager"
                 decoding="async"
@@ -71,7 +76,13 @@ export function Home() {
             aria-label={t.startH}
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/system-start.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/system-start.webp 1x, /images/system-start.webp 2x"
+              />
+              <source
+                srcSet="/images/system-start.jpg 1x, /images/system-start.jpg 2x"
+              />
               <img
                 src="/images/system-start.jpg"
                 alt="M3 System Start"
@@ -103,7 +114,13 @@ export function Home() {
             aria-label="Pillar M1 Metabolism"
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/mod-body-reset.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/mod-body-reset.webp 1x, /images/mod-body-reset.webp 2x"
+              />
+              <source
+                srcSet="/images/mod-body-reset.jpg 1x, /images/mod-body-reset.jpg 2x"
+              />
               <img
                 src="/images/mod-body-reset.jpg"
                 alt="M1 Metabolism"
@@ -140,7 +157,13 @@ export function Home() {
             aria-label="Pillar M2 Biomechanics"
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/michel-work-mobility.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/michel-work-mobility.webp 1x, /images/michel-work-mobility.webp 2x"
+              />
+              <source
+                srcSet="/images/michel-work-mobility.jpg 1x, /images/michel-work-mobility.jpg 2x"
+              />
               <img
                 src="/images/michel-work-mobility.jpg"
                 alt="M2 Biomechanics"
@@ -177,7 +200,13 @@ export function Home() {
             aria-label="Pillar M3 Mindset"
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/mental-hero.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/mental-hero.webp 1x, /images/mental-hero.webp 2x"
+              />
+              <source
+                srcSet="/images/mental-hero.png 1x, /images/mental-hero.png 2x"
+              />
               <img
                 src="/images/mental-hero.png"
                 alt="M3 Mindset"
@@ -213,7 +242,13 @@ export function Home() {
             aria-label={t.moreAbout}
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/michel-breakdance.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/michel-breakdance.webp 1x, /images/michel-breakdance.webp 2x"
+              />
+              <source
+                srcSet="/images/michel-breakdance.jpg 1x, /images/michel-breakdance.jpg 2x"
+              />
               <img
                 src="/images/michel-breakdance.jpg"
                 alt="Michél Breakdance World Champion"
@@ -251,7 +286,13 @@ export function Home() {
             aria-label={t.modulesH}
           >
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/mod-training-v2.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/mod-training-v2.webp 1x, /images/mod-training-v2.webp 2x"
+              />
+              <source
+                srcSet="/images/mod-training-v2.jpg 1x, /images/mod-training-v2.jpg 2x"
+              />
               <img
                 src="/images/mod-training-v2.jpg"
                 alt="M3 Modular Catalog"
@@ -298,7 +339,13 @@ export function Home() {
           {/* 9. 1:1 DIRECT CONSULTATION / CONVERSION BENTO CARD (Span 6) */}
           <article className="bento-card bento-card--contact bento-span-6">
             <picture className="bento-bg">
-              <source type="image/webp" srcSet="/images/michel-trainer.webp" />
+              <source
+                type="image/webp"
+                srcSet="/images/michel-trainer.webp 1x, /images/michel-trainer.webp 2x"
+              />
+              <source
+                srcSet="/images/michel-trainer.jpg 1x, /images/michel-trainer.jpg 2x"
+              />
               <img
                 src="/images/michel-trainer.jpg"
                 alt="Michél Meier Trainer"
@@ -425,6 +472,7 @@ export function Home() {
               })}
             </div>
           </article>
+
         </section>
       </div>
     </main>
