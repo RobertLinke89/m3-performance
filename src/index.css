@@ -2945,8 +2945,8 @@ picture {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid var(--line);
-  background: var(--bg-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f1115;
   min-height: 230px;
   display: flex;
   flex-direction: column;
@@ -2954,7 +2954,7 @@ picture {
   padding: clamp(16px, 2cqi, 24px);
   text-decoration: none;
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
     border-color 0.24s ease,
     box-shadow 0.24s ease;
@@ -2963,8 +2963,8 @@ picture {
 
 .bento-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-  border-color: color-mix(in srgb, var(--gold) 60%, var(--line));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.2));
 }
 
 /* Hero card specific height */
@@ -2972,21 +2972,37 @@ picture {
   min-height: 290px;
 }
 
-/* Background Image - Clean, Rich & Saturated */
+/* Background Image - Clean, 100% Full Bleed, No Gaps or Margins */
+picture.bento-bg,
 .bento-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 1 !important;
   pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
+picture.bento-bg img,
 .bento-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
   object-position: center 30%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: inherit;
+  display: block !important;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
@@ -2994,17 +3010,22 @@ picture {
   transform: translateZ(0);
 }
 
-/* Crisp Dark Bottom Gradient - NO White Veil! */
+/* Crisp Dark Bottom Gradient - Clean contrast for text readability */
 .bento-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 2 !important;
   pointer-events: none;
+  border-radius: inherit;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.02) 0%,
-    rgba(0, 0, 0, 0.3) 45%,
-    rgba(0, 0, 0, 0.86) 100%
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.88) 100%
   );
 }
 
@@ -3245,6 +3266,8 @@ picture {
 
 /* Audience Bento Grid */
 .bento-card--audience {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
   min-height: auto;
   padding: clamp(18px, 2.4vw, 28px);
   color: var(--text);
@@ -3345,6 +3368,8 @@ picture {
 
 /* Journal / Insights Bento */
 .bento-card--journal {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
   min-height: auto;
   padding: clamp(18px, 2.4vw, 28px);
   color: var(--text);
@@ -3441,6 +3466,8 @@ picture {
 
 /* FAQ Bento */
 .bento-card--faq {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
   min-height: auto;
   padding: clamp(18px, 2.4vw, 28px);
   color: var(--text);
