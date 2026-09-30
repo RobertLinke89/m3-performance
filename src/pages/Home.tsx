@@ -83,14 +83,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/system-start.webp 1x, /images/system-start.webp 2x"
+                srcSet="/images/moodboard/mood-elevate.webp 1x, /images/moodboard/mood-elevate@2x.webp 2x"
               />
               <source
-                srcSet="/images/system-start.jpg 1x, /images/system-start.jpg 2x"
+                srcSet="/images/moodboard/mood-elevate.jpg 1x, /images/moodboard/mood-elevate.jpg 2x"
               />
               <img
-                src="/images/system-start.jpg"
-                alt="M3 System Start"
+                src="/images/moodboard/mood-elevate.jpg"
+                alt="M3 System Start Standortbestimmung"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
@@ -122,14 +122,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/mod-body-reset.webp 1x, /images/mod-body-reset.webp 2x"
+                srcSet="/images/moodboard/mood-kitchen.webp 1x, /images/moodboard/mood-kitchen@2x.webp 2x"
               />
               <source
-                srcSet="/images/mod-body-reset.jpg 1x, /images/mod-body-reset.jpg 2x"
+                srcSet="/images/moodboard/mood-kitchen.jpg 1x, /images/moodboard/mood-kitchen.jpg 2x"
               />
               <img
-                src="/images/mod-body-reset.jpg"
-                alt="M1 Metabolism"
+                src="/images/moodboard/mood-kitchen.jpg"
+                alt="M1 Metabolism Ernährung & Zellenergie"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
@@ -161,14 +161,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/michel-work-mobility.webp 1x, /images/michel-work-mobility.webp 2x"
+                srcSet="/images/moodboard/mood-limitless.webp 1x, /images/moodboard/mood-limitless@2x.webp 2x"
               />
               <source
-                srcSet="/images/michel-work-mobility.jpg 1x, /images/michel-work-mobility.jpg 2x"
+                srcSet="/images/moodboard/mood-limitless.jpg 1x, /images/moodboard/mood-limitless.jpg 2x"
               />
               <img
-                src="/images/michel-work-mobility.jpg"
-                alt="M2 Biomechanics"
+                src="/images/moodboard/mood-limitless.jpg"
+                alt="M2 Biomechanics Mobilität & Schmerzfreiheit"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
@@ -200,14 +200,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/mental-hero.webp 1x, /images/mental-hero.webp 2x"
+                srcSet="/images/moodboard/mood-focus.webp 1x, /images/moodboard/mood-focus@2x.webp 2x"
               />
               <source
-                srcSet="/images/mental-hero.png 1x, /images/mental-hero.png 2x"
+                srcSet="/images/moodboard/mood-focus.jpg 1x, /images/moodboard/mood-focus.jpg 2x"
               />
               <img
-                src="/images/mental-hero.png"
-                alt="M3 Mindset"
+                src="/images/moodboard/mood-focus.jpg"
+                alt="M3 Mindset Fokus & neuronale Klarheit"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
@@ -255,13 +255,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/michel-breakdance.webp 1x, /images/michel-breakdance.webp 2x"
+                srcSet="/images/moodboard/mood-freeze.webp 1x, /images/moodboard/mood-freeze@2x.webp 2x"
               />
               <source
-                srcSet="/images/michel-breakdance.jpg 1x, /images/michel-breakdance.jpg 2x"
+                srcSet="/images/moodboard/mood-freeze.jpg 1x, /images/moodboard/mood-freeze.jpg 2x"
               />
               <img
-                src="/images/michel-breakdance.jpg"
+                src="/images/moodboard/mood-freeze.jpg"
                 alt="Michél Breakdance World Champion"
                 loading="lazy"
                 decoding="async"
@@ -293,13 +293,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/mod-training-v2.webp 1x, /images/mod-training-v2.webp 2x"
+                srcSet="/images/moodboard/mood-mobility.webp 1x, /images/moodboard/mood-mobility@2x.webp 2x"
               />
               <source
-                srcSet="/images/mod-training-v2.jpg 1x, /images/mod-training-v2.jpg 2x"
+                srcSet="/images/moodboard/mood-mobility.jpg 1x, /images/moodboard/mood-mobility.jpg 2x"
               />
               <img
-                src="/images/mod-training-v2.jpg"
+                src="/images/moodboard/mood-mobility.jpg"
                 alt="M3 Modular Catalog"
                 loading="lazy"
                 decoding="async"
@@ -327,14 +327,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/michel-trainer.webp 1x, /images/michel-trainer.webp 2x"
+                srcSet="/images/moodboard/mood-pushup.webp 1x, /images/moodboard/mood-pushup@2x.webp 2x"
               />
               <source
-                srcSet="/images/michel-trainer.jpg 1x, /images/michel-trainer.jpg 2x"
+                srcSet="/images/moodboard/mood-pushup.jpg 1x, /images/moodboard/mood-pushup.jpg 2x"
               />
               <img
-                src="/images/michel-trainer.jpg"
-                alt="Michél Meier Trainer"
+                src="/images/moodboard/mood-pushup.jpg"
+                alt="Michél Meier Performance Coaching"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
