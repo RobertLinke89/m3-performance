@@ -153,7 +153,7 @@ export function SystemStart() {
                       <source type="image/webp" srcSet={`${imgSrc} 1x, ${imgSrc.replace('.webp', '@2x.webp')} 2x`} />
                       <img src={imgSrc} alt={c.title} className="bento-bg-img" loading="lazy" />
                     </picture>
-                    <div className="bento-overlay" style={{ background: isSelected ? 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.88) 100%)' : 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.92) 100%)' }} />
+                    <div className="bento-overlay" />
                     <div className="bento-content">
                       <h3 className="bento-title" style={{ fontSize: 18 }}>
                         <span className="bento-pillar-accent" style={{ color: '#ffffff' }}>
@@ -303,7 +303,7 @@ export function SystemStart() {
                 className="bento-bg-img"
               />
             </picture>
-            <div className="bento-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.92) 100%)' }} />
+            <div className="bento-overlay" />
             <div className="bento-content" style={{ maxWidth: 680 }}>
               <h2 className="bento-title" style={{ fontSize: 'clamp(24px, 3.2cqi, 36px)' }}>
                 {isEn ? 'Status first, then intervention.' : 'Erst Status, dann Eingriff.'}
