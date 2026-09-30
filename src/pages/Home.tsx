@@ -54,14 +54,11 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content bento-content--hero">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? 'M¹–M³ PERFORMANCE SYSTEM' : 'M¹ · M² · M³ PERFORMANCE SYSTEM'}
-              </span>
               <h1 className="bento-hero-h1">
                 {isEn ? (
-                  <>Holistic <span>Performance.</span> <em className="gold">Pain-Free & Sharp.</em></>
+                  <>M¹–M³ Performance. <span>Holistic, Pain-Free &amp; Sharp.</span></>
                 ) : (
-                  <>Ganzheitliche <span>Performance.</span> <em className="gold">Schmerzfrei & Klar.</em></>
+                  <>M¹ · M² · M³ Performance. <span>Schmerzfrei &amp; Klar.</span></>
                 )}
               </h1>
               <p className="bento-lead">
@@ -101,11 +98,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? 'CHAPTER 01 · ASSESSMENT' : 'SCHRITT 01 · STANDORTBESTIMMUNG'}
-              </span>
               <h2 className="bento-title">
-                {isEn ? 'Where do you lose energy?' : 'Wo stehst du heute?'}
+                <span className="bento-step-num">01 ·</span> {isEn ? 'Assessment & Status Quo' : 'Standortbestimmung & Analyse'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -143,12 +137,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <div className="bento-pillar-header">
-                <span className="bento-pillar-mark" style={{ color: '#e8a14a' }}>M¹</span>
-                <span className="bento-tag">SÄULE 01 · METABOLISMUS</span>
-              </div>
               <h2 className="bento-title">
-                {isEn ? 'Cellular Energy & Gut.' : 'Zellenergie & Mikrobiom.'}
+                <span className="bento-pillar-accent" style={{ color: '#e8a14a' }}>M¹</span> {isEn ? 'Metabolism & Cellular Energy' : 'Metabolismus & Zellenergie'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -186,12 +176,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <div className="bento-pillar-header">
-                <span className="bento-pillar-mark" style={{ color: '#2f9a72' }}>M²</span>
-                <span className="bento-tag">SÄULE 02 · BIOMECHANIK</span>
-              </div>
               <h2 className="bento-title">
-                {isEn ? 'Athletic Freedom from Pain.' : 'Athletische Schmerzfreiheit.'}
+                <span className="bento-pillar-accent" style={{ color: '#2f9a72' }}>M²</span> {isEn ? 'Biomechanics & Pain Freedom' : 'Biomechanik & Schmerzfreiheit'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -229,12 +215,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <div className="bento-pillar-header">
-                <span className="bento-pillar-mark" style={{ color: '#4f6fd6' }}>M³</span>
-                <span className="bento-tag">SÄULE 03 · MINDSET</span>
-              </div>
               <h2 className="bento-title">
-                {isEn ? 'Focus & Neural Clarity.' : 'Fokus & neuronale Klarheit.'}
+                <span className="bento-pillar-accent" style={{ color: '#4f6fd6' }}>M³</span> {isEn ? 'Mindset & Neural Clarity' : 'Mindset & neuronale Klarheit'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -253,16 +235,13 @@ export function Home() {
               <SystemMolecule />
             </div>
             <div className="bento-molecule-content">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? 'THE M³ SYNERGY' : 'DIE METHODIK · DIE M³ SYNERGIE'}
-              </span>
               <h2 className="bento-title">
-                {isEn ? 'Why isolated fixes fail.' : 'Warum Einzellösungen scheitern.'}
+                {isEn ? 'The M³ Synergy: Why isolated fixes fail.' : 'Die M³ Synergie: Warum Einzellösungen scheitern.'}
               </h2>
               <p className="bento-desc">
                 {isEn
                   ? 'Training without metabolic foundation exhausts you. Diet without mindset never sticks. True performance requires all three in synergy.'
-                  : 'Training ohne Stoffwechsel verbrennt dich. Ernährung ohne mentale Klarheit hält nicht. Nur das vernetzte Zusammenspiel erzeugt dauerhafte Höchstleistung.'}
+                  : 'Training ohne Stoffwechsel verbrennt dich. Ernährung ohne mentale Klarheit hält nicht. Nur das vernetzte Zusammenspiel aller 3 Säulen erzeugt dauerhafte Höchstleistung.'}
               </p>
             </div>
           </article>
@@ -291,14 +270,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <div className="bento-tag-row">
-                <span className="bento-tag bento-tag--gold">
-                  🏆 IDO BREAKDANCE WELTMEISTER 2006/07
-                </span>
-                <span className="bento-tag">30+ {isEn ? 'YEARS PRACTICE' : 'JAHRE BEWEGUNG'}</span>
-              </div>
               <h2 className="bento-title">
-                {isEn ? 'From World Champion to a Proven System.' : 'Vom Weltmeistertitel zum krisenfesten System.'}
+                {isEn ? 'World Champion Codex & 30 Years of Movement' : 'Weltmeister-Codex & 30 Jahre Bewegungspraxis'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -335,11 +308,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? 'MODULAR CATALOG' : 'DER FAHRPLAN · MODULBAUKASTEN'}
-              </span>
               <h2 className="bento-title">
-                {isEn ? 'Customized to your bottleneck.' : 'Individuell statt 0815-Standard.'}
+                {isEn ? 'Modular Roadmap: Tailored to your bottleneck' : 'Modulbaukasten: Individuell statt Standard'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -372,11 +342,8 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <span className="bento-tag bento-tag--gold">
-                {isEn ? '1:1 ORIENTATION' : 'DEIN NÄCHSTER SCHRITT'}
-              </span>
               <h2 className="bento-title">
-                {isEn ? '20-min strategy call with Michél.' : '20 Min. Orientierung mit Michél.'}
+                {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
               </h2>
               <p className="bento-desc">
                 {isEn
@@ -406,7 +373,6 @@ export function Home() {
           <article className="bento-card bento-card--audience bento-span-12">
             <div className="bento-card-header">
               <div>
-                <span className="bento-tag bento-tag--gold">{t.audienceEyebrow}</span>
                 <h2 className="bento-title">{t.audienceH}</h2>
                 <p className="bento-desc" style={{ maxWidth: '60ch' }}>{t.audienceLead}</p>
               </div>
@@ -428,7 +394,6 @@ export function Home() {
           <article className="bento-card bento-card--journal bento-span-7">
             <div className="bento-card-header">
               <div>
-                <span className="bento-tag bento-tag--gold">{t.blogEyebrow}</span>
                 <h2 className="bento-title">{t.blogH}</h2>
               </div>
               <Link to="/blog" className="bento-header-link">
@@ -464,7 +429,6 @@ export function Home() {
           <article className="bento-card bento-card--faq bento-span-5">
             <div className="bento-card-header">
               <div>
-                <span className="bento-tag bento-tag--gold">{t.faqEyebrow}</span>
                 <h2 className="bento-title">{t.faqH}</h2>
               </div>
             </div>
