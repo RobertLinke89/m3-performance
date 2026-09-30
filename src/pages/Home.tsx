@@ -2,8 +2,6 @@ import { useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Img } from '../components/Img'
 import { SystemMolecule } from '../components/SystemMolecule'
-import { ShowreelModal } from '../components/ShowreelModal'
-import { JockeyUnderline } from '../components/JockeyUnderline'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
 import { useContent } from '../useContent'
@@ -12,7 +10,6 @@ export function Home() {
   const t = useUi()
   const { lang } = useLocale()
   const isEn = lang === 'en'
-  const [showreelOpen, setShowreelOpen] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const { audience, faqs, pillars, posts, wa } = useContent()
 
@@ -60,29 +57,10 @@ export function Home() {
               </h1>
               <p className="bento-lead">{t.heroPitch}</p>
 
-              {/* Showreel Trigger with Breakdance Codex Jockey Underline */}
-              <div className="hero-showreel-anchor">
-                <button
-                  type="button"
-                  className="hero-showreel-trigger"
-                  onClick={() => setShowreelOpen(true)}
-                  aria-label={t.watchShowreel}
-                >
-                  <span className="showreel-play-circle" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11.5-6.86a1 1 0 0 0 0-1.72L9.5 4.28a1 1 0 0 0-1.5.86z" />
-                    </svg>
-                  </span>
-                  <span className="showreel-trigger-content">
-                    <span className="showreel-trigger-title">
-                      {t.watchShowreel}
-                      <span className="showreel-chip">{t.showreelDuration}</span>
-                    </span>
-                    <span className="showreel-trigger-sub">{t.showreelPillSubtitle}</span>
-                  </span>
-                </button>
-                <JockeyUnderline variant="codex" className="hero-jockey-stroke" />
-              </div>
+              {/* Minimalistic Transparent Showreel CTA */}
+              <Link to="/ueber-mich" className="hero-btn-showreel">
+                Showreel
+              </Link>
             </div>
           </article>
 
@@ -447,16 +425,8 @@ export function Home() {
               })}
             </div>
           </article>
-
         </section>
       </div>
-
-      {/* 15s Showreel Video Modal */}
-      <ShowreelModal
-        isOpen={showreelOpen}
-        onClose={() => setShowreelOpen(false)}
-        isEn={isEn}
-      />
     </main>
   )
 }
