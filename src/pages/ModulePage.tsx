@@ -8,7 +8,7 @@ import { useContent } from '../useContent'
 export function ModulePage() {
   const { slug } = useParams()
   const t = useUi()
-  const { modules, pillars, process, wa } = useContent()
+  const { contact, modules, pillars, process, wa } = useContent()
   const mod = modules.find((m) => m.slug === slug)
   if (!mod) return <Navigate to="/" replace />
   const pillar = pillars.find((p) => p.id === mod.pillar)
@@ -35,11 +35,23 @@ export function ModulePage() {
             <p className="lead">{mod.kicker}</p>
             <p className="prose">{mod.text}</p>
             <div className="cta-row">
-              <a className="btn btn-gold" href={mod.wa}>
+              <a className="btn btn-gold" href={mod.wa} target="_blank" rel="noreferrer">
                 {t.writeMe}
               </a>
-              <a className="btn btn-ghost" href={wa.talk}>
+              <a className="btn btn-ghost" href={wa.talk} target="_blank" rel="noreferrer">
                 {t.firstTalk}
+              </a>
+            </div>
+            <div className="cal-booking-hint">
+              <span>{t.calText}</span>{' '}
+              <a
+                href={contact.cal}
+                target="_blank"
+                rel="noreferrer"
+                className="cal-link"
+                data-cal-link="michelmeier/30min"
+              >
+                {t.calLinkText}
               </a>
             </div>
           </div>
@@ -90,12 +102,24 @@ export function ModulePage() {
         <div className="wrap card card-highlight card-cta">
           <h2>{mod.outcome}</h2>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
-            <a className="btn btn-gold" href={mod.wa}>
+            <a className="btn btn-gold" href={mod.wa} target="_blank" rel="noreferrer">
               {t.writeMe}
             </a>
             <Link className="btn btn-ghost" to="/system-start">
               {t.preferStart}
             </Link>
+          </div>
+          <div className="cal-booking-hint" style={{ justifyContent: 'center', marginTop: 16 }}>
+            <span>{t.calText}</span>{' '}
+            <a
+              href={contact.cal}
+              target="_blank"
+              rel="noreferrer"
+              className="cal-link"
+              data-cal-link="michelmeier/30min"
+            >
+              {t.calLinkText}
+            </a>
           </div>
         </div>
       </section>

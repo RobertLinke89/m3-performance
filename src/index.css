@@ -686,6 +686,59 @@ img.card-media[src*='michel-trainer'] {
   justify-self: end;
 }
 
+.nav-cal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-cal-link:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.nav-cal-icon {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+}
+
+.cal-booking-hint {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+
+.cal-link {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.cal-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .theme-toggle {
   width: 44px;
   height: 44px;
@@ -2461,6 +2514,11 @@ picture {
 
   .card-cta .btn {
     width: 100%;
+  }
+
+  .nav-cal-link {
+    padding: 0 8px;
+    font-size: 12px;
   }
 }
 

@@ -3,6 +3,10 @@ import { useLocale, type Lang } from './locale'
 const ui = {
   de: {
     writeMe: 'Schreib Mir',
+    bookCal: '30 Min. Slot buchen',
+    navCal: '30 Min. Kennenlernen',
+    calText: 'Oder direkt einen 30-Minuten Kennenlern-Slot buchen:',
+    calLinkText: '30 Min. Termin via Cal.com buchen →',
     firstTalk: 'Erstgespräch',
     systemStart: 'System Start',
     details: 'Details',
@@ -164,6 +168,10 @@ const ui = {
   },
   en: {
     writeMe: 'Write me',
+    bookCal: 'Book 30-min slot',
+    navCal: '30 Min. Intro Call',
+    calText: 'Or book a 30-minute intro call slot directly:',
+    calLinkText: 'Book 30-min slot via Cal.com →',
     firstTalk: 'Intro call',
     systemStart: 'System Start',
     details: 'Details',

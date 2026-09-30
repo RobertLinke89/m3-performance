@@ -10,7 +10,7 @@ export function SystemStart() {
   const t = useUi()
   const { lang } = useLocale()
   const isEn = lang === 'en'
-  const { compass, modules, pillars, startProof, wa } = useContent()
+  const { compass, contact, modules, pillars, startProof, wa } = useContent()
   const [pick, setPick] = useState<string>('m1')
   const picked = pillars.find((p) => p.id === pick) || pillars[0]
   const next = picked ? modules.filter((m) => m.pillar === picked.id).slice(0, 3) : []
@@ -65,8 +65,14 @@ export function SystemStart() {
                   </svg>
                   {isEn ? 'Start Assessment' : 'Standortbestimmung starten'}
                 </a>
-                <a href={wa.talk} target="_blank" rel="noreferrer" className="btn-white-ghost">
-                  {isEn ? '20-Min. Call with Michél' : '20 Min. Orientierungsgespräch'}
+                <a
+                  href={contact.cal}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-white-ghost"
+                  data-cal-link="michelmeier/30min"
+                >
+                  {isEn ? 'Book 30-Min. Slot (Cal.com) →' : '30 Min. Slot buchen (Cal.com) →'}
                 </a>
               </div>
             </div>

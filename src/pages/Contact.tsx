@@ -15,11 +15,23 @@ export function Contact() {
           <h1>{t.contactH}</h1>
           <p className="lead">{t.contactLead}</p>
           <div className="cta-row">
-            <a className="btn btn-gold" href={wa.talk}>
+            <a className="btn btn-gold" href={wa.talk} target="_blank" rel="noreferrer">
               {t.contactWa}
             </a>
             <a className="btn btn-ghost" href={`tel:+${contact.phone}`}>
               {phoneDisplay}
+            </a>
+          </div>
+          <div className="cal-booking-hint">
+            <span>{t.calText}</span>{' '}
+            <a
+              href={contact.cal}
+              target="_blank"
+              rel="noreferrer"
+              className="cal-link"
+              data-cal-link="michelmeier/30min"
+            >
+              {t.calLinkText}
             </a>
           </div>
         </div>

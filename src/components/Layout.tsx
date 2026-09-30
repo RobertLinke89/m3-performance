@@ -67,7 +67,7 @@ function LangSwitch() {
 
 export function Layout() {
   const t = useUi()
-  const { wa } = useContent()
+  const { contact, wa } = useContent()
 
   return (
     <>
@@ -78,7 +78,30 @@ export function Layout() {
           <BrandMark />
         </Link>
         <div className="nav-actions">
-          <a className="btn btn-gold" href={wa.talk}>
+          <a
+            className="nav-cal-link"
+            href={contact.cal}
+            target="_blank"
+            rel="noreferrer"
+            data-cal-link="michelmeier/30min"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="nav-cal-icon"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <span>{t.navCal}</span>
+          </a>
+          <a className="btn btn-gold" href={wa.talk} target="_blank" rel="noreferrer">
             {t.writeMe}
           </a>
         </div>
@@ -110,6 +133,11 @@ export function Layout() {
           </div>
           <div>
             <strong>{t.footerContact}</strong>
+            <p>
+              <a href={contact.cal} target="_blank" rel="noreferrer">
+                {t.bookCal}
+              </a>
+            </p>
             <p><Link to="/kontakt" onClick={scrollToPageStart}>{t.footerWaTalk}</Link></p>
             <p><Link to="/katalog" onClick={scrollToPageStart}>{t.footerWaCat}</Link></p>
             <p><Link to="/ueber-mich" onClick={scrollToPageStart}>{t.footerAboutMichel}</Link></p>

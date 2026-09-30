@@ -11,7 +11,7 @@ export function Home() {
   const { lang } = useLocale()
   const isEn = lang === 'en'
   const [openFaq, setOpenFaq] = useState<number | null>(0)
-  const { audience, faqs, pillars, posts, wa } = useContent()
+  const { audience, contact, faqs, pillars, posts, wa } = useContent()
 
   // Get featured posts for the journal bento card
   const featuredPosts = pillars
@@ -362,9 +362,15 @@ export function Home() {
                   </svg>
                   {t.ctaTalk}
                 </a>
-                <Link to="/kontakt" className="btn btn-ghost">
-                  {isEn ? 'Contact options' : 'Kontaktoptionen'}
-                </Link>
+                <a
+                  href={contact.cal}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-ghost"
+                  data-cal-link="michelmeier/30min"
+                >
+                  {isEn ? 'Book 30-Min. Slot (Cal.com) →' : '30 Min. Slot buchen (Cal.com) →'}
+                </a>
               </div>
             </div>
           </article>

@@ -6,7 +6,7 @@ import { useContent } from '../useContent'
 
 export function MentalPage() {
   const t = useUi()
-  const { pillars, posts, wa } = useContent()
+  const { contact, pillars, posts, wa } = useContent()
   const pillar = pillars.find((p) => p.id === 'm3')!
   const relatedPosts = posts.filter((p) => p.pillar === 'm3')
   const prompts = 'prompts' in pillar ? pillar.prompts : []
@@ -28,12 +28,24 @@ export function MentalPage() {
           <p className="quote">„{pillar.quote}“</p>
           <p className="lead">{pillar.body}</p>
           <div className="cta-row">
-            <a className="btn btn-gold" href={wa.talk}>
+            <a className="btn btn-gold" href={wa.talk} target="_blank" rel="noreferrer">
               {t.writeMe}
             </a>
             <Link className="btn btn-ghost" to="/system-start">
               {t.systemStart}
             </Link>
+          </div>
+          <div className="cal-booking-hint">
+            <span>{t.calText}</span>{' '}
+            <a
+              href={contact.cal}
+              target="_blank"
+              rel="noreferrer"
+              className="cal-link"
+              data-cal-link="michelmeier/30min"
+            >
+              {t.calLinkText}
+            </a>
           </div>
         </div>
       </section>
@@ -153,12 +165,24 @@ export function MentalPage() {
             {t.pillarCtaLead}
           </p>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
-            <a className="btn btn-gold" href={wa.talk}>
+            <a className="btn btn-gold" href={wa.talk} target="_blank" rel="noreferrer">
               {t.ctaTalk}
             </a>
             <Link className="btn btn-ghost" to="/system-start">
               {t.ctaMoreStart}
             </Link>
+          </div>
+          <div className="cal-booking-hint" style={{ justifyContent: 'center', marginTop: 16 }}>
+            <span>{t.calText}</span>{' '}
+            <a
+              href={contact.cal}
+              target="_blank"
+              rel="noreferrer"
+              className="cal-link"
+              data-cal-link="michelmeier/30min"
+            >
+              {t.calLinkText}
+            </a>
           </div>
         </div>
       </section>
