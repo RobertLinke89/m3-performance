@@ -20,16 +20,13 @@ function LegalPage({ kind }: { kind: Kind }) {
   const other = kind === 'imprint' ? { to: '/datenschutz', label: t.privacy } : { to: '/impressum', label: t.imprint }
 
   return (
-    <main>
-      <section className="page-hero">
-        <div className="wrap">
-          <p className="eyebrow">{page.eyebrow}</p>
+    <main className="legal-page">
+      <div className="legal-container">
+        <header className="legal-header">
           <h1>{page.title}</h1>
           <p className="lead">{page.lead}</p>
-        </div>
-      </section>
-      <section className="section">
-        <div className="wrap legal">
+        </header>
+        <div className="legal">
           {page.sections.map((block) => (
             <article key={block.h}>
               <h2>{block.h}</h2>
@@ -42,7 +39,7 @@ function LegalPage({ kind }: { kind: Kind }) {
             <Link to={other.to}>{other.label}</Link>
           </p>
         </div>
-      </section>
+      </div>
     </main>
   )
 }
