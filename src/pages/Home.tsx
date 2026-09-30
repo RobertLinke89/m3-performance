@@ -23,28 +23,27 @@ export function Home() {
       <div className="wrap">
         {/* Bento Grid Master Universe */}
         <section className="bento-grid" aria-label="M³ Performance System Bento Grid">
-          
-          {/* 1. HERO BENTO CARD (Span 8 - The Vision & Core Promise) */}
+                    {/* 1. HERO BENTO CARD (Span 8 - The Vision & Core Promise) */}
           <article className="bento-card bento-card--hero bento-span-8">
             <picture className="bento-bg">
               <source
                 media="(max-width: 860px)"
                 type="image/webp"
-                srcSet="/images/hero-system-mobile.webp 1x, /images/hero-system-mobile.webp 2x"
+                srcSet="/images/hero-system-mobile.webp?v=28 1x, /images/hero-system-mobile@2x.webp?v=28 2x"
               />
               <source
                 media="(max-width: 860px)"
-                srcSet="/images/hero-system-mobile-1x.jpg 1x, /images/hero-system-mobile.jpg 2x"
+                srcSet="/images/hero-system-mobile-1x.jpg?v=28 1x, /images/hero-system-mobile@2x.jpg?v=28 2x"
               />
               <source
                 type="image/webp"
-                srcSet="/images/hero-system.webp 1x, /images/hero-system.webp 2x"
+                srcSet="/images/hero-system.webp?v=28 1x, /images/hero-system@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/hero-system-1x.jpg 1x, /images/hero-system.jpg 2x"
+                srcSet="/images/hero-system-1x.jpg?v=28 1x, /images/hero-system@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/hero-system.jpg"
+                src="/images/hero-system.jpg?v=28"
                 alt={t.problemAlt}
                 loading="eager"
                 decoding="async"
@@ -83,13 +82,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-elevate.webp 1x, /images/moodboard/mood-elevate@2x.webp 2x"
+                srcSet="/images/moodboard/mood-elevate.webp?v=28 1x, /images/moodboard/mood-elevate@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-elevate.jpg 1x, /images/moodboard/mood-elevate.jpg 2x"
+                srcSet="/images/moodboard/mood-elevate.jpg?v=28 1x, /images/moodboard/mood-elevate@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-elevate.jpg"
+                src="/images/moodboard/mood-elevate.jpg?v=28"
                 alt="M3 System Start Standortbestimmung"
                 loading="lazy"
                 decoding="async"
@@ -122,13 +121,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-kitchen.webp 1x, /images/moodboard/mood-kitchen@2x.webp 2x"
+                srcSet="/images/moodboard/mood-kitchen.webp?v=28 1x, /images/moodboard/mood-kitchen@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-kitchen.jpg 1x, /images/moodboard/mood-kitchen.jpg 2x"
+                srcSet="/images/moodboard/mood-kitchen.jpg?v=28 1x, /images/moodboard/mood-kitchen@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-kitchen.jpg"
+                src="/images/moodboard/mood-kitchen.jpg?v=28"
                 alt="M1 Metabolism Ernährung & Zellenergie"
                 loading="lazy"
                 decoding="async"
@@ -161,13 +160,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-limitless.webp 1x, /images/moodboard/mood-limitless@2x.webp 2x"
+                srcSet="/images/moodboard/mood-limitless.webp?v=28 1x, /images/moodboard/mood-limitless@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-limitless.jpg 1x, /images/moodboard/mood-limitless.jpg 2x"
+                srcSet="/images/moodboard/mood-limitless.jpg?v=28 1x, /images/moodboard/mood-limitless@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-limitless.jpg"
+                src="/images/moodboard/mood-limitless.jpg?v=28"
                 alt="M2 Biomechanics Mobilität & Schmerzfreiheit"
                 loading="lazy"
                 decoding="async"
@@ -200,13 +199,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-focus.webp 1x, /images/moodboard/mood-focus@2x.webp 2x"
+                srcSet="/images/moodboard/mood-focus.webp?v=28 1x, /images/moodboard/mood-focus@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-focus.jpg 1x, /images/moodboard/mood-focus.jpg 2x"
+                srcSet="/images/moodboard/mood-focus.jpg?v=28 1x, /images/moodboard/mood-focus@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-focus.jpg"
+                src="/images/moodboard/mood-focus.jpg?v=28"
                 alt="M3 Mindset Fokus & neuronale Klarheit"
                 loading="lazy"
                 decoding="async"
@@ -255,13 +254,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-freeze.webp 1x, /images/moodboard/mood-freeze@2x.webp 2x"
+                srcSet="/images/moodboard/mood-freeze.webp?v=28 1x, /images/moodboard/mood-freeze@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-freeze.jpg 1x, /images/moodboard/mood-freeze.jpg 2x"
+                srcSet="/images/moodboard/mood-freeze.jpg?v=28 1x, /images/moodboard/mood-freeze@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-freeze.jpg"
+                src="/images/moodboard/mood-freeze.jpg?v=28"
                 alt="Michél Breakdance World Champion"
                 loading="lazy"
                 decoding="async"
@@ -293,13 +292,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-mobility.webp 1x, /images/moodboard/mood-mobility@2x.webp 2x"
+                srcSet="/images/moodboard/mood-mobility.webp?v=28 1x, /images/moodboard/mood-mobility@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-mobility.jpg 1x, /images/moodboard/mood-mobility.jpg 2x"
+                srcSet="/images/moodboard/mood-mobility.jpg?v=28 1x, /images/moodboard/mood-mobility@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-mobility.jpg"
+                src="/images/moodboard/mood-mobility.jpg?v=28"
                 alt="M3 Modular Catalog"
                 loading="lazy"
                 decoding="async"
@@ -327,13 +326,13 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-pushup.webp 1x, /images/moodboard/mood-pushup@2x.webp 2x"
+                srcSet="/images/moodboard/mood-pushup.webp?v=28 1x, /images/moodboard/mood-pushup@2x.webp?v=28 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-pushup.jpg 1x, /images/moodboard/mood-pushup.jpg 2x"
+                srcSet="/images/moodboard/mood-pushup.jpg?v=28 1x, /images/moodboard/mood-pushup@2x.jpg?v=28 2x"
               />
               <img
-                src="/images/moodboard/mood-pushup.jpg"
+                src="/images/moodboard/mood-pushup.jpg?v=28"
                 alt="Michél Meier Performance Coaching"
                 loading="lazy"
                 decoding="async"

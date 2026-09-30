@@ -5,7 +5,7 @@ type Props = ImgHTMLAttributes<HTMLImageElement> & {
   max?: boolean
 }
 
-const ASSET_V = '26'
+const ASSET_V = '28'
 
 function withVersion(src: string) {
   if (src.includes('?')) return src
@@ -16,9 +16,20 @@ function webpFor(src: string) {
   return withVersion(src.replace(/\.(jpe?g|png)$/i, '.webp'))
 }
 
+function retina2xWebp(src: string) {
+  const base = src.replace(/(@2x)?\.(jpe?g|png|webp)$/i, '')
+  return withVersion(`${base}@2x.webp`)
+}
+
+function retina2xOrig(src: string) {
+  const ext = src.match(/\.(jpe?g|png|webp)$/i)?.[0] || '.jpg'
+  const base = src.replace(/(@2x)?\.(jpe?g|png|webp)$/i, '')
+  return withVersion(`${base}@2x${ext}`)
+}
+
 /**
- * High-performance Retina @2x/@3x responsive image component.
- * Delivers razor-sharp WebP & original raster sources with crisp display rendering.
+ * High-performance Razor-Sharp Retina @2x responsive image component.
+ * Delivers pristine 4K WebP & uncompressed raster sources with crisp display rendering.
  */
 export function Img({ src, alt = '', priority, max, loading, decoding, fetchPriority, ...rest }: Props) {
   const eager = Boolean(priority) || loading === 'eager'
@@ -38,12 +49,14 @@ export function Img({ src, alt = '', priority, max, loading, decoding, fetchPrio
   }
 
   const webpSrc = webpFor(src)
+  const webp2xSrc = retina2xWebp(src)
   const origSrc = withVersion(src)
+  const orig2xSrc = retina2xOrig(src)
 
   return (
     <picture>
-      <source type="image/webp" srcSet={`${webpSrc} 1x, ${webpSrc} 2x`} />
-      <source srcSet={`${origSrc} 1x, ${origSrc} 2x`} />
+      <source type="image/webp" srcSet={`${webpSrc} 1x, ${webp2xSrc} 2x`} />
+      <source srcSet={`${origSrc} 1x, ${orig2xSrc} 2x`} />
       <img
         src={origSrc}
         alt={alt}
@@ -55,3 +68,4 @@ export function Img({ src, alt = '', priority, max, loading, decoding, fetchPrio
     </picture>
   )
 }
+

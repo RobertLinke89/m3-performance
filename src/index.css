@@ -3114,10 +3114,10 @@ picture.bento-bg img,
   display: block !important;
   filter: saturate(1.08) contrast(1.04);
   image-rendering: -webkit-optimize-contrast;
-  image-rendering: auto;
+  image-rendering: high-quality;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: none !important;
+  transform: translateZ(0);
   transition: none !important;
 }
 
