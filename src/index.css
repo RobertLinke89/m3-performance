@@ -2945,8 +2945,8 @@ picture {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #090a0d;
   min-height: clamp(340px, 38vh, 420px);
   display: flex;
   flex-direction: column;
@@ -2954,15 +2954,15 @@ picture {
   padding: clamp(20px, 2.8cqi, 32px);
   text-decoration: none;
   color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: border-color 0.24s ease, box-shadow 0.24s ease;
   container-type: inline-size;
 }
 
 .bento-card:hover {
   transform: none !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.25));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 /* Hero & System Start top row height */
@@ -2988,7 +2988,7 @@ picture {
   min-height: clamp(360px, 40vh, 440px);
 }
 
-/* Background Image - Clean, 100% Full Bleed, No Gaps or Margins */
+/* Background Image - Clean, 100% Full Bleed, Pure B&W Monochrome */
 picture.bento-bg,
 .bento-bg {
   display: block !important;
@@ -3019,6 +3019,7 @@ picture.bento-bg img,
   border: none !important;
   border-radius: inherit;
   display: block !important;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
@@ -3033,7 +3034,7 @@ picture.bento-bg img,
   scale: 1 !important;
 }
 
-/* Crisp Dark Bottom Gradient - Clean contrast for text readability */
+/* Crisp Dark Bottom Gradient */
 .bento-overlay {
   position: absolute !important;
   inset: 0 !important;
@@ -3046,9 +3047,9 @@ picture.bento-bg img,
   border-radius: inherit;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.02) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0.88) 100%
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.92) 100%
   );
 }
 
@@ -3583,24 +3584,24 @@ picture.bento-bg img,
 }
 
 /* ==========================================================================
-   SYSTEM START BENTO EXPANSIONS
+   SYSTEM START BENTO EXPANSIONS (STRICT MONOCHROME BLACK & WHITE)
    ========================================================================== */
 
 .bento-card--audit-step {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  color: var(--text);
+  background: #0d0e12;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   min-height: auto;
   padding: clamp(20px, 2.5cqi, 28px);
 }
 
 .bento-card--audit-step .bento-title {
-  color: var(--text);
+  color: #ffffff;
   text-shadow: none;
 }
 
 .bento-card--audit-step .bento-desc {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.7);
   text-shadow: none;
 }
 
@@ -3612,7 +3613,8 @@ picture.bento-bg img,
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #ffffff;
+  opacity: 0.8;
   margin-bottom: 6px;
 }
 
@@ -3628,7 +3630,7 @@ picture.bento-bg img,
 .bento-audit-points li {
   font-size: 13px;
   line-height: 1.4;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -3636,7 +3638,7 @@ picture.bento-bg img,
 
 .bento-audit-points li::before {
   content: '✓';
-  color: var(--gold);
+  color: #ffffff;
   font-weight: 900;
   flex-shrink: 0;
 }
@@ -3659,8 +3661,8 @@ picture.bento-bg img,
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  border: 2px solid transparent;
-  background: #0f1115;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #090a0d;
   cursor: pointer;
   padding: 20px;
   display: flex;
@@ -3674,20 +3676,20 @@ picture.bento-bg img,
 }
 
 .bento-compass-card:hover {
-  border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.25));
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .bento-compass-card.selected {
-  border-color: var(--gold, #fbbf24) !important;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 40%, transparent);
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
 .bento-result-box {
   margin-top: 20px;
   padding: 24px;
   border-radius: 18px;
-  background: color-mix(in srgb, var(--gold) 8%, var(--bg-2));
-  border: 1px solid color-mix(in srgb, var(--gold) 40%, var(--line));
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   width: 100%;
   animation: fadeIn 0.3s ease;
 }
@@ -3699,6 +3701,88 @@ picture.bento-bg img,
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+}
+
+.bento-sub-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.bento-sub-card:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.bento-sub-media {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: 50% 18%;
+  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+}
+
+.bento-sub-body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bento-sub-body h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.bento-sub-body p {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.35;
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.btn-white-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-white-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes fadeIn {
