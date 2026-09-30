@@ -2955,15 +2955,13 @@ picture {
   text-decoration: none;
   color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.28s ease,
-    box-shadow 0.28s ease;
+  transition: border-color 0.24s ease, box-shadow 0.24s ease;
   container-type: inline-size;
 }
 
 .bento-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  transform: none !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   border-color: color-mix(in srgb, var(--gold) 60%, rgba(255, 255, 255, 0.25));
 }
 
@@ -3025,7 +3023,14 @@ picture.bento-bg img,
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform: translateZ(0);
+  transform: none !important;
+  transition: none !important;
+}
+
+.bento-card:hover .bento-bg-img,
+.bento-card:hover picture.bento-bg img {
+  transform: none !important;
+  scale: 1 !important;
 }
 
 /* Crisp Dark Bottom Gradient - Clean contrast for text readability */
@@ -3367,7 +3372,7 @@ picture.bento-bg img,
 }
 
 .bento-sub-card:hover {
-  transform: translateY(-2px);
+  transform: none;
   border-color: color-mix(in srgb, var(--gold) 35%, var(--line));
 }
 
@@ -3448,7 +3453,7 @@ picture.bento-bg img,
 }
 
 .bento-journal-item:hover {
-  transform: translateX(3px);
+  transform: none;
   background: color-mix(in srgb, var(--bg-2) 75%, var(--gold) 25%);
   border-color: color-mix(in srgb, var(--gold) 40%, var(--line));
 }
