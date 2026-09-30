@@ -2905,7 +2905,7 @@ picture {
    ========================================================================== */
 
 .bento-page {
-  padding-top: 14px;
+  padding-top: calc(var(--nav-height) + var(--page-gutter));
   padding-bottom: 56px;
 }
 
