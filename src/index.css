@@ -1775,7 +1775,7 @@ picture {
   object-fit: cover;
   object-position: 50% 18%;
   border-radius: 18px;
-  filter: grayscale(0.12) contrast(1.06);
+  filter: saturate(1.06) contrast(1.04);
 }
 
 .portrait-cutout {
@@ -3019,7 +3019,7 @@ picture.bento-bg img,
   border: none !important;
   border-radius: inherit;
   display: block !important;
-  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  filter: saturate(1.08) contrast(1.04);
   image-rendering: -webkit-optimize-contrast;
   image-rendering: auto;
   -webkit-backface-visibility: hidden;
@@ -3722,7 +3722,7 @@ picture.bento-bg img,
   height: 120px;
   object-fit: cover;
   object-position: 50% 18%;
-  filter: grayscale(100%) contrast(1.1) brightness(0.95);
+  filter: saturate(1.15) contrast(1.05);
 }
 
 .bento-sub-body {
