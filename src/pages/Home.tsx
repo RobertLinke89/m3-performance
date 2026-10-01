@@ -415,63 +415,7 @@ export function Home() {
 
         </section>
 
-        {/* 11. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
-        <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading">
-          <div className="faq-standalone-container">
-            <header className="faq-standalone-header">
-              <span className="faq-standalone-kicker">FAQ</span>
-              <h2 id="faq-main-heading" className="faq-standalone-title">{t.faqH}</h2>
-              <p className="faq-standalone-lead">
-                {isEn
-                  ? 'Direct, transparent answers about our methodology, structure, and 1:1 mentorship.'
-                  : 'Direkte und ehrliche Antworten zu Ablauf, Betreuung und dem M³-System.'}
-              </p>
-            </header>
-
-            <div className="faq-standalone-list">
-              {faqs.map((f, i) => {
-                const isOpen = openFaq === i
-                return (
-                  <div
-                    key={f.q}
-                    className={`faq-standalone-item ${isOpen ? 'is-open' : ''}`}
-                  >
-                    <button
-                      type="button"
-                      className="faq-standalone-btn"
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                      aria-expanded={isOpen}
-                    >
-                      <span className="faq-standalone-q">{f.q}</span>
-                      <span className="faq-standalone-icon" aria-hidden="true">
-                        <svg
-                          viewBox="0 0 24 24"
-                          width="18"
-                          height="18"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className={`faq-chevron-icon ${isOpen ? 'is-rotated' : ''}`}
-                        >
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className="faq-standalone-panel">
-                        <p className="faq-standalone-a">{f.a}</p>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* 12. STANDALONE JOURNAL SECTION (10 Science & Practice Articles Below FAQ) */}
+        {/* 11. STANDALONE JOURNAL SECTION (10 Science & Practice Articles) */}
         <section className="journal-standalone-section" id="journal" aria-labelledby="journal-main-heading">
           <div className="journal-standalone-header">
             <span className="journal-standalone-kicker">
@@ -533,6 +477,62 @@ export function Home() {
                       </div>
                     </div>
                   </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 12. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
+        <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading">
+          <div className="faq-standalone-container">
+            <header className="faq-standalone-header">
+              <span className="faq-standalone-kicker">FAQ</span>
+              <h2 id="faq-main-heading" className="faq-standalone-title">{t.faqH}</h2>
+              <p className="faq-standalone-lead">
+                {isEn
+                  ? 'Direct, transparent answers about our methodology, structure, and 1:1 mentorship.'
+                  : 'Direkte und ehrliche Antworten zu Ablauf, Betreuung und dem M³-System.'}
+              </p>
+            </header>
+
+            <div className="faq-standalone-list">
+              {faqs.map((f, i) => {
+                const isOpen = openFaq === i
+                return (
+                  <div
+                    key={f.q}
+                    className={`faq-standalone-item ${isOpen ? 'is-open' : ''}`}
+                  >
+                    <button
+                      type="button"
+                      className="faq-standalone-btn"
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="faq-standalone-q">{f.q}</span>
+                      <span className="faq-standalone-icon" aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="18"
+                          height="18"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`faq-chevron-icon ${isOpen ? 'is-rotated' : ''}`}
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="faq-standalone-panel">
+                        <p className="faq-standalone-a">{f.a}</p>
+                      </div>
+                    )}
+                  </div>
                 )
               })}
             </div>
