@@ -3114,14 +3114,14 @@ picture {
    ========================================================================== */
 
 .bento-page {
-  padding-top: calc(var(--nav-height) + var(--page-gutter));
-  padding-bottom: 56px;
+  padding-top: calc(var(--nav-height) + 12px);
+  padding-bottom: 48px;
 }
 
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
+  gap: 12px;
   align-items: stretch;
 }
 
@@ -3153,14 +3153,14 @@ picture {
 .bento-card {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #090a0d;
-  min-height: clamp(340px, 38vh, 420px);
+  min-height: clamp(240px, 28vh, 340px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(20px, 2.8cqi, 32px);
+  padding: clamp(16px, 2.2cqi, 26px);
   text-decoration: none;
   color: #ffffff;
   box-shadow: none !important;
@@ -3177,24 +3177,24 @@ picture {
 /* Hero & System Start top row height */
 .bento-card--hero,
 .bento-card--start {
-  min-height: clamp(440px, 50vh, 540px);
+  min-height: clamp(270px, 42vh, 420px);
 }
 
 /* 3-Pillar Cards Height */
 .bento-card--pillar {
-  min-height: clamp(380px, 42vh, 460px);
+  min-height: clamp(200px, 30.5vh, 300px);
 }
 
 /* Story / Michél & Catalog Cards */
 .bento-card--michel,
 .bento-card--catalog {
-  min-height: clamp(380px, 42vh, 460px);
+  min-height: clamp(260px, 34vh, 360px);
 }
 
 /* Molecule & Contact Cards */
 .bento-card--molecule,
 .bento-card--contact {
-  min-height: clamp(360px, 40vh, 440px);
+  min-height: clamp(260px, 34vh, 360px);
 }
 
 /* Background Image - Clean, 100% Full Bleed, Pure B&W Monochrome */
@@ -3328,11 +3328,11 @@ picture.bento-bg img,
 }
 
 .bento-title {
-  margin: 3px 0 0;
-  font-size: clamp(17px, 1.8cqi, 23px);
+  margin: 2px 0 0;
+  font-size: clamp(15px, 1.6cqi, 20px);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.22;
+  line-height: 1.2;
   color: #ffffff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
@@ -3340,7 +3340,7 @@ picture.bento-bg img,
 .bento-pillar-accent {
   display: inline-block;
   font-weight: 900;
-  margin-right: 6px;
+  margin-right: 5px;
   font-size: 1.05em;
   line-height: 1;
 }
@@ -3353,8 +3353,8 @@ picture.bento-bg img,
 }
 
 .bento-hero-h1 {
-  margin: 3px 0 0;
-  font-size: clamp(24px, 3.4cqi, 42px);
+  margin: 2px 0 0;
+  font-size: clamp(21px, 2.9cqi, 36px);
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.12;
@@ -3373,21 +3373,21 @@ picture.bento-bg img,
 }
 
 .bento-lead {
-  margin: 6px 0 0;
-  font-size: clamp(13px, 1.4cqi, 15px);
+  margin: 4px 0 0;
+  font-size: clamp(12px, 1.25cqi, 14px);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  line-height: 1.35;
   max-width: 48ch;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 .bento-desc {
   margin: 2px 0 0;
-  font-size: clamp(12px, 1.2cqi, 14px);
+  font-size: clamp(11.5px, 1.15cqi, 13px);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.82);
-  line-height: 1.38;
+  line-height: 1.34;
   max-width: 42ch;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
@@ -3396,8 +3396,8 @@ picture.bento-bg img,
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 8px;
-  font-size: 12px;
+  margin-top: 6px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #fbbf24;
   transition: transform 0.2s ease, color 0.2s ease;
@@ -3414,13 +3414,13 @@ picture.bento-bg img,
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 14px;
-  padding: 7px 20px;
+  margin-top: 10px;
+  padding: 6px 18px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   color: #ffffff;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none;
@@ -3501,9 +3501,9 @@ picture.bento-bg img,
 }
 
 .bento-card--m1 .bento-molecule-visual .system-molecule {
-  max-width: 280px;
-  max-height: 220px;
-  transform: translateY(-24px);
+  max-width: 240px;
+  max-height: 180px;
+  transform: translateY(-28px) scale(0.9);
 }
 
 .bento-molecule-visual .system-molecule {
