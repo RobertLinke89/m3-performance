@@ -4206,31 +4206,393 @@ picture.bento-bg img,
 }
 
 @media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  :root,
+  [data-theme='night'],
+  [data-theme='day'] {
+    --page-gutter: 14px;
+    --radius: 14px;
+    --nav-pad-y: 8px;
+    --nav-control-h: 36px;
   }
+
+  .wrap {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Bento Page & Grid Mobile Layout */
+  .bento-page {
+    padding-top: calc(var(--nav-height, 60px) + 8px);
+    padding-bottom: 36px;
+  }
+
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .bento-span-12,
   .bento-span-8,
   .bento-span-7,
   .bento-span-6,
   .bento-span-5,
   .bento-span-4 {
-    grid-column: span 1;
+    width: 100%;
+    grid-column: span 1 !important;
   }
+
+  /* Bento Cards Mobile Dimensions & Padding */
   .bento-card {
-    min-height: 300px;
-    padding: 20px;
-    border-radius: 20px;
+    min-height: 280px;
+    padding: 20px 18px;
+    border-radius: 18px;
   }
-  .bento-card--hero,
-  .bento-card--start {
+
+  .bento-card--hero {
     min-height: 380px;
+    padding: 24px 18px;
   }
-  .bento-card--pillar {
-    min-height: 320px;
+
+  .bento-hero-h1 {
+    font-size: clamp(23px, 6.8vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .bento-lead {
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin-top: 8px;
+  }
+
+  .hero-btn-showreel {
+    margin-top: 14px;
+    min-height: 38px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+
+  .bento-card--start,
+  .bento-card--pillar,
+  .bento-card--michel,
+  .bento-card--catalog,
+  .bento-card--contact {
+    min-height: 280px;
+  }
+
+  .bento-title {
+    font-size: clamp(17px, 5vw, 20px);
+    line-height: 1.25;
+  }
+
+  .bento-desc {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .bento-step-num {
+    font-size: 14px;
+  }
+
+  /* Molecule Mobile Rendering */
+  .bento-card--molecule {
+    min-height: auto;
+    padding: 22px 18px;
+  }
+
+  .bento-molecule-visual {
+    width: 100%;
+    max-width: 280px;
+    height: 190px;
+    margin: 0 auto;
+  }
+
+  .bento-molecule-visual .system-molecule {
+    max-width: 280px;
+    max-height: 190px;
+  }
+
+  /* Contact CTA Mobile Stacking */
+  .bento-card--contact .bento-cta-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .bento-card--contact .bento-cta-row .btn-gold,
+  .bento-card--contact .bento-cta-row .btn-ghost {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    text-align: center;
+    font-size: 13.5px;
+  }
+
+  /* Audience & Personas Mobile Grid */
+  .bento-card--audience {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .bento-audience-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .bento-persona-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .bento-persona-head {
+    gap: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bento-persona-avatar-wrap {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+
+  .bento-persona-role {
+    font-size: 10.5px;
+  }
+
+  .bento-persona-title {
+    font-size: 14px;
+  }
+
+  .bento-persona-section {
+    padding: 10px 12px;
+    gap: 4px;
+    border-radius: 10px;
+  }
+
+  .bento-persona-badge {
+    font-size: 10px;
+  }
+
+  .bento-persona-text {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Standalone FAQ Mobile */
+  .faq-standalone-section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .faq-standalone-container {
+    padding: 0;
+  }
+
+  .faq-standalone-header {
+    margin-bottom: 16px;
+  }
+
+  .faq-standalone-kicker {
+    font-size: 10px;
+  }
+
+  .faq-standalone-title {
+    font-size: clamp(22px, 6vw, 26px);
+    margin-bottom: 6px;
+  }
+
+  .faq-standalone-lead {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .faq-standalone-list {
+    gap: 8px;
+  }
+
+  .faq-standalone-item {
+    border-radius: 14px;
+  }
+
+  .faq-standalone-btn {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .faq-standalone-q {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .faq-standalone-panel {
+    padding: 0 16px 14px 16px;
+  }
+
+  .faq-standalone-a {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Standalone Journal Feed Mobile */
+  .journal-standalone-section {
+    margin-top: 44px;
+    margin-bottom: 28px;
+  }
+
+  .journal-standalone-header {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .journal-standalone-kicker {
+    font-size: 10px;
+  }
+
+  .journal-standalone-title {
+    font-size: clamp(22px, 6.2vw, 28px);
+    margin-bottom: 8px;
+  }
+
+  .journal-standalone-lead {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .journal-header-actions {
+    margin-top: 12px;
+  }
+
+  .journal-header-link {
+    font-size: 12.5px;
+    padding: 6px 16px;
+  }
+
+  .journal-cards-container {
+    margin: 0 calc(-1 * var(--page-gutter, 14px));
+    padding: 4px var(--page-gutter, 14px) 14px var(--page-gutter, 14px);
+    width: calc(100% + (2 * var(--page-gutter, 14px)));
+  }
+
+  .journal-feed-card {
+    flex: 0 0 min(280px, 80vw);
+    border-radius: 16px;
+  }
+
+  .journal-feed-body {
+    padding: 14px;
+  }
+
+  .journal-feed-title {
+    font-size: 14px;
+  }
+
+  .journal-feed-excerpt {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Navigation & Controls Mobile */
+  .nav {
+    padding: var(--nav-pad-y) 12px;
+    padding-top: max(var(--nav-pad-y), env(safe-area-inset-top, 0px));
+    gap: 8px;
+  }
+
+  .nav .brand {
+    font-size: 14px;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .nav-cal-link {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .nav-cal-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .nav .btn-gold {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  /* Subpages Mobile Grid Stacking */
+  .sub-bento-grid,
+  .mental-bento-grid,
+  .mod-bento-grid,
+  .catalog-bento-grid,
+  .contact-bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sub-bento-card,
+  .mental-bento-card,
+  .mod-bento-card,
+  .catalog-bento-card,
+  .contact-bento-card {
+    width: 100%;
+    border-radius: 18px;
+    padding: 20px 16px;
+  }
+
+  /* Footer Mobile */
+  .footer {
+    padding: 36px 0 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 18px;
   }
 }
+
+@media (max-width: 420px) {
+  .nav-cal-link span {
+    display: none;
+  }
+
+  .nav-cal-link {
+    padding: 0 8px;
+    min-width: 34px;
+    justify-content: center;
+  }
+
+  .bento-hero-h1 {
+    font-size: 22px;
+  }
+
+  .bento-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+
+  .journal-feed-card {
+    flex: 0 0 84vw;
+  }
+}
+
 
 
 
