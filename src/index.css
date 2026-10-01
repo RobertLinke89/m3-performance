@@ -3742,24 +3742,26 @@ picture.bento-bg img,
 .faq-standalone-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0;
   width: 100%;
+  border-top: 1px solid var(--line);
 }
 
 .faq-standalone-item {
   width: 100%;
-  background: color-mix(in srgb, var(--bg-2) 65%, var(--bg) 35%);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  overflow: visible;
   text-align: left;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: none !important;
 }
 
 .faq-standalone-item:hover,
 .faq-standalone-item.is-open {
-  border-color: color-mix(in srgb, var(--gold) 45%, var(--line));
-  background: var(--bg-2);
+  border-color: var(--line) !important;
+  background: transparent !important;
 }
 
 .faq-standalone-btn {
@@ -3768,7 +3770,7 @@ picture.bento-bg img,
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 22px;
+  padding: 20px 0 !important;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -3779,7 +3781,7 @@ picture.bento-bg img,
 }
 
 .faq-standalone-q {
-  font-size: clamp(14.5px, 1.3vw, 16.5px);
+  font-size: clamp(15px, 1.4vw, 17px);
   font-weight: 700;
   line-height: 1.35;
   color: var(--text);
@@ -3804,13 +3806,13 @@ picture.bento-bg img,
 }
 
 .faq-standalone-panel {
-  padding: 0 22px 20px 22px;
+  padding: 0 0 20px 0 !important;
   text-align: left;
 }
 
 .faq-standalone-a {
   margin: 0;
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.6;
   color: var(--muted);
   text-align: left;
@@ -4514,30 +4516,30 @@ picture.bento-bg img,
   }
 
   .faq-standalone-list {
-    gap: 8px;
+    gap: 0;
   }
 
   .faq-standalone-item {
-    border-radius: 14px;
+    border-radius: 0 !important;
   }
 
   .faq-standalone-btn {
-    padding: 14px 16px;
+    padding: 16px 0 !important;
     gap: 10px;
   }
 
   .faq-standalone-q {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.35;
   }
 
   .faq-standalone-panel {
-    padding: 0 16px 14px 16px;
+    padding: 0 0 16px 0 !important;
   }
 
   .faq-standalone-a {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 13.5px;
+    line-height: 1.55;
   }
 
   /* Standalone Journal Feed Mobile */
