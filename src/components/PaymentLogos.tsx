@@ -1,5 +1,16 @@
 import { useLocale } from '../locale'
 
+const PAYMENT_METHODS = [
+  { name: 'Visa', src: '/images/payments/visa.svg' },
+  { name: 'Mastercard', src: '/images/payments/mastercard.svg' },
+  { name: 'American Express', src: '/images/payments/amex.svg' },
+  { name: 'Apple Pay', src: '/images/payments/apple-pay.svg' },
+  { name: 'Google Pay', src: '/images/payments/google-pay.svg' },
+  { name: 'PayPal', src: '/images/payments/paypal.svg' },
+  { name: 'Klarna', src: '/images/payments/klarna.svg' },
+  { name: 'SEPA', src: '/images/payments/sepa.svg' },
+]
+
 export function PaymentLogos() {
   const { lang } = useLocale()
   const isEn = lang === 'en'
@@ -9,134 +20,33 @@ export function PaymentLogos() {
       <div className="footer-payment-top">
         <div className="footer-payment-brand">
           <span className="footer-payment-kicker">
-            {isEn ? 'SECURE PAYMENT' : 'SICHER BEZAHLEN'}
+            {isEn ? 'SECURE CHECKOUT' : 'SICHER BEZAHLEN'}
           </span>
           <div className="footer-payment-stripe-logo" title="Powered by Stripe" aria-label="Stripe">
-            <svg viewBox="0 0 60 25" width="52" height="22" fill="#635BFF" role="img">
-              <path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v2.68c-1.25.6-2.89.92-4.63.92-4.14 0-6.42-2.55-6.42-6.52 0-3.66 2.15-6.47 5.79-6.47 3.66 0 5.4 2.76 5.4 6.22 0 .58-.05 1.15-.12 1.57h.79zm-7.98-2.15h4.63c-.09-1.57-1.04-2.31-2.27-2.31-1.25 0-2.18.77-2.36 2.31zM36.78 6.74h3.75v12.44h-3.75V6.74zm-.12-4.24c0-1.23.97-2.13 2.18-2.13 1.2 0 2.15.9 2.15 2.13 0 1.2-.95 2.13-2.15 2.13-1.2 0-2.18-.92-2.18-2.13zm-8.8 4.24h3.63v2.01h.05c.81-1.39 2.22-2.29 4.03-2.29.58 0 1.04.07 1.39.19v3.47c-.51-.19-1.11-.28-1.83-.28-2.52 0-3.52 1.6-3.52 4.03v5.32h-3.75V6.74zm-9.03 9.4c0 1.13.9 1.76 2.08 1.76 1.06 0 1.94-.28 2.82-.74v2.75c-.97.46-2.22.69-3.47.69-3.1 0-5.18-1.55-5.18-4.51v-6.6h-2.18V6.74h2.18V3.06l3.75-.79v4.47h3.75v2.75h-3.75v6.65zm-11.41-3.61c0-3.87 2.5-6.76 6.34-6.76 1.71 0 3.06.49 4.07 1.18l-1.39 2.62c-.74-.46-1.57-.81-2.64-.81-1.99 0-3.26 1.48-3.26 3.63 0 2.27 1.34 3.73 3.33 3.73 1.09 0 2-.37 2.78-.88l1.34 2.57c-1.09.83-2.52 1.34-4.33 1.34-4.03 0-6.24-2.82-6.24-6.62zM.6 16.32l1.97-2.27c1.37 1.16 3.1 1.83 4.88 1.83 1.62 0 2.45-.58 2.45-1.48 0-2.27-7.22-1.02-7.22-5.49 0-2.64 2.15-4.42 5.56-4.42 1.92 0 3.68.58 4.98 1.67L11.41 8.6c-1.18-.88-2.59-1.37-4.07-1.37-1.39 0-2.06.58-2.06 1.3 0 2.18 7.15 1.02 7.15 5.44 0 2.66-2.06 4.54-5.83 4.54-2.2 0-4.35-.74-5.99-2.19z" />
-            </svg>
+            <img
+              src="/images/payments/stripe-logo.svg"
+              alt="Stripe"
+              width="56"
+              height="22"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 
         <div className="footer-payment-badges">
-          {/* 1. Visa */}
-          <div className="pay-badge pay-badge--white" title="Visa">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#ffffff" />
-              <path
-                fill="#1A1F71"
-                d="M15.2 16.2l1.9-10h2.4l-1.9 10h-2.4zm8.6-9.8c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7.9.5 1.3.8 1.3 1.2 0 .7-.8 1-1.6 1-.9 0-1.5-.1-2.3-.4l-.3 1.5c.5.2 1.4.4 2.4.4 2.6 0 4.4-1.3 4.4-3.3 0-1.1-.7-2-2.2-2.7-.9-.5-1.5-.8-1.5-1.3 0-.4.5-.9 1.5-.9.8 0 1.4.2 1.9.4l.3-1.3zm6.3 6.3l1-2.7.6 2.7h-1.6zm2.3 3.5l-1.5-7.1c-.1-.4-.4-.6-.8-.6h-2.9c-.3 0-.5.2-.6.4l-3.6 8.3h2.6l.5-1.4h3.1l.3 1.4h2.4zm-19.1-10l-2.4 6.8-.3-1.3c-.5-1.6-2-3.4-3.7-4.3l2.4 8.8h2.6l3.9-10H13.3z"
+          {PAYMENT_METHODS.map((method) => (
+            <div key={method.name} className="pay-badge" title={method.name}>
+              <img
+                src={method.src}
+                alt={method.name}
+                width="38"
+                height="25"
+                loading="lazy"
+                decoding="async"
               />
-              <path
-                fill="#F7B600"
-                d="M8.9 6.2H5L4.9 6.4c3.3.8 5.6 2.8 6.5 5.2l-.9-4.7c-.2-.5-.6-.7-1.1-.7z"
-              />
-            </svg>
-          </div>
-
-          {/* 2. Mastercard */}
-          <div className="pay-badge pay-badge--white" title="Mastercard">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#ffffff" />
-              <circle cx="14" cy="12" r="6.5" fill="#EB001B" />
-              <circle cx="24" cy="12" r="6.5" fill="#F79E1B" />
-              <path
-                d="M19 7.3a6.47 6.47 0 0 1 2.5 4.7c0 1.9-1 3.7-2.5 4.7a6.47 6.47 0 0 1-2.5-4.7c0-1.9 1-3.7 2.5-4.7z"
-                fill="#FF5F00"
-              />
-            </svg>
-          </div>
-
-          {/* 3. Amex */}
-          <div className="pay-badge pay-badge--amex" title="American Express">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#006FCF" />
-              <path
-                fill="#ffffff"
-                d="M5 12l2.4-5.2h3.4L13.2 12l-2.4 5.2H7.4L5 12zm3.3 0l.9 2h1.6l-.9-2 .9-2H9.2l-.9 2zm6.7 5.2L17.5 12l-2.5-5.2h2.5l1.6 3.4 1.6-3.4h2.5L20.7 12l2.5 5.2h-2.5l-1.6-3.5-1.6 3.5H15zm9-10.4h6.5v2.2h-4.3v1.8h3.8v2.1h-3.8v2.1h4.5v2.2H24V6.8z"
-              />
-            </svg>
-          </div>
-
-          {/* 4. Apple Pay */}
-          <div className="pay-badge pay-badge--white" title="Apple Pay">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#ffffff" />
-              <path
-                fill="#000000"
-                d="M11.8 11.2c-.4.5-1 .8-1.6.7-.1-.6.2-1.2.5-1.6.4-.4 1-.7 1.6-.7 0 .6-.1 1.2-.5 1.6zm.5.8c-.9-.1-1.6.5-2 .5-.5 0-1.1-.5-1.8-.5-.9 0-1.8.5-2.3 1.4-1 1.7-.3 4.2.7 5.6.5.7 1.1 1.5 1.9 1.5.7 0 1-.5 1.8-.5.8 0 1 .5 1.8.5.8 0 1.3-.7 1.8-1.4.6-.9.9-1.8.9-1.9-.1 0-1.7-.6-1.7-2.5 0-1.6 1.3-2.3 1.3-2.4-.7-1.1-1.9-1.2-2.3-1.3zm5.2-3.2h-2.4v9.5h1.3v-3.4h1.1c2 0 3.4-1.3 3.4-3.1 0-1.7-1.3-3-3.4-3zm-.1 4.9h-1v-3.6h1c1.3 0 2 .7 2 1.8 0 1.1-.7 1.8-2 1.8zm7.5-2.4c-1.2 0-2 .6-2.3 1.2v-1.1h-1.3v6.9h1.4v-3.5c0-1.1.6-1.7 1.5-1.7.3 0 .5.1.7.1l.4-1.3c-.4-.4-.7-.6-.4-.6zm4.5-2.5l-1.7 4.8-1.6-4.8h-1.5l2.4 6.2-1.5 3.3h1.5l4.7-9.5h-1.8z"
-              />
-            </svg>
-          </div>
-
-          {/* 5. Google Pay */}
-          <div className="pay-badge pay-badge--white" title="Google Pay">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#ffffff" />
-              <path
-                fill="#4285F4"
-                d="M11.8 12.1c0-.3 0-.6-.1-.8H7.5v1.6h2.4c-.1.6-.5 1.1-1 1.4v1.2h1.6c1-.9 1.5-2.2 1.5-3.4z"
-              />
-              <path
-                fill="#34A853"
-                d="M7.5 16.5c1.4 0 2.5-.5 3.3-1.3l-1.6-1.2c-.4.3-1 .5-1.7.5-1.3 0-2.3-.9-2.7-2h-1.7v1.3c.9 1.6 2.5 2.7 4.4 2.7z"
-              />
-              <path
-                fill="#FBBC05"
-                d="M4.8 12.5c-.1-.3-.2-.6-.2-1s.1-.7.2-1V9.2H3.1c-.4.8-.6 1.8-.6 2.8s.2 2 .6 2.8l1.7-1.3z"
-              />
-              <path
-                fill="#EA4335"
-                d="M7.5 8.5c.7 0 1.4.3 1.9.7l1.4-1.4C10 7 8.9 6.5 7.5 6.5 5.6 6.5 4 7.6 3.1 9.2l1.7 1.3c.4-1.1 1.4-2 2.7-2z"
-              />
-              <path
-                fill="#5F6368"
-                d="M15.5 9.2h-2.3v5.6h1.2v-2h1.1c1.7 0 2.8-1.1 2.8-2.6 0-1.5-1.1-2.6-2.8-2.6zm0 3.8h-1.1v-2.3h1.1c1 0 1.6.6 1.6 1.2s-.6 1.1-1.6 1.1zm6.7-1.8c-1 0-1.7.5-2 1v-.9H19v4.5h1.2v-2.3c0-.9.6-1.4 1.3-1.4.2 0 .4 0 .6.1l.4-1.1c-.3-.2-.5-.2-.3-.2zm3.4-2l-1.4 3.9-1.3-3.9h-1.3l2 5-1.2 2.7h1.2l3.9-7.7h-1.4z"
-              />
-            </svg>
-          </div>
-
-          {/* 6. PayPal */}
-          <div className="pay-badge pay-badge--white" title="PayPal">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#ffffff" />
-              <path
-                fill="#003087"
-                d="M14.5 5h-4.2c-.4 0-.7.3-.8.7L7.5 17.5c0 .2.2.4.4.4h2.4l.6-3.8c.1-.3.4-.5.7-.5h1.5c3.1 0 5-1.5 5.4-4.3.2-1.3-.1-2.3-.8-3-.7-.9-1.9-1.3-3.2-1.3z"
-              />
-              <path
-                fill="#0079C1"
-                d="M15.1 7.5h-1.8l-.6 4.1c0 .2.1.3.3.3h1.3c2.3 0 3.6-1.1 4-3.3.1-1-.1-1.7-.6-2.3-.6-.5-1.5-.8-2.6-.8z"
-              />
-              <path
-                fill="#00457C"
-                d="M13.3 7.5l-.6 4.1c0 .2.1.3.3.3h1.3c2.3 0 3.6-1.1 4-3.3 0-.4 0-.6-.1-.9-.5 1.3-1.7 2-3.5 2h-1l.5-3.2c0-.2 0-.3-.1-.3l-.8 1.3z"
-              />
-            </svg>
-          </div>
-
-          {/* 7. Klarna */}
-          <div className="pay-badge pay-badge--klarna" title="Klarna">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#FFB3C7" />
-              <path
-                fill="#0A0A0A"
-                d="M7.5 6.5h1.8v11H7.5v-11zm8 0h1.9l-3.3 4.8 3.7 4.8h-2.1l-3-4v4h-1.8v-11h1.8v3.8l3-3.8zm5.2 9.6h-1.8V9.5h1.8v1c.5-.8 1.4-1.2 2.2-1.2 1.7 0 2.9 1.3 2.9 3.4 0 2.1-1.3 3.4-3 3.4-.9 0-1.7-.4-2.1-1.1v1.1zm1.8-3.5c0 1.1.7 1.9 1.6 1.9s1.6-.7 1.6-1.9c0-1.1-.7-1.8-1.6-1.8s-1.6.8-1.6 1.8zm8 3.5h-1.7V9.5h1.7v1c.5-.7 1.2-1.1 2.1-1.1.2 0 .5 0 .7.1v1.7c-.3-.1-.6-.2-1-.2-1 0-1.8.7-1.8 1.8v3.3zm4.9 0c-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1.6 0 1.1.5 1.1 1.1 0 .6-.5 1.1-1.1 1.1z"
-              />
-            </svg>
-          </div>
-
-          {/* 8. SEPA */}
-          <div className="pay-badge pay-badge--sepa" title="SEPA">
-            <svg viewBox="0 0 38 24" width="38" height="24">
-              <rect width="38" height="24" rx="5" fill="#002D72" />
-              {/* Crisp SEPA Vector Letters */}
-              <path
-                fill="#FFCC00"
-                d="M10.2 9.6c-.3-.2-.8-.4-1.4-.4-.8 0-1.3.4-1.3.9 0 1.1 1.7.9 1.7 1.6 0 .3-.3.5-.7.5-.5 0-1.1-.2-1.4-.5l-.3.9c.4.3 1 .4 1.7.4 1 0 1.6-.5 1.6-1.2 0-1.2-1.7-1-1.7-1.6 0-.3.3-.4.6-.4.4 0 .9.2 1.2.4l.3-.7zm2.4-1.7h3.3v.9h-2.3v1h2v.9h-2v1.2h2.4v.9h-3.4V7.9zm4.7 0h2.2c1.2 0 1.9.7 1.9 1.7 0 1-.7 1.7-1.9 1.7h-1.1v1.5h-1.1V7.9zm1.1 2.5h.9c.6 0 1-.3 1-.8s-.4-.8-1-.8h-.9v1.6zm6.3-2.5h1.2l2.3 4.9h-1.1l-.5-1.1h-2.4l-.5 1.1H23l2.3-4.9zm-.1 3h1.8l-.9-2-.9 2z"
-              />
-            </svg>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 

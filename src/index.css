@@ -1520,6 +1520,12 @@ picture {
   align-items: center;
 }
 
+.footer-payment-stripe-logo img {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
 .footer-payment-badges {
   display: flex;
   flex-wrap: wrap;
@@ -1532,11 +1538,11 @@ picture {
   align-items: center;
   justify-content: center;
   width: 38px;
-  height: 24px;
-  border-radius: 5px;
+  height: 25px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   background: #ffffff;
   flex-shrink: 0;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -1547,32 +1553,16 @@ picture {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
-.pay-badge--white {
-  background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.pay-badge--amex {
-  background: #006fcf !important;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-.pay-badge--klarna {
-  background: #ffb3c7 !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.pay-badge--sepa {
-  background: #002d72 !important;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+.pay-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 [data-theme='night'] .pay-badge {
   border-color: rgba(255, 255, 255, 0.15);
-}
-
-[data-theme='night'] .footer-payment-stripe-logo svg {
-  fill: #7a73ff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
 .footer-payment-sub {
