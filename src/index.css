@@ -3898,28 +3898,22 @@ picture.bento-bg img,
   transform: translateY(-1px);
 }
 
-/* Horizontal Scroll Feed with Snap */
+/* Horizontal Scroll Feed with Snap (Hidden Scrollbar) */
 .journal-cards-container {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   padding: 6px 4px 18px 4px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: color-mix(in srgb, var(--gold) 45%, var(--line)) transparent;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
 
 .journal-cards-container::-webkit-scrollbar {
-  height: 6px;
-}
-
-.journal-cards-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.journal-cards-container::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--gold) 45%, var(--line));
-  border-radius: 999px;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 .journal-cards-track {
@@ -3940,14 +3934,15 @@ picture.bento-bg img,
   text-decoration: none;
   color: var(--text);
   scroll-snap-align: start;
-  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+  transition: none !important;
+  transform: none !important;
 }
 
 .journal-feed-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--gold) 50%, var(--line));
-  background: color-mix(in srgb, var(--bg-2) 80%, var(--gold) 20%);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  transform: none !important;
+  border-color: var(--line) !important;
+  background: color-mix(in srgb, var(--bg) 60%, var(--bg-2) 40%) !important;
+  box-shadow: none !important;
 }
 
 .journal-feed-media {
@@ -3963,11 +3958,13 @@ picture.bento-bg img,
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transition: transform 0.35s ease;
+  transition: none !important;
+  transform: none !important;
 }
 
 .journal-feed-card:hover .journal-feed-img {
-  transform: scale(1.04);
+  transform: none !important;
+  scale: 1 !important;
 }
 
 .journal-feed-badge {
@@ -4040,12 +4037,11 @@ picture.bento-bg img,
 }
 
 .journal-feed-arrow {
-  transition: transform 0.2s ease;
   display: inline-block;
 }
 
 .journal-feed-card:hover .journal-feed-arrow {
-  transform: translateX(3px);
+  transform: none !important;
 }
 
 .journal-feed-min {

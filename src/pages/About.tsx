@@ -145,7 +145,8 @@ export function About() {
                 width: '100%',
                 overflowX: 'auto',
                 paddingBottom: 14,
-                scrollbarWidth: 'thin',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
                 scrollSnapType: 'x mandatory',
                 WebkitOverflowScrolling: 'touch',
               }}
