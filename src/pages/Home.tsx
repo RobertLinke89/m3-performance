@@ -396,27 +396,32 @@ export function Home() {
             </div>
           </article>
 
-          {/* 11. JOURNAL & INSIGHTS BENTO CARD (Span 7) */}
-          <article className="bento-card bento-card--journal bento-span-7">
+          {/* 11. JOURNAL & INSIGHTS BENTO CARD (Span 12) */}
+          <article className="bento-card bento-card--journal bento-span-12">
             <div className="bento-card-header">
               <div>
                 <h2 className="bento-title">{t.blogH}</h2>
+                <p className="bento-desc" style={{ maxWidth: '60ch' }}>
+                  {isEn
+                    ? 'Science-backed insights on metabolic optimization, biomechanics, and decision clarity.'
+                    : 'Wissenschaftlich fundierte Einblicke in Stoffwechsel, Biomechanik und neuronale Klarheit.'}
+                </p>
               </div>
               <Link to="/blog" className="bento-header-link">
                 {t.blogAll} →
               </Link>
             </div>
-            <div className="bento-journal-list">
+            <div className="bento-journal-grid">
               {featuredPosts.map((post) => {
                 const pillar = pillars.find((p) => p.id === post.pillar)
                 return (
                   <Link
                     key={post.slug}
                     to={`/blog/${post.slug}`}
-                    className="bento-journal-item"
+                    className="bento-journal-card"
                   >
-                    <Img className="bento-journal-thumb" src={post.image} alt="" />
-                    <div className="bento-journal-info">
+                    <Img className="bento-journal-card-thumb" src={post.image} alt="" />
+                    <div className="bento-journal-card-body">
                       {pillar && (
                         <span className="bento-micro-tag" style={{ color: pillar.color }}>
                           {pillar.mark} · {pillar.name}
@@ -431,36 +436,66 @@ export function Home() {
             </div>
           </article>
 
-          {/* 12. FAQ BENTO CARD (Span 5) */}
-          <article className="bento-card bento-card--faq bento-span-5">
-            <div className="bento-card-header">
-              <div>
-                <h2 className="bento-title">{t.faqH}</h2>
-              </div>
-            </div>
-            <div className="bento-faq-list">
+        </section>
+
+        {/* 12. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
+        <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading">
+          <div className="faq-standalone-container">
+            <header className="faq-standalone-header">
+              <span className="faq-standalone-kicker">FAQ</span>
+              <h2 id="faq-main-heading" className="faq-standalone-title">{t.faqH}</h2>
+              <p className="faq-standalone-lead">
+                {isEn
+                  ? 'Direct, transparent answers about our methodology, structure, and 1:1 mentorship.'
+                  : 'Direkte und ehrliche Antworten zu Ablauf, Betreuung und dem M³-System.'}
+              </p>
+            </header>
+
+            <div className="faq-standalone-list">
               {faqs.map((f, i) => {
                 const isOpen = openFaq === i
                 return (
-                  <button
+                  <div
                     key={f.q}
-                    type="button"
-                    className={`bento-faq-item ${isOpen ? 'open' : ''}`}
-                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className={`faq-standalone-item ${isOpen ? 'is-open' : ''}`}
                   >
-                    <div className="bento-faq-q">
-                      <strong>{f.q}</strong>
-                      <span className="bento-faq-icon">{isOpen ? '−' : '+'}</span>
-                    </div>
-                    {isOpen && <p className="bento-faq-a">{f.a}</p>}
-                  </button>
+                    <button
+                      type="button"
+                      className="faq-standalone-btn"
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="faq-standalone-q">{f.q}</span>
+                      <span className="faq-standalone-icon" aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="18"
+                          height="18"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`faq-chevron-icon ${isOpen ? 'is-rotated' : ''}`}
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="faq-standalone-panel">
+                        <p className="faq-standalone-a">{f.a}</p>
+                      </div>
+                    )}
+                  </div>
                 )
               })}
             </div>
-          </article>
-
+          </div>
         </section>
+
       </div>
     </main>
   )
 }
+
