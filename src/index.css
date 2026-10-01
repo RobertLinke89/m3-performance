@@ -3122,22 +3122,21 @@ picture.bento-bg img,
 }
 
 .bento-card--m2 .bento-bg-img {
-  object-position: center 15% !important;
+  object-position: center 30% !important;
 }
 
 .bento-card--m3 .bento-bg-img {
   object-position: center 40% !important;
 }
 
-.bento-card--contact .bento-bg-img {
-  object-position: center 60% !important;
-}
-
 .bento-card--michel .bento-bg-img {
   object-position: center 25% !important;
 }
 
-.bento-card--start .bento-bg-img,
+.bento-card--start .bento-bg-img {
+  object-position: center 20% !important;
+}
+
 .bento-card--catalog .bento-bg-img {
   object-position: center 35% !important;
 }
@@ -3411,9 +3410,14 @@ picture.bento-bg img,
   width: 100%;
 }
 
-/* Contact / 1:1 Bento */
+/* Contact / 1:1 Bento (Neutral Clean Card) */
 .bento-card--contact {
-  min-height: 280px;
+  min-height: 260px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  padding: clamp(24px, 3vw, 36px) !important;
 }
 
 .bento-cta-row {

@@ -317,35 +317,21 @@ export function Home() {
             </div>
           </Link>
 
-          {/* 9. 1:1 DIRECT CONSULTATION (Span 6 - Chapter 4B: The Next Step) */}
+          {/* 9. 1:1 DIRECT CONSULTATION (Span 6 - Chapter 4B: Neutral Contact Card) */}
           <article className="bento-card bento-card--contact bento-span-6">
-            <picture className="bento-bg">
-              <source
-                type="image/webp"
-                srcSet="/images/moodboard/mood-pushup.webp 1x, /images/moodboard/mood-pushup@2x.webp 2x"
-              />
-              <source
-                srcSet="/images/moodboard/mood-pushup.jpg 1x, /images/moodboard/mood-pushup.jpg 2x"
-              />
-              <img
-                src="/images/moodboard/mood-pushup.jpg"
-                alt="Michél Meier Performance Coaching"
-                loading="lazy"
-                decoding="async"
-                className="bento-bg-img"
-              />
-            </picture>
-            <div className="bento-overlay" />
             <div className="bento-content">
-              <h2 className="bento-title">
+              <span className="bento-badge" style={{ marginBottom: 4, background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '3px 9px', borderRadius: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>
+                {isEn ? 'DIRECT CONTACT' : 'DIREKTKONTAKT'}
+              </span>
+              <h2 className="bento-title" style={{ fontSize: 'clamp(20px, 2.2cqi, 26px)' }}>
                 {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
               </h2>
-              <p className="bento-desc">
+              <p className="bento-desc" style={{ maxWidth: '52ch', marginTop: 4 }}>
                 {isEn
                   ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation.'
                   : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
               </p>
-              <div className="bento-cta-row">
+              <div className="bento-cta-row" style={{ marginTop: 14 }}>
                 <a
                   href={wa.talk}
                   target="_blank"
