@@ -385,11 +385,33 @@ export function Home() {
             </div>
             <div className="bento-audience-grid">
               {audience.map((a) => (
-                <div className="bento-sub-card" key={a.title}>
-                  <Img className="bento-sub-media" src={a.image} alt={a.title} />
-                  <div className="bento-sub-body">
-                    <h3>{a.title}</h3>
-                    <p>{a.text}</p>
+                <div className="bento-persona-card" key={a.title}>
+                  <div className="bento-persona-head">
+                    <div className="bento-persona-avatar-wrap">
+                      <Img className="bento-persona-avatar" src={a.image} alt={a.persona || a.title} />
+                    </div>
+                    <div className="bento-persona-meta">
+                      <span className="bento-persona-role">{a.persona}</span>
+                      <h3 className="bento-persona-title">{a.title}</h3>
+                    </div>
+                  </div>
+
+                  <div className="bento-persona-body">
+                    <div className="bento-persona-section bento-persona-section--daily">
+                      <div className="bento-persona-badge">
+                        <span className="bento-persona-icon">⚡</span>
+                        <span>{isEn ? 'Daily Reality' : 'Typischer Alltag'}</span>
+                      </div>
+                      <p className="bento-persona-text">{a.dailyLife}</p>
+                    </div>
+
+                    <div className="bento-persona-section bento-persona-section--approach">
+                      <div className="bento-persona-badge bento-persona-badge--gold">
+                        <span className="bento-persona-icon">🎯</span>
+                        <span>{isEn ? 'Michél’s Approach' : 'Michéls Vorgehen'}</span>
+                      </div>
+                      <p className="bento-persona-text">{a.approach}</p>
+                    </div>
                   </div>
                 </div>
               ))}

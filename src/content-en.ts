@@ -768,11 +768,36 @@ export const modules = [
 ] as const
 
 export const audience = [
-  { title: 'Leaders & 60-hour weeks', text: 'Full vitality without the afternoon crash.', image: '/images/aud-exec-face.jpg' },
-  { title: 'Desk pain', text: 'Pain-free again, anatomically stable.', image: '/images/aud-desk-face.jpg' },
-  { title: 'Diet-tired', text: 'A metabolic reset without yo-yo and without bans.', image: '/images/aud-diet-face.jpg' },
-  { title: 'Athletes & ambitious', text: 'Break plateaus and raise capacity.', image: '/images/aud-athlete-face.jpg' },
+  {
+    title: 'Leaders & 60-Hour Weeks',
+    persona: 'Sarah · Managing Director & Founder',
+    dailyLife: '12-hour days, non-stop meetings, coffee as fuel and quick snacks between calls. By 2:30 PM severe brain fog hits, thoughts race at night, and sleep never truly restores.',
+    approach: 'No extra burden on your calendar: Michél assesses blood sugar spikes and cortisol levels, establishes 3 precise nutritional anchors, and introduces micro-circadian habits that restore high daytime drive and restorative deep sleep.',
+    image: '/images/aud-exec-face.jpg',
+  },
+  {
+    title: 'Desk Workers & Chronic Pain',
+    persona: 'Markus · Tech Lead & Software Architect',
+    dailyLife: '8 to 10 hours seated behind screens. A dull, nagging ache in the lower back, constant neck tightness, and frustration because massages and physio only offered 48 hours of relief.',
+    approach: 'Built on Michél’s own recovery from severe cervical disc herniation (C6/C7): We test neuromuscular activation and joint stability. Instead of generic stretching, we fix movement compensations and integrate 5-minute desk resets for lasting pain freedom.',
+    image: '/images/aud-desk-face.jpg',
+  },
+  {
+    title: 'Diet-Tired & Metabolic Stagnation',
+    persona: 'Elena · Executive & Mother',
+    dailyLife: 'Years of low-carb diets, calorie tracking and rigid rules. Despite strict discipline: persistent bloating, late-night cravings, and the feeling that your metabolism has completely stalled.',
+    approach: 'Ending diet dogma and deprivation. Michél targets gut health and cellular ATP energy: We repair the microbiome, stabilize blood sugar and reboot mitochondrial fat oxidation — sustainable, enjoyable, and free of the yo-yo trap.',
+    image: '/images/aud-diet-face.jpg',
+  },
+  {
+    title: 'Athletes & Ambitious Performers',
+    persona: 'David · Hyrox Athlete & Entrepreneur',
+    dailyLife: 'High dedication, 4 to 5 intense workouts per week. Yet personal records plateau, tendons flare up repeatedly, and recovery takes days instead of hours.',
+    approach: 'More grit only causes breakdown when precision is missing. Michél audits biomechanical asymmetries, optimizes cellular micronutrient delivery, and implements a periodized mobility-strength framework that unlocks power without wear.',
+    image: '/images/aud-athlete-face.jpg',
+  },
 ]
+
 
 export const process = [
   { n: '01', title: 'Meet', text: 'An informal conversation about your situation, goals and expectations.' },

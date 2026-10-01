@@ -837,11 +837,36 @@ export const modules = [
 ] as const
 
 export const audience = [
-  { title: 'Führungskräfte & 60h-Woche', text: 'Volle Vitalität ohne Nachmittagstiefs.', image: '/images/aud-exec-face.jpg' },
-  { title: 'Schreibtisch-Schmerzen', text: 'Wieder schmerzfrei und anatomisch stabil.', image: '/images/aud-desk-face.jpg' },
-  { title: 'Diät-Müde', text: 'Stoffwechsel-Reset ohne Jojo-Effekt und ohne Verbote.', image: '/images/aud-diet-face.jpg' },
-  { title: 'Sportler & Ambitionierte', text: 'Plateaus durchbrechen und Belastbarkeit steigern.', image: '/images/aud-athlete-face.jpg' },
+  {
+    title: 'Führungskräfte & 60h-Woche',
+    persona: 'Sarah · Managing Director & Gründerin',
+    dailyLife: '12-Stunden-Tage, ständige Meetings, Kaffee als Treibstoff und Hektik zwischen Calls. Um 14:30 Uhr kommt das bleierne Energietief, nachts kreisen die Gedanken und der Schlaf bleibt oberflächlich.',
+    approach: 'Kein zusätzlicher Stressor im Kalender: Michél analysiert Blutzuckerkurve und Cortisolspiegel, etabliert 3 feste Ernährungskerne und baut mikro-zirkadiane Routinen ein, die ohne Zeitverlust maximale Tagesenergie und tiefen Schlaf wiederherstellen.',
+    image: '/images/aud-exec-face.jpg',
+  },
+  {
+    title: 'Schreibtisch & Chronische Schmerzen',
+    persona: 'Markus · Tech Lead & Architekt',
+    dailyLife: '8 bis 10 Stunden sitzend am Bildschirm. Ein dumpfer, stechender Zug im Lendenwirbelbereich, ständige Nackenblockaden und Frust, weil Physio und Massagen immer nur für 48 Stunden Linderung brachten.',
+    approach: 'Aus Erfahrung mit eigenem Halswirbelvorfall: Michél prüft neuronale Muskelansteuerung und Gelenkketten. Statt planlosem Dehnen stärken wir die anatomische Basis und etablieren gezielte 5-Minuten-Resets direkt am Arbeitsplatz.',
+    image: '/images/aud-desk-face.jpg',
+  },
+  {
+    title: 'Diät-Müde & Stoffwechsel-Blockade',
+    persona: 'Elena · Executive & Mutter',
+    dailyLife: 'Jahrelang Low-Carb, Kalorienzählen und Verzicht ausprobiert. Trotz hoher Disziplin quälen ständiger Blähbauch, Heißhunger am Abend und das Gefühl, dass der Körper selbst bei minimaler Nahrung blockiert.',
+    approach: 'Schluss mit Diätmoral und Verboten. Michél setzt an der Darmgesundheit und Zellenergie (ATP) an: Wir reparieren das Mikrobiom, stabilisieren den Blutzucker und bringen die Mitochondrien wieder in die Fettverbrennung – nachhaltig und ohne Jojo-Effekt.',
+    image: '/images/aud-diet-face.jpg',
+  },
+  {
+    title: 'Ambitionierte & Sportler-Plateau',
+    persona: 'David · Hyrox-Athlet & Unternehmer',
+    dailyLife: 'Hohe Disziplin, 4 bis 5 harte Workouts pro Woche. Doch die Zeiten stagnieren, die Achillessehne zwickt regelmäßig und die Regeneration nach intensiven Einheiten dauert Tage statt Stunden.',
+    approach: 'Mehr Härte zerstört, wo Präzision fehlt. Michél analysiert Bewegungsmuster auf Asymmetrien, optimiert die Mikronährstoffversorgung und baut ein periodisiertes Kraft-Mobilitäts-System, das Leistung freisetzt und Überlastung stoppt.',
+    image: '/images/aud-athlete-face.jpg',
+  },
 ]
+
 
 export const process = [
   { n: '01', title: 'Kennenlernen', text: 'Unverbindliches Gespräch über deine Situation, Ziele und Erwartungen.' },

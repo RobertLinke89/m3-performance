@@ -3474,52 +3474,137 @@ picture.bento-bg img,
 
 .bento-audience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
   width: 100%;
 }
 
-.bento-sub-card {
+.bento-persona-card {
   display: flex;
   flex-direction: column;
   background: color-mix(in srgb, var(--bg) 60%, var(--bg-2) 40%);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: 18px;
+  padding: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.bento-persona-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--gold) 40%, var(--line));
+  background: color-mix(in srgb, var(--bg-2) 80%, var(--bg) 20%);
+}
+
+.bento-persona-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+}
+
+.bento-persona-avatar-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 50%;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  border: 2px solid var(--line);
+  background: var(--bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
 }
 
-.bento-sub-card:hover {
-  transform: none;
-  border-color: color-mix(in srgb, var(--gold) 35%, var(--line));
+.bento-persona-card:hover .bento-persona-avatar-wrap {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 20%, transparent);
 }
 
-.bento-sub-media {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  object-position: 50% 18%;
+.bento-persona-avatar-wrap picture,
+.bento-persona-avatar-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center 22% !important;
+  display: block !important;
 }
 
-.bento-sub-body {
-  padding: 12px;
+.bento-persona-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bento-persona-role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.bento-persona-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.bento-persona-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.bento-persona-section {
+  background: color-mix(in srgb, var(--bg-2) 50%, var(--bg) 50%);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.bento-sub-body h3 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
+.bento-persona-section--approach {
+  border-color: color-mix(in srgb, var(--gold) 25%, var(--line));
+  background: color-mix(in srgb, var(--bg-2) 75%, var(--gold) 8%);
+}
+
+.bento-persona-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--text);
 }
 
-.bento-sub-body p {
+.bento-persona-badge--gold {
+  color: var(--gold);
+}
+
+.bento-persona-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.bento-persona-text {
   margin: 0;
   font-size: 12px;
+  line-height: 1.48;
   color: var(--muted);
-  line-height: 1.35;
+  text-wrap: pretty;
 }
 
 /* Journal / Insights Bento */
