@@ -12,7 +12,23 @@ export function PillarPage() {
   const { lang } = useLocale()
   const isEn = lang === 'en'
   const { contact, modules, pillars, posts, wa } = useContent()
-  const pillar = pillars.find((p) => p.slug === slug)
+
+  const pillarSlugMap: Record<string, string> = {
+    metabolism: 'metabolism',
+    stoffwechsel: 'metabolism',
+    m1: 'metabolism',
+    movement: 'movement',
+    biomechanics: 'movement',
+    biomechanik: 'movement',
+    m2: 'movement',
+    'mental-performance': 'mental-performance',
+    mental: 'mental-performance',
+    mindset: 'mental-performance',
+    m3: 'mental-performance',
+  }
+  const s = (slug || '').toLowerCase()
+  const resolvedSlug = pillarSlugMap[s] || s
+  const pillar = pillars.find((p) => p.slug === resolvedSlug || p.id === resolvedSlug)
   if (!pillar) return <Navigate to="/" replace />
   const related = modules.filter((m) => m.pillar === pillar.id).slice().sort(byTier)
   const relatedPosts = posts.filter((p) => p.pillar === pillar.id)

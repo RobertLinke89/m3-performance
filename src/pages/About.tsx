@@ -71,30 +71,58 @@ export function About() {
             </div>
           </article>
 
-          {/* 2. SUMMARY / BIO CARD (Span 4) */}
-          <article className="bento-card bento-card--audit-step bento-span-4" style={{ justifyContent: 'space-between', minHeight: 'clamp(440px, 50vh, 540px)' }}>
+          {/* 2. SUMMARY / BIO CARD (Span 4) - White background with black text */}
+          <article
+            className="bento-card bento-card--audit-step bento-span-4"
+            style={{
+              justifyContent: 'space-between',
+              minHeight: 'clamp(440px, 50vh, 540px)',
+              background: '#ffffff',
+              color: '#111111',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
+              boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+            }}
+          >
             <div>
-              <span className="bento-audit-badge">{isEn ? 'PROFILE & CODEX' : 'PROFIL & CODEX'}</span>
-              <h2 className="bento-title" style={{ fontSize: 21 }}>
+              <span
+                className="bento-audit-badge"
+                style={{
+                  background: 'rgba(0, 0, 0, 0.07)',
+                  color: '#111111',
+                  borderColor: 'rgba(0, 0, 0, 0.12)',
+                }}
+              >
+                {isEn ? 'PROFILE & CODEX' : 'PROFIL & CODEX'}
+              </span>
+              <h2 className="bento-title" style={{ fontSize: 21, color: '#111111', marginTop: 10 }}>
                 {isEn ? '30+ Years of Movement Practice' : '30+ Jahre Bewegungserfahrung'}
               </h2>
-              <p className="bento-desc" style={{ marginTop: 8, fontSize: 13, lineHeight: 1.5 }}>
+              <p className="bento-desc" style={{ marginTop: 8, fontSize: 13, lineHeight: 1.5, color: '#333333' }}>
                 {about.bio}
               </p>
             </div>
 
             <ul className="bento-audit-points" style={{ marginTop: 14 }}>
-              <li>{isEn ? 'Breakdance World Champion (Battle of the Year)' : 'Breakdance Weltmeister (Battle of the Year)'}</li>
-              <li>{isEn ? 'C6/C7 cervical disc herniation recovery' : 'C6/C7 Bandscheibenvorfall erfolgreich überwunden'}</li>
-              <li>{isEn ? 'Solo fatherhood & high-performance balance' : 'Alleinerziehender Vater im High-Performance-Alltag'}</li>
+              <li style={{ color: '#222222' }}>
+                <span style={{ color: '#111111', marginRight: 6 }}>✔</span>
+                {isEn ? 'Breakdance World Champion (Battle of the Year)' : 'Breakdance Weltmeister (Battle of the Year)'}
+              </li>
+              <li style={{ color: '#222222' }}>
+                <span style={{ color: '#111111', marginRight: 6 }}>✔</span>
+                {isEn ? 'C6/C7 cervical disc herniation recovery' : 'C6/C7 Bandscheibenvorfall erfolgreich überwunden'}
+              </li>
+              <li style={{ color: '#222222' }}>
+                <span style={{ color: '#111111', marginRight: 6 }}>✔</span>
+                {isEn ? 'Solo fatherhood & high-performance balance' : 'Alleinerziehender Vater im High-Performance-Alltag'}
+              </li>
             </ul>
 
-            <div style={{ fontSize: 12, fontWeight: 700, color: '#ffffff', opacity: 0.85 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: '#111111', opacity: 0.9 }}>
               {isEn ? '→ No dogmas. Real life proof.' : '→ Keine Dogmen. Reine Praxis.'}
             </div>
           </article>
 
-          {/* 3. LIFE TIMELINE BENTO (Span 12) */}
+          {/* 3. LIFE TIMELINE BENTO (Span 12) - Horizontal timeline layout */}
           <article className="bento-card bento-card--journal bento-span-12" style={{ padding: 'clamp(22px, 3vw, 36px)' }}>
             <div className="bento-card-header" style={{ marginBottom: 20 }}>
               <div>
@@ -109,17 +137,39 @@ export function About() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14, width: '100%' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 16,
+                width: '100%',
+                overflowX: 'auto',
+                paddingBottom: 14,
+                scrollbarWidth: 'thin',
+                scrollSnapType: 'x mandatory',
+                WebkitOverflowScrolling: 'touch',
+              }}
+            >
               {about.stations.map((s) => (
                 <div
                   key={s.years}
                   className="bento-compass-card"
-                  style={{ minHeight: 180, cursor: 'default', pointerEvents: 'none', justifyContent: 'flex-start' }}
+                  style={{
+                    flex: '0 0 clamp(260px, 24vw, 320px)',
+                    minHeight: 200,
+                    cursor: 'default',
+                    pointerEvents: 'none',
+                    justifyContent: 'flex-start',
+                    scrollSnapAlign: 'start',
+                  }}
                 >
-                  <span style={{ fontSize: 11, fontWeight: 800, color: '#ffffff', opacity: 0.6, letterSpacing: '0.08em' }}>
-                    {s.years}
-                  </span>
-                  <h3 style={{ margin: '8px 0 6px', fontSize: 16, fontWeight: 700, color: '#ffffff' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                    <span style={{ fontSize: 11, fontWeight: 800, color: '#e8a14a', letterSpacing: '0.08em' }}>
+                      {s.years}
+                    </span>
+                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#e8a14a', opacity: 0.7 }} />
+                  </div>
+                  <h3 style={{ margin: '4px 0 8px', fontSize: 16, fontWeight: 700, color: '#ffffff' }}>
                     {s.title}
                   </h3>
                   <p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.75)', lineHeight: 1.45 }}>
@@ -130,7 +180,7 @@ export function About() {
             </div>
           </article>
 
-          {/* 4. CORE VALUES GRID (Span 12) */}
+          {/* 4. CORE VALUES GRID (Span 12) - Highlight color background */}
           <article className="bento-card bento-card--journal bento-span-12" style={{ padding: 'clamp(22px, 3vw, 36px)' }}>
             <div className="bento-card-header" style={{ marginBottom: 20 }}>
               <div>
@@ -150,15 +200,36 @@ export function About() {
                 <div
                   key={v.title}
                   className="bento-compass-card"
-                  style={{ minHeight: 160, cursor: 'default', pointerEvents: 'none', justifyContent: 'flex-start' }}
+                  style={{
+                    minHeight: 160,
+                    cursor: 'default',
+                    pointerEvents: 'none',
+                    justifyContent: 'flex-start',
+                    background: 'linear-gradient(145deg, rgba(232, 161, 74, 0.16) 0%, rgba(232, 161, 74, 0.06) 100%)',
+                    borderColor: 'rgba(232, 161, 74, 0.35)',
+                    boxShadow: '0 4px 20px rgba(232, 161, 74, 0.08)',
+                  }}
                 >
-                  <div style={{ marginBottom: 8, color: '#ffffff' }}>
+                  <div
+                    style={{
+                      marginBottom: 10,
+                      width: 38,
+                      height: 38,
+                      borderRadius: 10,
+                      background: 'rgba(232, 161, 74, 0.22)',
+                      border: '1px solid rgba(232, 161, 74, 0.45)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#e8a14a',
+                    }}
+                  >
                     <ValueIcon name={v.icon} />
                   </div>
                   <h3 style={{ margin: '0 0 6px', fontSize: 16, fontWeight: 700, color: '#ffffff' }}>
                     {v.title}
                   </h3>
-                  <p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.72)', lineHeight: 1.45 }}>
+                  <p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.45 }}>
                     {v.text}
                   </p>
                 </div>
@@ -166,18 +237,18 @@ export function About() {
             </div>
           </article>
 
-          {/* 5. MASTER BOTTOM CTA BENTO (Span 12) */}
+          {/* 5. MASTER BOTTOM CTA BENTO (Span 12) - High Res Pushup Asset */}
           <article className="bento-card bento-card--start bento-span-12">
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-elevate.webp 1x, /images/moodboard/mood-elevate@2x.webp 2x"
+                srcSet="/images/moodboard/mood-pushup.webp 1x, /images/moodboard/mood-pushup@2x.webp 2x"
               />
               <source
-                srcSet="/images/moodboard/mood-elevate.jpg 1x, /images/moodboard/mood-elevate.jpg 2x"
+                srcSet="/images/moodboard/mood-pushup.jpg 1x, /images/moodboard/mood-pushup.jpg 2x"
               />
               <img
-                src="/images/moodboard/mood-elevate.jpg"
+                src="/images/moodboard/mood-pushup.jpg"
                 alt="M3 Performance System Start"
                 loading="lazy"
                 decoding="async"
