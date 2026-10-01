@@ -114,22 +114,9 @@ export function Home() {
             style={{ '--pillar-color': '#e8a14a' } as CSSProperties}
             aria-label="Pillar M1 Metabolism"
           >
-            <picture className="bento-bg">
-              <source
-                type="image/webp"
-                srcSet="/images/moodboard/mood-kitchen.webp 1x, /images/moodboard/mood-kitchen@2x.webp 2x"
-              />
-              <source
-                srcSet="/images/moodboard/mood-kitchen.jpg 1x, /images/moodboard/mood-kitchen.jpg 2x"
-              />
-              <img
-                src="/images/moodboard/mood-kitchen.jpg"
-                alt="M1 Metabolism Ernährung & Zellenergie"
-                loading="lazy"
-                decoding="async"
-                className="bento-bg-img"
-              />
-            </picture>
+            <div className="bento-molecule-visual" style={{ position: 'absolute', inset: 0, opacity: 0.9, pointerEvents: 'none' }}>
+              <SystemMolecule />
+            </div>
             <div className="bento-overlay" />
             <div className="bento-content">
               <h2 className="bento-title">

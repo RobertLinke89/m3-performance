@@ -3369,6 +3369,27 @@ picture.bento-bg img,
   background: radial-gradient(circle at center, rgba(251, 191, 36, 0.1) 0%, transparent 68%);
 }
 
+.bento-card--m1 .bento-molecule-visual {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  background: radial-gradient(circle at center 35%, rgba(232, 161, 74, 0.18) 0%, rgba(0, 0, 0, 0.4) 80%) !important;
+  pointer-events: none;
+}
+
+.bento-card--m1 .bento-molecule-visual .system-molecule {
+  max-width: 280px;
+  max-height: 220px;
+  transform: translateY(-24px);
+}
+
 .bento-molecule-visual .system-molecule {
   width: 100%;
   max-width: 380px;
