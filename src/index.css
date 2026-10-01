@@ -3114,14 +3114,14 @@ picture {
    ========================================================================== */
 
 .bento-page {
-  padding-top: calc(var(--nav-height) + 12px);
-  padding-bottom: 48px;
+  padding-top: calc(var(--nav-height) + 14px);
+  padding-bottom: 56px;
 }
 
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -3156,7 +3156,7 @@ picture {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: #090a0d;
-  min-height: clamp(240px, 28vh, 340px);
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -3174,27 +3174,35 @@ picture {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Hero & System Start top row height */
+/* Hero & System Start top row height - Symmetrical 100dvh fit */
 .bento-card--hero,
 .bento-card--start {
-  min-height: clamp(270px, 42vh, 420px);
+  height: calc((100dvh - var(--nav-height) - 44px) * 0.565);
+  min-height: 290px;
 }
 
-/* 3-Pillar Cards Height */
+/* 3-Pillar Cards Height - Symmetrical 100dvh fit */
 .bento-card--pillar {
-  min-height: clamp(200px, 30.5vh, 300px);
+  height: calc((100dvh - var(--nav-height) - 44px) * 0.435);
+  min-height: 220px;
+}
+
+/* Next row (cards 6 & 7) starts cleanly below the initial viewport */
+.bento-card--molecule,
+.bento-card--michel {
+  margin-top: 14px;
 }
 
 /* Story / Michél & Catalog Cards */
 .bento-card--michel,
 .bento-card--catalog {
-  min-height: clamp(260px, 34vh, 360px);
+  min-height: clamp(340px, 40vh, 440px);
 }
 
 /* Molecule & Contact Cards */
 .bento-card--molecule,
 .bento-card--contact {
-  min-height: clamp(260px, 34vh, 360px);
+  min-height: clamp(340px, 40vh, 440px);
 }
 
 /* Background Image - Clean, 100% Full Bleed, Pure B&W Monochrome */
@@ -4419,9 +4427,21 @@ picture.bento-bg img,
   }
   .bento-card--hero {
     grid-column: span 12;
+    height: auto;
+    min-height: 360px;
   }
   .bento-card--start {
     grid-column: span 12;
+    height: auto;
+    min-height: 280px;
+  }
+  .bento-card--pillar {
+    height: auto;
+    min-height: 260px;
+  }
+  .bento-card--molecule,
+  .bento-card--michel {
+    margin-top: 0;
   }
 }
 
