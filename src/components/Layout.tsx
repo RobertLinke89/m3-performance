@@ -5,6 +5,7 @@ import { useUi } from '../copy'
 import { useLocale } from '../locale'
 import { useContent } from '../useContent'
 import { ThemeSwitch } from './ThemeSwitch'
+import { PaymentLogos } from './PaymentLogos'
 
 function scrollToPageStart() {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
@@ -144,6 +145,9 @@ export function Layout() {
             <p><Link to="/impressum" onClick={scrollToPageStart}>{t.imprint}</Link></p>
             <p><Link to="/datenschutz" onClick={scrollToPageStart}>{t.privacy}</Link></p>
           </div>
+        </div>
+        <div className="wrap footer-payment-container">
+          <PaymentLogos />
         </div>
         <div className="wrap footer-bar">
           <span>{t.footerCopy}</span>

@@ -1477,13 +1477,129 @@ picture {
   color: var(--text);
 }
 
+.footer-payment-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-payment-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  max-width: 540px;
+  gap: 8px;
+}
+
+.footer-payment-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.footer-payment-kicker {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.footer-payment-stripe-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer-payment-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.pay-badge {
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.pay-badge--white {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.pay-badge--amex {
+  background: #006fcf !important;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0 4px;
+}
+
+.pay-badge--klarna {
+  background: #ffb3c7 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 4px;
+}
+
+.pay-badge--sepa {
+  background: #002d72 !important;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0 4px;
+}
+
+.footer-payment-sub {
+  margin: 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--muted);
+  opacity: 0.85;
+  text-align: right;
+  max-width: 48ch;
+}
+
+@media (max-width: 768px) {
+  .footer-payment-container {
+    justify-content: flex-start;
+  }
+  .footer-payment-wrap {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+  .footer-payment-header {
+    align-items: flex-start;
+  }
+  .footer-payment-stripe-logo {
+    justify-content: flex-start;
+  }
+  .footer-payment-badges {
+    justify-content: flex-start;
+  }
+  .footer-payment-sub {
+    text-align: left;
+  }
+}
+
 .footer-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .footer-legal {
