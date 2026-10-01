@@ -3121,6 +3121,27 @@ picture.bento-bg img,
   transition: none !important;
 }
 
+.bento-card--m2 .bento-bg-img {
+  object-position: center 15% !important;
+}
+
+.bento-card--m3 .bento-bg-img {
+  object-position: center 40% !important;
+}
+
+.bento-card--contact .bento-bg-img {
+  object-position: center 60% !important;
+}
+
+.bento-card--michel .bento-bg-img {
+  object-position: center 25% !important;
+}
+
+.bento-card--start .bento-bg-img,
+.bento-card--catalog .bento-bg-img {
+  object-position: center 35% !important;
+}
+
 .bento-card:hover .bento-bg-img,
 .bento-card:hover picture.bento-bg img {
   transform: none !important;
