@@ -142,12 +142,11 @@ export function Layout() {
             <p><Link to="/kontakt" onClick={scrollToPageStart}>{t.footerWaTalk}</Link></p>
             <p><Link to="/katalog" onClick={scrollToPageStart}>{t.footerWaCat}</Link></p>
             <p><Link to="/ueber-mich" onClick={scrollToPageStart}>{t.footerAboutMichel}</Link></p>
-            <p><Link to="/impressum" onClick={scrollToPageStart}>{t.imprint}</Link></p>
-            <p><Link to="/datenschutz" onClick={scrollToPageStart}>{t.privacy}</Link></p>
           </div>
-        </div>
-        <div className="wrap footer-payment-container">
-          <PaymentLogos />
+
+          <div className="footer-payment-section">
+            <PaymentLogos />
+          </div>
         </div>
         <div className="wrap footer-bar">
           <span>{t.footerCopy}</span>
