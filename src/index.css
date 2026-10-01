@@ -3602,55 +3602,86 @@ picture.bento-bg img,
   letter-spacing: -0.01em;
 }
 
-.bento-persona-body {
+/* Bento Persona Chat Dialogues */
+.bento-persona-chat {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   flex: 1;
   justify-content: space-between;
+  background: color-mix(in srgb, var(--bg-2) 60%, var(--bg) 40%);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
 }
 
-.bento-persona-section {
-  background: color-mix(in srgb, var(--bg-2) 50%, var(--bg) 50%);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 10px 12px;
+.bento-chat-msg {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 100%;
 }
 
-.bento-persona-section--approach {
-  border-color: color-mix(in srgb, var(--gold) 25%, var(--line));
-  background: color-mix(in srgb, var(--bg-2) 75%, var(--gold) 8%);
+.bento-chat-msg--client {
+  align-items: flex-start;
 }
 
-.bento-persona-badge {
-  display: inline-flex;
+.bento-chat-msg--michel {
+  align-items: flex-end;
+}
+
+.bento-chat-header {
+  display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-size: 10.5px;
+  padding: 0 4px;
+}
+
+.bento-chat-header .bento-chat-author {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.bento-chat-header--michel .bento-chat-author {
+  color: var(--gold-2, #d97706);
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text);
 }
 
-.bento-persona-badge--gold {
-  color: var(--gold);
+[data-theme='night'] .bento-chat-header--michel .bento-chat-author {
+  color: var(--gold, #f59e0b);
 }
 
-.bento-persona-icon {
-  font-size: 12px;
-  line-height: 1;
+.bento-chat-time {
+  font-size: 9.5px;
+  color: var(--muted);
+  opacity: 0.7;
 }
 
-.bento-persona-text {
-  margin: 0;
+.bento-chat-bubble {
+  max-width: 95%;
+  padding: 10px 12px;
   font-size: 12px;
   line-height: 1.48;
-  color: var(--muted);
-  text-wrap: pretty;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.bento-chat-bubble p {
+  margin: 0;
+}
+
+.bento-chat-bubble--client {
+  background: color-mix(in srgb, var(--bg-2) 90%, var(--text) 10%);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px 14px 14px 3px;
+}
+
+.bento-chat-bubble--michel {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--gold) 18%, var(--bg-2) 82%) 0%, color-mix(in srgb, var(--gold) 10%, var(--bg-2) 90%) 100%);
+  color: var(--text);
+  border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--line));
+  border-radius: 14px 14px 3px 14px;
 }
 
 /* ==========================================================================

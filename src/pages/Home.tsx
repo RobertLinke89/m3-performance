@@ -364,21 +364,27 @@ export function Home() {
                     </div>
                   </div>
 
-                  <div className="bento-persona-body">
-                    <div className="bento-persona-section bento-persona-section--daily">
-                      <div className="bento-persona-badge">
-                        <span className="bento-persona-icon">⚡</span>
-                        <span>{isEn ? 'Daily Reality' : 'Typischer Alltag'}</span>
+                  <div className="bento-persona-chat">
+                    {/* Chat Msg 1: Client / Persona */}
+                    <div className="bento-chat-msg bento-chat-msg--client">
+                      <div className="bento-chat-header">
+                        <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
+                        <span className="bento-chat-time">08:42</span>
                       </div>
-                      <p className="bento-persona-text">{a.dailyLife}</p>
+                      <div className="bento-chat-bubble bento-chat-bubble--client">
+                        <p>{a.dailyLife}</p>
+                      </div>
                     </div>
 
-                    <div className="bento-persona-section bento-persona-section--approach">
-                      <div className="bento-persona-badge bento-persona-badge--gold">
-                        <span className="bento-persona-icon">🎯</span>
-                        <span>{isEn ? 'Michél’s Approach' : 'Michéls Vorgehen'}</span>
+                    {/* Chat Msg 2: Michél's Response & Solution */}
+                    <div className="bento-chat-msg bento-chat-msg--michel">
+                      <div className="bento-chat-header bento-chat-header--michel">
+                        <span className="bento-chat-author">Michél · M³</span>
+                        <span className="bento-chat-time">08:45</span>
                       </div>
-                      <p className="bento-persona-text">{a.approach}</p>
+                      <div className="bento-chat-bubble bento-chat-bubble--michel">
+                        <p>{a.approach}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
