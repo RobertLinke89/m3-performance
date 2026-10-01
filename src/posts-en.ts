@@ -246,4 +246,32 @@ export const posts = [
       },
     ],
   },
+  {
+    slug: 'mitochondrien-und-zellenergie',
+    pillar: 'm1',
+    date: '2026-09-24',
+    minutes: 6,
+    title: 'Mitochondria & Cellular Energy: Why Your Body Stalls Without ATP',
+    excerpt:
+      'ATP is the only currency your cells understand. How micronutrients, oxygen, and insulin sensitivity dictate cellular powerhouse output.',
+    image: '/images/blog-zellenergie.jpg',
+    sections: [
+      {
+        p: 'Fatigue is rarely a lack of caffeine. At the cellular level, it is almost always a bottleneck in ATP synthesis: the mitochondria, the biological powerhouses of your cells. When they falter, the body compensates with stress hormones.',
+      },
+      {
+        h: 'ATP: The Biological Currency',
+        p: 'Every muscle contraction, conscious thought, and immune response costs Adenosine Triphosphate (ATP). To extract it from nutrients and oxygen, mitochondrial enzyme complexes require essential cofactors: magnesium, CoQ10, B-vitamins, iron, and an intact membrane potential.',
+      },
+      {
+        h: 'Why Crash Diets Starve Your Powerhouses',
+        p: 'Chronic nutrient deficits and inflammatory stress degrade mitochondrial density (mitophagy without biogenesis). The body switches into metabolic emergency mode: fat oxidation stalls, lactate spikes prematurely, and recovery collapses.',
+      },
+      {
+        h: 'The M¹ Lever for True Vitality',
+        p: 'In Pillar M¹, we resolve this cellular bottleneck: optimizing mitochondrial nutrient density, stabilizing blood sugar for steady substrate delivery, and using targeted thermal and mobility stimuli for mitochondrial biogenesis. The result is deep, calm, lasting vitality without jittery highs.',
+      },
+    ],
+  },
 ] as const
+

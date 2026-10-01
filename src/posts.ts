@@ -246,4 +246,32 @@ export const posts = [
       },
     ],
   },
+  {
+    slug: 'mitochondrien-und-zellenergie',
+    pillar: 'm1',
+    date: '2026-09-24',
+    minutes: 6,
+    title: 'Mitochondrien & Zellenergie: Warum der Körper ohne ATP auf Notstrom läuft',
+    excerpt:
+      'ATP ist die einzige Währung, die deine Zellen verstehen. Wie Mikronährstoffe, Sauerstoff und Insulinsensitivität die zelluläre Kraftwerk-Leistung bestimmen.',
+    image: '/images/blog-zellenergie.jpg',
+    sections: [
+      {
+        p: 'Müdigkeit ist kein Mangel an Koffein. Auf zellulärer Ebene ist sie fast immer ein Engpass in der ATP-Synthese: den Mitochondrien, den biologischen Kraftwerken deiner Zellen. Wenn sie nicht zünden, kompensiert der Körper mit Stresshormonen.',
+      },
+      {
+        h: 'ATP: Der biologische Treibstoff',
+        p: 'Jeder Muskelzug, jeder Gedanke und jede Immunreaktion kostet Adenosintriphosphat (ATP). Um es aus Nahrung und Sauerstoff zu gewinnen, braucht der mitochondriale Enzymkomplex essenzielle Kofaktoren: Magnesium, Coenzym Q10, B-Vitamine, Eisen und ein intaktes Membranpotenzial.',
+      },
+      {
+        h: 'Warum Crash-Diäten die Kraftwerke drosseln',
+        p: 'Chronischer Nährstoffmangel und entzündlicher Dauerstress drosseln die mitochondriale Dichte (Mitophagie ohne Biogenese). Der Körper schaltet auf metabolischen Notstrom: Fettverbrennung blockiert, Laktat steigt schneller an, die Regeneration kollabiert.',
+      },
+      {
+        h: 'Der M¹ Hebel für echte Vitalität',
+        p: 'In Säule M¹ reparieren wir diesen zellulären Engpass: Optimierung der mitochondrialen Nährstoffdichte, Stabilisierung des Blutzuckers für konstante Substratzufuhr und gezielte Kälte-/Bewegungsreize zur Neubildung von Mitochondrien. Das Ergebnis ist keine künstliche Überdrehtheit, sondern tiefe, ruhige Leistungsfähigkeit.',
+      },
+    ],
+  },
 ] as const
+

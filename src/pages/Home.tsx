@@ -13,11 +13,6 @@ export function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   const { audience, contact, faqs, pillars, posts, wa } = useContent()
 
-  // Get featured posts for the journal bento card
-  const featuredPosts = pillars
-    .map((p) => posts.filter((post) => post.pillar === p.id).at(-1))
-    .filter((post): post is (typeof posts)[number] => Boolean(post))
-
   return (
     <main className="bento-page">
       <div className="wrap">
@@ -418,49 +413,9 @@ export function Home() {
             </div>
           </article>
 
-          {/* 11. JOURNAL & INSIGHTS BENTO CARD (Span 12) */}
-          <article className="bento-card bento-card--journal bento-span-12">
-            <div className="bento-card-header">
-              <div>
-                <h2 className="bento-title">{t.blogH}</h2>
-                <p className="bento-desc" style={{ maxWidth: '60ch' }}>
-                  {isEn
-                    ? 'Science-backed insights on metabolic optimization, biomechanics, and decision clarity.'
-                    : 'Wissenschaftlich fundierte Einblicke in Stoffwechsel, Biomechanik und neuronale Klarheit.'}
-                </p>
-              </div>
-              <Link to="/blog" className="bento-header-link">
-                {t.blogAll} →
-              </Link>
-            </div>
-            <div className="bento-journal-grid">
-              {featuredPosts.map((post) => {
-                const pillar = pillars.find((p) => p.id === post.pillar)
-                return (
-                  <Link
-                    key={post.slug}
-                    to={`/blog/${post.slug}`}
-                    className="bento-journal-card"
-                  >
-                    <Img className="bento-journal-card-thumb" src={post.image} alt="" />
-                    <div className="bento-journal-card-body">
-                      {pillar && (
-                        <span className="bento-micro-tag" style={{ color: pillar.color }}>
-                          {pillar.mark} · {pillar.name}
-                        </span>
-                      )}
-                      <h4>{post.title}</h4>
-                      <p>{post.excerpt}</p>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </article>
-
         </section>
 
-        {/* 12. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
+        {/* 11. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
         <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading">
           <div className="faq-standalone-container">
             <header className="faq-standalone-header">
@@ -516,8 +471,81 @@ export function Home() {
           </div>
         </section>
 
+        {/* 12. STANDALONE JOURNAL SECTION (10 Science & Practice Articles Below FAQ) */}
+        <section className="journal-standalone-section" id="journal" aria-labelledby="journal-main-heading">
+          <div className="journal-standalone-header">
+            <span className="journal-standalone-kicker">
+              {isEn ? 'M³ System Journal & Science' : 'M³ Journal & Wissenschaft'}
+            </span>
+            <h2 id="journal-main-heading" className="journal-standalone-title">
+              {isEn ? (
+                <>If you want to understand <span className="journal-title-accent">how your body truly performs.</span></>
+              ) : (
+                <>Wenn du verstehen willst, <span className="journal-title-accent">wie dein Körper wirklich funktioniert.</span></>
+              )}
+            </h2>
+            <p className="journal-standalone-lead">
+              {isEn
+                ? 'Not theoretical fluff. 10 fundamental articles from real practice — why blood sugar crashes, why load without track causes wear, and how routines hold without hype.'
+                : 'Nicht Theorie für die Schublade. 10 fundamentale Texte aus der Praxis – warum der Blutzucker abstürzt, warum Last ohne saubere Bahn verschleißt und wie Routinen ohne Motivations-Hype halten.'}
+            </p>
+
+            <div className="journal-header-actions">
+              <Link to="/blog" className="journal-header-link">
+                {isEn ? 'View all 10 articles →' : 'Alle 10 Texte ansehen →'}
+              </Link>
+            </div>
+          </div>
+
+          <div className="journal-cards-container">
+            <div className="journal-cards-track">
+              {posts.map((post) => {
+                const pillar = pillars.find((p) => p.id === post.pillar)
+                return (
+                  <Link
+                    key={post.slug}
+                    to={`/blog/${post.slug}`}
+                    className="journal-feed-card"
+                  >
+                    <div className="journal-feed-media">
+                      <Img className="journal-feed-img" src={post.image} alt={post.title} />
+                      {pillar && (
+                        <span
+                          className="journal-feed-badge"
+                          style={{
+                            borderColor: colorMixPillar(pillar.color),
+                            color: pillar.color,
+                          }}
+                        >
+                          {pillar.mark} · {pillar.name}
+                        </span>
+                      )}
+                    </div>
+                    <div className="journal-feed-body">
+                      <h3 className="journal-feed-title">{post.title}</h3>
+                      <p className="journal-feed-excerpt">{post.excerpt}</p>
+                      <div className="journal-feed-footer">
+                        <span className="journal-feed-cta">
+                          {isEn ? 'Read article' : 'Lesen'}
+                          <span className="journal-feed-arrow" aria-hidden="true">→</span>
+                        </span>
+                        <span className="journal-feed-min">{post.minutes} Min.</span>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
       </div>
     </main>
   )
 }
+
+function colorMixPillar(color: string) {
+  return `color-mix(in srgb, ${color} 45%, var(--line))`
+}
+
 
