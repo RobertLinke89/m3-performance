@@ -4026,28 +4026,45 @@ picture.bento-bg img,
 
 
 /* ==========================================================================
-   SYSTEM START BENTO EXPANSIONS (STRICT MONOCHROME BLACK & WHITE)
+   BENTO AUDIT / INFO CARDS (CRISP WHITE WITH PROMINENT HIGHLIGHT DROP SHADOW)
    ========================================================================== */
 
 .bento-card--audit-step {
-  background: #0d0e12;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #111111 !important;
   min-height: auto;
-  padding: clamp(20px, 2.5cqi, 28px);
+  padding: clamp(22px, 2.8cqi, 32px) !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.bento-card--audit-step .bento-title {
-  color: #ffffff;
-  text-shadow: none;
+.bento-card--audit-step:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45), 0 8px 20px rgba(0, 0, 0, 0.18) !important;
 }
 
-.bento-card--audit-step .bento-desc {
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: none;
+.bento-card--audit-step .bento-title,
+.bento-card--audit-step h2,
+.bento-card--audit-step h3,
+.bento-card--audit-step h4 {
+  color: #111111 !important;
+  text-shadow: none !important;
 }
 
-.bento-audit-badge {
+.bento-card--audit-step .bento-desc,
+.bento-card--audit-step .bento-lead,
+.bento-card--audit-step p {
+  color: #333333 !important;
+  text-shadow: none !important;
+}
+
+.bento-card--audit-step div[style*="borderBottom"] {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.bento-audit-badge,
+.bento-card--audit-step .bento-audit-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -4055,13 +4072,18 @@ picture.bento-bg img,
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
-  opacity: 0.8;
-  margin-bottom: 6px;
+  color: #111111 !important;
+  background: rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 6px;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+  opacity: 1 !important;
 }
 
-.bento-audit-points {
-  margin: 12px 0 0;
+.bento-audit-points,
+.bento-card--audit-step .bento-audit-points {
+  margin: 14px 0 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -4069,20 +4091,27 @@ picture.bento-bg img,
   gap: 8px;
 }
 
-.bento-audit-points li {
+.bento-audit-points li,
+.bento-card--audit-step .bento-audit-points li {
   font-size: 13px;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.45;
+  color: #222222 !important;
   display: flex;
   align-items: flex-start;
   gap: 8px;
 }
 
-.bento-audit-points li::before {
+.bento-audit-points li::before,
+.bento-card--audit-step .bento-audit-points li::before {
   content: '✓';
-  color: #ffffff;
+  color: #111111 !important;
   font-weight: 900;
   flex-shrink: 0;
+}
+
+.bento-card--audit-step div[style*="color: #ffffff"],
+.bento-card--audit-step div[style*="color:#ffffff"] {
+  color: #111111 !important;
 }
 
 /* Compass Interactive Items */
