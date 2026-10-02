@@ -3178,20 +3178,14 @@ picture {
   min-height: 220px;
 }
 
-/* Next row (cards 6 & 7) starts cleanly below the initial viewport */
-.bento-card--molecule,
+/* Next row (Michél Codex card) starts cleanly below the initial viewport */
 .bento-card--michel {
   margin-top: 14px;
-}
-
-/* Story / Michél & Catalog Cards */
-.bento-card--michel,
-.bento-card--catalog {
   min-height: clamp(340px, 40vh, 440px);
 }
 
-/* Molecule & Contact Cards */
-.bento-card--molecule,
+/* Catalog & Contact Cards */
+.bento-card--catalog,
 .bento-card--contact {
   min-height: clamp(340px, 40vh, 440px);
 }

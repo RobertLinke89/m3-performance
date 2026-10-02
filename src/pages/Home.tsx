@@ -211,27 +211,10 @@ export function Home() {
             </div>
           </Link>
 
-          {/* 6. INTERACTIVE SYSTEM MOLECULE (Span 5 - Chapter 3A: The Synergy Law) */}
-          <article className="bento-card bento-card--molecule bento-span-5">
-            <div className="bento-molecule-visual">
-              <SystemMolecule />
-            </div>
-            <div className="bento-molecule-content">
-              <h2 className="bento-title">
-                {isEn ? 'The M³ Synergy: Why isolated fixes fail.' : 'Die M³ Synergie: Warum Einzellösungen scheitern.'}
-              </h2>
-              <p className="bento-desc">
-                {isEn
-                  ? 'Training without metabolic foundation exhausts you. Diet without mindset never sticks. True performance requires all three in synergy.'
-                  : 'Training ohne Stoffwechsel verbrennt dich. Ernährung ohne mentale Klarheit hält nicht. Nur das vernetzte Zusammenspiel aller 3 Säulen erzeugt dauerhafte Höchstleistung.'}
-              </p>
-            </div>
-          </article>
-
-          {/* 7. AUTHENTICITY & WORLD CHAMPION CODEX (Span 7 - Chapter 3B: The Origin) */}
+          {/* 6. AUTHENTICITY & WORLD CHAMPION CODEX (Span 12 - Chapter 3: The Origin & Philosophy) */}
           <Link
             to="/ueber-mich"
-            className="bento-card bento-card--michel bento-span-7"
+            className="bento-card bento-card--michel bento-span-12"
             aria-label={t.moreAbout}
           >
             <picture className="bento-bg">
@@ -251,16 +234,16 @@ export function Home() {
               />
             </picture>
             <div className="bento-overlay" />
-            <div className="bento-content">
-              <h2 className="bento-title">
+            <div className="bento-content" style={{ maxWidth: 640 }}>
+              <h2 className="bento-title" style={{ fontSize: 'clamp(20px, 2.4cqi, 28px)' }}>
                 {isEn ? 'World Champion Codex & 30 Years of Movement' : 'Weltmeister-Codex & 30 Jahre Bewegungspraxis'}
               </h2>
-              <p className="bento-desc">
+              <p className="bento-desc" style={{ maxWidth: '58ch', marginTop: 6 }}>
                 {isEn
                   ? 'From top-tier world dance stages through disc herniation to everyday solo fatherhood: No dogma. No hype. A system built on real resilience.'
                   : 'Vom Weltmeistertitel über Bandscheibenvorfall bis Alleinerzieher-Alltag: Kein Dogma. Keine leeren Versprechungen. Ein System aus der Praxis für die Praxis.'}
               </p>
-              <div className="bento-arrow-btn">
+              <div className="bento-arrow-btn" style={{ marginTop: 10 }}>
                 <span>{isEn ? 'Read Michél’s Codex →' : 'Michéls Story & Codex →'}</span>
               </div>
             </div>
