@@ -4336,8 +4336,26 @@ picture.bento-bg img,
 }
 
 .bento-card--audit-step div[style*="color: #ffffff"],
-.bento-card--audit-step div[style*="color:#ffffff"] {
+.bento-card--audit-step div[style*="color:#ffffff"],
+.bento-card--audit-step strong,
+.bento-card--audit-step span[style*="color: rgba(255"],
+.bento-card--audit-step span[style*="color:#ffffff"],
+.bento-card--audit-step a {
   color: #111111 !important;
+}
+
+.bento-card--audit-step strong {
+  color: #111111 !important;
+  font-weight: 700;
+}
+
+.bento-card--audit-step p,
+.bento-card--audit-step span {
+  color: #333333;
+}
+
+.bento-card--audit-step a:hover {
+  background: rgba(0, 0, 0, 0.06) !important;
 }
 
 /* Compass Interactive Items */

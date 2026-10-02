@@ -169,10 +169,10 @@ export function ModulePage() {
                 <h2 className="bento-title" style={{ fontSize: 20 }}>
                   {t.partOf} {pillar.mark} · {pillar.name}
                 </h2>
-                <p style={{ margin: '12px 0 0', fontSize: 13.5, color: 'rgba(255,255,255,0.75)', lineHeight: 1.5 }}>
+                <p style={{ margin: '12px 0 0', fontSize: 13.5, color: '#333333', lineHeight: 1.5 }}>
                   {pillar.lead}
                 </p>
-                <div style={{ marginTop: 14, fontStyle: 'italic', fontSize: 13, color: '#ffffff' }}>
+                <div style={{ marginTop: 14, fontStyle: 'italic', fontSize: 13, color: '#111111' }}>
                   „{pillar.quote}“
                 </div>
               </div>

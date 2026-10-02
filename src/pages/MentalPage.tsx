@@ -221,11 +221,11 @@ export function MentalPage() {
               <h2 className="bento-title" style={{ fontSize: 20 }}>
                 {pillar.experience.title}
               </h2>
-              <p style={{ margin: '14px 0 0', fontSize: 13.5, color: 'rgba(255,255,255,0.78)', lineHeight: 1.55 }}>
+              <p style={{ margin: '14px 0 0', fontSize: 13.5, color: '#333333', lineHeight: 1.55 }}>
                 {pillar.experience.text}
               </p>
-              <div style={{ marginTop: 18, padding: 14, borderRadius: 12, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: '#ffffff', lineHeight: 1.45 }}>
+              <div style={{ marginTop: 18, padding: 14, borderRadius: 12, background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.08)' }}>
+                <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: '#111111', lineHeight: 1.45 }}>
                   „{pillar.experience.quote}“
                 </p>
               </div>
@@ -241,11 +241,11 @@ export function MentalPage() {
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 16 }}>
                 {pillar.principles.map((pr) => (
-                  <div key={pr.title} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 12 }}>
-                    <strong style={{ display: 'block', fontSize: 14, color: '#ffffff', marginBottom: 2 }}>
+                  <div key={pr.title} style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: 12 }}>
+                    <strong style={{ display: 'block', fontSize: 14, color: '#111111', marginBottom: 2 }}>
                       {pr.title}
                     </strong>
-                    <span style={{ fontSize: 12.5, color: 'rgba(255,255,255,0.7)', lineHeight: 1.4 }}>
+                    <span style={{ fontSize: 12.5, color: '#555555', lineHeight: 1.4 }}>
                       {pr.text}
                     </span>
                   </div>
@@ -273,19 +273,19 @@ export function MentalPage() {
                         justifyContent: 'space-between',
                         padding: 12,
                         borderRadius: 12,
-                        background: 'rgba(255,255,255,0.03)',
-                        border: '1px solid rgba(255,255,255,0.08)',
+                        background: 'rgba(0,0,0,0.03)',
+                        border: '1px solid rgba(0,0,0,0.08)',
                         textDecoration: 'none',
-                        color: '#ffffff',
+                        color: '#111111',
                       }}
                     >
                       <div>
-                        <strong style={{ fontSize: 13.5, display: 'block' }}>{post.title}</strong>
-                        <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>
+                        <strong style={{ fontSize: 13.5, display: 'block', color: '#111111' }}>{post.title}</strong>
+                        <span style={{ fontSize: 12, color: '#666666' }}>
                           {post.minutes} {t.blogMin} · {post.excerpt.slice(0, 60)}…
                         </span>
                       </div>
-                      <span style={{ fontSize: 14, color: '#ffffff', marginLeft: 12, flexShrink: 0 }}>→</span>
+                      <span style={{ fontSize: 14, color: '#111111', marginLeft: 12, flexShrink: 0 }}>→</span>
                     </Link>
                   ))}
                 </div>
