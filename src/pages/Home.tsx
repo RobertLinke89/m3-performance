@@ -239,59 +239,21 @@ export function Home() {
 
       <div className="wrap">
         <section className="bento-grid" aria-label="M³ Modules & Contact">
-          {/* 7. MODULAR CATALOG (Span 6 - Chapter 4A: The Custom Roadmap) */}
-          <Link
-            to="/catalog"
-            className="bento-card bento-card--catalog bento-span-6"
-            aria-label={t.modulesH}
-          >
-            <picture className="bento-bg">
-              <source
-                type="image/webp"
-                srcSet="/images/moodboard/mood-mobility.webp 1x, /images/moodboard/mood-mobility@2x.webp 2x"
-              />
-              <source
-                srcSet="/images/moodboard/mood-mobility.jpg 1x, /images/moodboard/mood-mobility.jpg 2x"
-              />
-              <img
-                src="/images/moodboard/mood-mobility.jpg"
-                alt="M3 Modular Catalog"
-                loading="lazy"
-                decoding="async"
-                className="bento-bg-img"
-              />
-            </picture>
-            <div className="bento-overlay" />
-            <div className="bento-content">
-              <h2 className="bento-title">
-                {isEn ? 'Modular Roadmap: Tailored to your bottleneck' : 'Modulbaukasten: Individuell statt Standard'}
-              </h2>
-              <p className="bento-desc">
-                {isEn
-                  ? 'From targeted self-learning modules to exclusive 1:1 executive coaching: Choose the exact lever that fits your schedule and goals.'
-                  : 'Vom gezielten Einzelmodul bis zur exklusiven 1:1 Executive-Betreuung: Wähle genau die Bausteine, die zu deinem Alltag und Engpass passen.'}
-              </p>
-              <div className="bento-arrow-btn">
-                <span>{isEn ? 'Explore modules →' : 'Modul-Katalog ansehen →'}</span>
-              </div>
-            </div>
-          </Link>
-
-          {/* 9. 1:1 DIRECT CONSULTATION (Span 6 - Chapter 4B: Neutral Contact Card) */}
-          <article className="bento-card bento-card--contact bento-span-6">
-            <div className="bento-content">
-              <span className="bento-badge" style={{ marginBottom: 4, background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '3px 9px', borderRadius: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>
+          {/* 7. 1:1 DIRECT CONSULTATION (Span 12 - Chapter 4: Neutral Contact Card) */}
+          <article className="bento-card bento-card--contact bento-span-12">
+            <div className="bento-content" style={{ maxWidth: 680 }}>
+              <span className="bento-badge" style={{ marginBottom: 6, background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '3px 9px', borderRadius: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>
                 {isEn ? 'DIRECT CONTACT' : 'DIREKTKONTAKT'}
               </span>
-              <h2 className="bento-title" style={{ fontSize: 'clamp(20px, 2.2cqi, 26px)' }}>
+              <h2 className="bento-title" style={{ fontSize: 'clamp(22px, 2.6cqi, 30px)' }}>
                 {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
               </h2>
-              <p className="bento-desc" style={{ maxWidth: '52ch', marginTop: 4 }}>
+              <p className="bento-desc" style={{ maxWidth: '60ch', marginTop: 6, fontSize: 14, lineHeight: 1.5 }}>
                 {isEn
                   ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation.'
                   : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
               </p>
-              <div className="bento-cta-row" style={{ marginTop: 14 }}>
+              <div className="bento-cta-row" style={{ marginTop: 18 }}>
                 <a
                   href={wa.talk}
                   target="_blank"
