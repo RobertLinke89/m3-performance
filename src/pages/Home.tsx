@@ -1,6 +1,7 @@
 import { useState, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { Img } from '../components/Img'
+import { MichelShow } from '../components/MichelShow'
 import { SystemMolecule } from '../components/SystemMolecule'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
@@ -211,45 +212,34 @@ export function Home() {
             </div>
           </Link>
 
-          {/* 6. AUTHENTICITY & WORLD CHAMPION CODEX (Span 12 - Chapter 3: The Origin & Philosophy) */}
-          <Link
-            to="/ueber-mich"
-            className="bento-card bento-card--michel bento-span-12"
-            aria-label={t.moreAbout}
-          >
-            <picture className="bento-bg">
-              <source
-                type="image/webp"
-                srcSet="/images/moodboard/mood-freeze.webp 1x, /images/moodboard/mood-freeze@2x.webp 2x"
-              />
-              <source
-                srcSet="/images/moodboard/mood-freeze.jpg 1x, /images/moodboard/mood-freeze.jpg 2x"
-              />
-              <img
-                src="/images/moodboard/mood-freeze.jpg"
-                alt="Michél Breakdance World Champion"
-                loading="lazy"
-                decoding="async"
-                className="bento-bg-img"
-              />
-            </picture>
-            <div className="bento-overlay" />
-            <div className="bento-content" style={{ maxWidth: 640 }}>
-              <h2 className="bento-title" style={{ fontSize: 'clamp(20px, 2.4cqi, 28px)' }}>
-                {isEn ? 'World Champion Codex & 30 Years of Movement' : 'Weltmeister-Codex & 30 Jahre Bewegungspraxis'}
-              </h2>
-              <p className="bento-desc" style={{ maxWidth: '58ch', marginTop: 6 }}>
-                {isEn
-                  ? 'From top-tier world dance stages through disc herniation to everyday solo fatherhood: No dogma. No hype. A system built on real resilience.'
-                  : 'Vom Weltmeistertitel über Bandscheibenvorfall bis Alleinerzieher-Alltag: Kein Dogma. Keine leeren Versprechungen. Ein System aus der Praxis für die Praxis.'}
-              </p>
-              <div className="bento-arrow-btn" style={{ marginTop: 10 }}>
-                <span>{isEn ? 'Read Michél’s Codex →' : 'Michéls Story & Codex →'}</span>
-              </div>
-            </div>
-          </Link>
+        </section>
+      </div>
 
-          {/* 8. MODULAR CATALOG (Span 6 - Chapter 4A: The Custom Roadmap) */}
+      {/* 6. ABOUT MICHÉL SECTION (Particle Animated Show) */}
+      <section className="section michel-section" id="about-michel">
+        <div className="wrap michel-split">
+          <div className="michel-visual">
+            <MichelShow />
+          </div>
+          <div className="michel-copy">
+            <p className="eyebrow">{t.michelEyebrow}</p>
+            <h2>{t.michelH}</h2>
+            <div className="michel-block">
+              <p>{t.michelLead}</p>
+              <p>{t.michelLead2}</p>
+              <p>„{t.michelQuote}“</p>
+              <p className="michel-meta">{t.michelMeta}</p>
+            </div>
+            <Link className="btn btn-ghost" to="/ueber-mich" style={{ marginTop: 18, width: 'fit-content' }}>
+              {t.moreAbout}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <div className="wrap">
+        <section className="bento-grid" aria-label="M³ Modules & Contact">
+          {/* 7. MODULAR CATALOG (Span 6 - Chapter 4A: The Custom Roadmap) */}
           <Link
             to="/catalog"
             className="bento-card bento-card--catalog bento-span-6"
