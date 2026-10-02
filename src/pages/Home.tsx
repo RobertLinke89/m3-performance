@@ -12,7 +12,7 @@ export function Home() {
   const { lang } = useLocale()
   const isEn = lang === 'en'
   const [openFaq, setOpenFaq] = useState<number | null>(0)
-  const { audience, contact, faqs, pillars, posts, wa } = useContent()
+  const { audience, faqs, pillars, posts, wa } = useContent()
 
   return (
     <main className="bento-page">
@@ -70,43 +70,32 @@ export function Home() {
             </div>
           </article>
 
-          {/* 2. SYSTEM START BENTO CARD (Span 4 - Chapter 1: The Status Quo & Assessment) */}
-          <Link
-            to="/system-start"
-            className="bento-card bento-card--start bento-span-4"
-            aria-label={t.startH}
-          >
-            <picture className="bento-bg">
-              <source
-                type="image/webp"
-                srcSet="/images/moodboard/mood-elevate.webp 1x, /images/moodboard/mood-elevate@2x.webp 2x"
-              />
-              <source
-                srcSet="/images/moodboard/mood-elevate.jpg 1x, /images/moodboard/mood-elevate.jpg 2x"
-              />
-              <img
-                src="/images/moodboard/mood-elevate.jpg"
-                alt="M3 System Start Standortbestimmung"
-                loading="lazy"
-                decoding="async"
-                className="bento-bg-img"
-              />
-            </picture>
-            <div className="bento-overlay" />
+          {/* 2. 20-MIN ORIENTIERUNGSGESPRÄCH BENTO CARD (Span 4 - Clean White Card, Black Border & Text) */}
+          <article className="bento-card bento-card--call-white bento-span-4">
             <div className="bento-content">
-              <h2 className="bento-title">
-                <span className="bento-step-num">01 ·</span> {isEn ? 'Assessment & Status Quo' : 'Standortbestimmung & Analyse'}
-              </h2>
-              <p className="bento-desc">
-                {isEn
-                  ? 'The 360° audit of your capacity: metabolic markers, movement patterns, and mental reserves.'
-                  : 'Die 360°-Analyse deiner Leistungsfähigkeit – Stoffwechsel-Marker, Bewegungsanalyse und neuronale Ressourcen.'}
-              </p>
-              <div className="bento-arrow-btn">
-                <span>{isEn ? 'Start assessment →' : 'Standort analysieren →'}</span>
+              <div>
+                <h2 className="bento-title">
+                  {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
+                </h2>
+                <p className="bento-desc">
+                  {isEn
+                    ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation, confidential, at eye level.'
+                    : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
+                </p>
               </div>
+              <a
+                href={wa.talk}
+                target="_blank"
+                rel="noreferrer"
+                className="bento-call-btn"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 16, height: 16 }}>
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                </svg>
+                {isEn ? 'Free Strategy Session' : 'Kostenloses Erstgespräch'}
+              </a>
             </div>
-          </Link>
+          </article>
 
           {/* 3. PILLAR M¹: METABOLISM (Span 4 - Chapter 2A: The Internal Foundation) */}
           <Link
@@ -238,46 +227,7 @@ export function Home() {
       </section>
 
       <div className="wrap">
-        <section className="bento-grid" aria-label="M³ Modules & Contact">
-          {/* 7. 1:1 DIRECT CONSULTATION (Span 12 - Chapter 4: Neutral Contact Card) */}
-          <article className="bento-card bento-card--contact bento-span-12">
-            <div className="bento-content" style={{ maxWidth: 680 }}>
-              <span className="bento-badge" style={{ marginBottom: 6, background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '3px 9px', borderRadius: 6, fontSize: 11, fontWeight: 700, letterSpacing: '0.04em' }}>
-                {isEn ? 'DIRECT CONTACT' : 'DIREKTKONTAKT'}
-              </span>
-              <h2 className="bento-title" style={{ fontSize: 'clamp(22px, 2.6cqi, 30px)' }}>
-                {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
-              </h2>
-              <p className="bento-desc" style={{ maxWidth: '60ch', marginTop: 6, fontSize: 14, lineHeight: 1.5 }}>
-                {isEn
-                  ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation.'
-                  : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
-              </p>
-              <div className="bento-cta-row" style={{ marginTop: 18 }}>
-                <a
-                  href={wa.talk}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-gold"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="btn-icon" style={{ width: 16, height: 16, marginRight: 6 }}>
-                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z" />
-                  </svg>
-                  {t.ctaTalk}
-                </a>
-                <a
-                  href={contact.cal}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-ghost"
-                  data-cal-link="michelmeier/30min"
-                >
-                  {isEn ? 'Book 30-Min. Slot (Cal.com) →' : '30 Min. Slot buchen (Cal.com) →'}
-                </a>
-              </div>
-            </div>
-          </article>
-
+        <section className="bento-grid" aria-label="M³ Personas & Dialogues">
           {/* AUDIENCE BENTO SECTION (Span 12 - Who this is for) */}
           <article className="bento-card bento-card--audience bento-span-12">
             <div className="bento-audience-grid">
