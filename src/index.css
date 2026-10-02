@@ -3664,9 +3664,9 @@ picture.bento-bg img,
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .bento-persona-avatar-wrap {
@@ -3725,13 +3725,12 @@ picture.bento-bg img,
 .bento-persona-chat {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   flex: 1;
   justify-content: space-between;
-  background: color-mix(in srgb, var(--bg-2) 60%, var(--bg) 40%);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .bento-chat-msg {
@@ -4585,8 +4584,9 @@ picture.bento-bg img,
 
   .bento-persona-head {
     gap: 12px;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 0;
+    border-bottom: none;
   }
 
   .bento-persona-avatar-wrap {

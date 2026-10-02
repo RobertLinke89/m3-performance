@@ -12,7 +12,7 @@ export function Home() {
   const { lang } = useLocale()
   const isEn = lang === 'en'
   const [openFaq, setOpenFaq] = useState<number | null>(0)
-  const { contact, faqs, pillars, posts, wa } = useContent()
+  const { audience, contact, faqs, pillars, posts, wa } = useContent()
 
   return (
     <main className="bento-page">
@@ -275,6 +275,49 @@ export function Home() {
                   {isEn ? 'Book 30-Min. Slot (Cal.com) →' : '30 Min. Slot buchen (Cal.com) →'}
                 </a>
               </div>
+            </div>
+          </article>
+
+          {/* AUDIENCE BENTO SECTION (Span 12 - Who this is for) */}
+          <article className="bento-card bento-card--audience bento-span-12">
+            <div className="bento-audience-grid">
+              {audience.map((a) => (
+                <div className="bento-persona-card" key={a.title}>
+                  <div className="bento-persona-head">
+                    <div className="bento-persona-avatar-wrap">
+                      <Img className="bento-persona-avatar" src={a.image} alt={a.persona || a.title} />
+                    </div>
+                    <div className="bento-persona-meta">
+                      <span className="bento-persona-role">{a.persona}</span>
+                      <h3 className="bento-persona-title">{a.title}</h3>
+                    </div>
+                  </div>
+
+                  <div className="bento-persona-chat">
+                    {/* Chat Msg 1: Client / Persona */}
+                    <div className="bento-chat-msg bento-chat-msg--client">
+                      <div className="bento-chat-header">
+                        <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
+                        <span className="bento-chat-time">08:42</span>
+                      </div>
+                      <div className="bento-chat-bubble bento-chat-bubble--client">
+                        <p>{a.dailyLife}</p>
+                      </div>
+                    </div>
+
+                    {/* Chat Msg 2: Michél's Response & Solution */}
+                    <div className="bento-chat-msg bento-chat-msg--michel">
+                      <div className="bento-chat-header bento-chat-header--michel">
+                        <span className="bento-chat-author">Michél · M³</span>
+                        <span className="bento-chat-time">08:45</span>
+                      </div>
+                      <div className="bento-chat-bubble bento-chat-bubble--michel">
+                        <p>{a.approach}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </article>
         </section>
