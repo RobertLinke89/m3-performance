@@ -3,7 +3,6 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { BrandMark } from './BrandMark'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
-import { useContent } from '../useContent'
 import { ThemeSwitch } from './ThemeSwitch'
 
 function scrollToPageStart() {
@@ -67,89 +66,54 @@ function LangSwitch() {
 
 export function Layout() {
   const t = useUi()
-  const { contact, wa } = useContent()
 
   return (
     <>
       <ScrollToTop />
       <header className="nav">
-        <LangSwitch />
+        <div className="nav-controls">
+          <div className="nav-burger" aria-hidden="true" role="presentation" title="Menü">
+            <span className="nav-burger-line" />
+            <span className="nav-burger-line" />
+            <span className="nav-burger-line" />
+          </div>
+          <LangSwitch />
+          <ThemeSwitch />
+        </div>
         <Link className="brand" to="/" aria-label="M³ Performance">
           <BrandMark />
         </Link>
         <div className="nav-actions">
-          <a
-            className="nav-cal-link"
-            href={contact.cal}
-            target="_blank"
-            rel="noreferrer"
-            data-cal-link="michelmeier/30min"
+          <Link
+            className="nav-secondary-link"
+            to="/ueber-mich"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="nav-cal-icon"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            <span>{t.navCal}</span>
-          </a>
-          <a className="btn btn-gold" href={wa.talk} target="_blank" rel="noreferrer">
-            {t.writeMe}
-          </a>
+            About
+          </Link>
+          <Link className="btn btn-gold nav-btn-booking" to="/buchen">
+            <span className="nav-btn-booking-full">{t.bookMichel}</span>
+            <span className="nav-btn-booking-short">{t.bookMichelShort}</span>
+          </Link>
         </div>
       </header>
       <Outlet />
-      <footer className="footer">
-        <div className="wrap footer-grid">
-          <div>
-            <div className="brand" aria-label="M³ Performance">
-              <BrandMark />
-            </div>
-            <p>{t.footerLine}</p>
-            <p>{t.footerAbout}</p>
+      <footer className="footer footer--minimal">
+        <div className="wrap footer-minimal-wrap">
+          <div className="footer-side footer-side--left">
+            <Link to="/impressum" onClick={scrollToPageStart} className="footer-corner-link">
+              {t.imprint}
+            </Link>
           </div>
-          <div>
-            <strong>{t.system}</strong>
-            <p><Link to="/system-start" onClick={scrollToPageStart}>{t.systemStart}</Link></p>
-            <p><Link to="/metabolism" onClick={scrollToPageStart}>M¹ Metabolism</Link></p>
-            <p><Link to="/movement" onClick={scrollToPageStart}>M² Movement</Link></p>
-            <p><Link to="/mental-performance" onClick={scrollToPageStart}>{t.footerMental}</Link></p>
-            <p><Link to="/blog" onClick={scrollToPageStart}>{t.blog}</Link></p>
+          <div className="footer-center">
+            <span className="footer-brand-text">
+              M³ Performance<span className="footer-trademark">®</span>
+            </span>
           </div>
-          <div>
-            <strong>{t.footerModules}</strong>
-            <p><Link to="/body-reset" onClick={scrollToPageStart}>Body Reset</Link></p>
-            <p><Link to="/performance-training" onClick={scrollToPageStart}>Performance Training</Link></p>
-            <p><Link to="/schmerzfrei" onClick={scrollToPageStart}>{t.painfree}</Link></p>
-            <p><Link to="/sitemap" onClick={scrollToPageStart}>{t.sitemap}</Link></p>
+          <div className="footer-side footer-side--right">
+            <Link to="/datenschutz" onClick={scrollToPageStart} className="footer-corner-link">
+              {t.privacy}
+            </Link>
           </div>
-          <div>
-            <strong>{t.footerContact}</strong>
-            <p>
-              <a href={contact.cal} target="_blank" rel="noreferrer">
-                {t.bookCal}
-              </a>
-            </p>
-            <p><Link to="/kontakt" onClick={scrollToPageStart}>{t.footerWaTalk}</Link></p>
-            <p><Link to="/katalog" onClick={scrollToPageStart}>{t.footerWaCat}</Link></p>
-            <p><Link to="/ueber-mich" onClick={scrollToPageStart}>{t.footerAboutMichel}</Link></p>
-          </div>
-        </div>
-        <div className="wrap footer-bar">
-          <span>{t.footerCopy}</span>
-          <nav className="footer-legal" aria-label={t.imprint}>
-            <Link to="/impressum" onClick={scrollToPageStart}>{t.imprint}</Link>
-            <Link to="/datenschutz" onClick={scrollToPageStart}>{t.privacy}</Link>
-          </nav>
-          <ThemeSwitch />
         </div>
       </footer>
     </>

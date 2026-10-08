@@ -476,8 +476,18 @@ img.card-media[src*='michel-trainer'] {
   justify-self: center;
 }
 
-.lang-switch {
+.nav-controls {
   justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-burger {
+  display: none;
+}
+
+.lang-switch {
   display: inline-flex;
   align-items: baseline;
   gap: 5px;
@@ -530,42 +540,21 @@ img.card-media[src*='michel-trainer'] {
   display: inline-block;
   background-image: linear-gradient(
     105deg,
-    #7c2d12 0%,
-    #c2410c 18%,
-    #ea580c 34%,
-    #f59e0b 48%,
-    #fbbf24 58%,
-    #f97316 72%,
-    #dc2626 88%,
-    #7c2d12 100%
+    #ea580c 0%,
+    #f59e0b 38%,
+    #fbbf24 65%,
+    #f97316 100%
   );
-  background-size: 220% 140%;
-  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: brand-fire-flow 8.5s ease-in-out infinite, brand-fire-flicker 4.2s ease-in-out infinite;
-  filter: drop-shadow(0 0 0.35em rgba(245, 158, 11, 0.35));
+  animation: none !important;
+  filter: none;
 }
 
 .brand-fire::after {
-  content: 'Performance';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(
-    180deg,
-    rgba(255, 247, 237, 0.95) 0%,
-    rgba(251, 191, 36, 0.55) 28%,
-    rgba(249, 115, 22, 0.2) 55%,
-    transparent 78%
-  );
-  background-size: 100% 180%;
-  background-position: 50% 120%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  opacity: 0.85;
-  animation: brand-fire-rise 5.2s linear infinite;
+  content: none !important;
+  display: none !important;
 }
 
 @keyframes brand-fire-flicker {
@@ -703,7 +692,27 @@ img.card-media[src*='michel-trainer'] {
   white-space: nowrap;
 }
 
-.nav-cal-link:hover {
+.nav-cal-link,
+.nav-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-cal-link:hover,
+.nav-secondary-link:hover {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
@@ -714,6 +723,27 @@ img.card-media[src*='michel-trainer'] {
   width: 14px;
   height: 14px;
   stroke-width: 2.2;
+}
+
+.nav-btn-booking {
+  white-space: nowrap;
+}
+
+.nav-btn-booking-full {
+  display: inline;
+}
+
+.nav-btn-booking-short {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .cal-booking-hint {
@@ -1462,140 +1492,85 @@ picture {
 
 .footer {
   border-top: 1px solid var(--line);
-  padding: 48px 0 28px;
+  padding: 24px 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  background: transparent;
 }
 
-.footer-grid {
+.footer--minimal {
+  padding: 22px 0;
+}
+
+.footer-minimal-wrap {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 24px;
-}
-
-.footer a:hover {
-  color: var(--text);
-}
-
-.footer-payment-section {
-  grid-column: 1 / -1;
-  width: 100%;
-  margin-top: 18px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
-}
-
-.footer-payment-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.footer-payment-top {
-  display: flex;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px 20px;
   width: 100%;
 }
 
-.footer-payment-brand {
+.footer-side--left {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
 }
 
-.footer-payment-kicker {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+.footer-side--right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-corner-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-corner-link:hover {
+  color: #ffffff;
+}
+
+[data-theme='day'] .footer-corner-link:hover {
+  color: #090a0d;
+}
+
+.footer-brand-text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
-}
-
-.footer-payment-stripe-logo {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
+  gap: 2px;
+  opacity: 0.9;
+  user-select: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.footer-payment-stripe-logo img {
-  display: block;
-  height: 20px;
-  width: auto;
+.footer-brand-text:hover {
+  color: #ffffff;
+  opacity: 1;
 }
 
-.footer-payment-badges {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
+[data-theme='day'] .footer-brand-text:hover {
+  color: #090a0d;
 }
 
-.pay-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 25px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #ffffff;
-  flex-shrink: 0;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.pay-badge:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
-}
-
-.pay-badge img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-[data-theme='night'] .pay-badge {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
-}
-
-.footer-payment-sub {
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.45;
-  color: var(--muted);
-  opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-  .footer-payment-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .footer-payment-badges {
-    justify-content: flex-start;
-  }
-}
-
-.footer-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
-
-.footer-legal {
-  display: flex;
-  gap: 16px;
+.footer-trademark {
+  font-size: 10px;
+  vertical-align: super;
+  font-weight: 700;
+  color: var(--gold, #fbbf24);
+  margin-left: 2px;
 }
 
 .legal-page {
@@ -3180,10 +3155,113 @@ picture {
   min-height: 290px;
 }
 
-/* 3-Pillar Cards Height - Symmetrical 100dvh fit */
+/* System Start Hero Card - Matches Original 517x600 Portrait Image Dimensions & Ratio */
+.bento-card--system-hero {
+  aspect-ratio: 517 / 600;
+  min-height: 540px;
+  height: auto;
+}
+
+.bento-card--system-hero .bento-bg-img {
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+.bento-card--system-hero .bento-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.08) 45%,
+    rgba(0, 0, 0, 0.72) 78%,
+    rgba(0, 0, 0, 0.9) 100%
+  ) !important;
+}
+
+/* Temple Bento Architecture: Roof (Span 12) -> 3 Pillars (Food, Move, Repeat) -> Base (Span 12) */
+.bento-card--temple-roof {
+  min-height: clamp(340px, 38vh, 420px);
+  height: auto;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+
 .bento-card--pillar {
-  height: calc((100dvh - var(--nav-height) - 44px) * 0.435);
-  min-height: 220px;
+  min-height: clamp(380px, 46vh, 480px);
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid var(--pillar-color, rgba(255, 255, 255, 0.25));
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.bento-card--pillar:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  border-bottom-color: var(--pillar-color, #ffffff);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+.bento-pillar-head {
+  font-size: clamp(32px, 3.8cqi, 44px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 6px 0 2px;
+  color: #ffffff;
+}
+
+.bento-pillar-sub {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 8px;
+}
+
+.bento-pillar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: fit-content;
+}
+
+.bento-card--temple-base {
+  min-height: auto;
+  padding: clamp(24px, 3vw, 36px);
+  background: linear-gradient(135deg, rgba(20, 22, 28, 0.95) 0%, rgba(10, 11, 15, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.bento-base-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.bento-base-text {
+  flex: 1 1 500px;
+}
+
+.bento-base-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 /* Next row (Michél Codex card) starts cleanly below the initial viewport */
@@ -4510,11 +4588,10 @@ picture.bento-bg img,
   .bento-span-8,
   .bento-span-7,
   .bento-span-6,
-  .bento-span-5 {
-    grid-column: span 12;
-  }
+  .bento-span-5,
   .bento-span-4 {
-    grid-column: span 6;
+    grid-column: span 12 !important;
+    width: 100%;
   }
   .bento-card--hero {
     grid-column: span 12;
@@ -4527,8 +4604,10 @@ picture.bento-bg img,
     min-height: 280px;
   }
   .bento-card--pillar {
+    grid-column: span 12 !important;
+    width: 100%;
     height: auto;
-    min-height: 260px;
+    min-height: 320px;
   }
   .bento-card--molecule,
   .bento-card--michel {
@@ -4585,6 +4664,12 @@ picture.bento-bg img,
     padding: 24px 18px;
   }
 
+  .bento-card--system-hero {
+    aspect-ratio: 517 / 600;
+    min-height: 440px;
+    height: auto;
+  }
+
   .bento-hero-h1 {
     font-size: clamp(23px, 6.8vw, 30px);
     line-height: 1.15;
@@ -4605,11 +4690,61 @@ picture.bento-bg img,
   }
 
   .bento-card--start,
-  .bento-card--pillar,
+  .bento-card--temple-roof,
+  .bento-card--temple-base,
   .bento-card--michel,
   .bento-card--catalog,
   .bento-card--contact {
     min-height: 280px;
+  }
+
+  .bento-card--pillar {
+    width: 100% !important;
+    min-height: 340px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 24px 20px !important;
+  }
+
+  .bento-card--pillar .bento-pillar-head {
+    font-size: 34px !important;
+    margin: 6px 0 2px !important;
+  }
+
+  .bento-card--pillar .bento-pillar-sub {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .bento-card--pillar .bento-desc {
+    font-size: 13.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  .bento-base-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .bento-base-actions {
+    width: 100%;
+  }
+
+  .bento-base-actions .btn-white,
+  .bento-base-actions .btn-white-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-btn-booking-full {
+    display: none;
+  }
+
+  .nav-btn-booking-short {
+    display: inline;
   }
 
   .bento-title {
@@ -4835,6 +4970,45 @@ picture.bento-bg img,
     gap: 8px;
   }
 
+  /* Mobile Burger Menu Placeholder (Top Left, Non-Clickable) */
+  .nav-burger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    cursor: default;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.9;
+  }
+
+  .nav-burger-line {
+    display: block;
+    width: 16px;
+    height: 1.8px;
+    background-color: currentColor;
+    border-radius: 1px;
+  }
+
+  [data-theme='day'] .nav-burger {
+    border-color: rgba(0, 0, 0, 0.14);
+    background: rgba(0, 0, 0, 0.05);
+    color: #090a0d;
+  }
+
+  .nav-controls .lang-switch,
+  .nav-controls .theme-switch {
+    display: none;
+  }
+
   .nav .brand {
     font-size: 14px;
   }
@@ -4843,7 +5017,8 @@ picture.bento-bg img,
     gap: 6px;
   }
 
-  .nav-cal-link {
+  .nav-cal-link,
+  .nav-secondary-link {
     min-height: 34px;
     padding: 0 10px;
     font-size: 12px;
@@ -4883,20 +5058,23 @@ picture.bento-bg img,
 
   /* Footer Mobile */
   .footer {
-    padding: 36px 0 28px;
+    padding: 20px 0;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .footer-bar {
-    flex-direction: column;
-    align-items: flex-start;
+  .footer-minimal-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 12px;
-    margin-top: 24px;
-    padding-top: 18px;
+  }
+
+  .footer-corner-link {
+    font-size: 12px;
+  }
+
+  .footer-brand-text {
+    font-size: 11px;
+    letter-spacing: 0.04em;
   }
 }
 

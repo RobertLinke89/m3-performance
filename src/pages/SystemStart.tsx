@@ -25,8 +25,8 @@ export function SystemStart() {
         {/* Master Bento Grid */}
         <section className="bento-grid" aria-label="M³ System Start Bento Grid">
 
-          {/* 1. HERO BENTO CARD (Span 8 - The Front Door Manifesto) */}
-          <article className="bento-card bento-card--hero bento-span-8">
+          {/* 1. HERO BENTO CARD (Span 6 - The Front Door Manifesto in Original Portrait Ratio) */}
+          <article className="bento-card bento-card--hero bento-card--system-hero bento-span-6">
             <picture className="bento-bg">
               <source
                 type="image/webp"
@@ -78,8 +78,8 @@ export function SystemStart() {
             </div>
           </article>
 
-          {/* 2. 3-STAGE AUDIT OVERVIEW (Span 4) */}
-          <article className="bento-card bento-card--audit-step bento-span-4" style={{ justifyContent: 'space-between', minHeight: 'clamp(440px, 50vh, 540px)' }}>
+          {/* 2. 3-STAGE AUDIT OVERVIEW (Span 6) */}
+          <article className="bento-card bento-card--audit-step bento-span-6" style={{ justifyContent: 'space-between', minHeight: 'clamp(440px, 50vh, 540px)' }}>
             <div>
               <span className="bento-audit-badge">{isEn ? 'THE DIAGNOSTICS' : 'DIE DIAGNOSTIK'}</span>
               <h2 className="bento-title" style={{ fontSize: 21 }}>

@@ -20,8 +20,8 @@ export function Home() {
         {/* Bento Grid Master Universe */}
         <section className="bento-grid" aria-label="M³ Performance System Bento Grid">
           
-          {/* 1. HERO BENTO CARD (Span 8 - The Vision & Core Promise) */}
-          <article className="bento-card bento-card--hero bento-span-8">
+          {/* 1. HERO BENTO CARD (Span 12 - The Temple Roof / Dach) */}
+          <article className="bento-card bento-card--hero bento-card--temple-roof bento-span-12">
             <picture className="bento-bg">
               <source
                 media="(max-width: 860px)"
@@ -49,7 +49,10 @@ export function Home() {
               />
             </picture>
             <div className="bento-overlay" />
-            <div className="bento-content bento-content--hero">
+            <div className="bento-content bento-content--hero" style={{ maxWidth: 760 }}>
+              <div className="bento-tag bento-tag--gold" style={{ marginBottom: 8 }}>
+                {isEn ? 'THE ARCHITECTURE · FOOD · MOVE · REPEAT' : 'DAS ARCHITEKTUR-SYSTEM · FOOD · MOVE · REPEAT'}
+              </div>
               <h1 className="bento-hero-h1">
                 {isEn ? (
                   <>M¹–M³ Performance. <span>Holistic, Pain-Free &amp; Sharp.</span></>
@@ -63,72 +66,54 @@ export function Home() {
                   : 'Für Unternehmer, Macher & High-Performer: Wir verbinden Stoffwechsel, Biomechanik und Mindset zu einem biologisch fundierten System – nachhaltig & messbar.'}
               </p>
 
-              {/* Minimalistic Transparent Showreel CTA */}
-              <Link to="/ueber-mich" className="hero-btn-showreel">
-                Showreel
-              </Link>
-            </div>
-          </article>
-
-          {/* 2. 20-MIN ORIENTIERUNGSGESPRÄCH BENTO CARD (Span 4 - Clean White Card, Black Border & Text) */}
-          <article className="bento-card bento-card--call-white bento-span-4">
-            <div className="bento-content">
-              <div>
-                <h2 className="bento-title">
-                  {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
-                </h2>
-                <p className="bento-desc">
-                  {isEn
-                    ? 'We directly and honestly evaluate where your biggest performance lever is. Zero obligation, confidential, at eye level.'
-                    : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt. Unverbindlich, diskret und auf Augenhöhe.'}
-                </p>
+              {/* Minimalistic Action Row */}
+              <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 14, flexWrap: 'wrap' }}>
+                <Link to="/ueber-mich" className="hero-btn-showreel">
+                  About
+                </Link>
+                <Link to="/system-start" className="btn-white-ghost" style={{ padding: '0 18px', minHeight: 38, fontSize: 13 }}>
+                  {t.systemStart} →
+                </Link>
               </div>
-              <a
-                href={wa.talk}
-                target="_blank"
-                rel="noreferrer"
-                className="bento-call-btn"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 16, height: 16 }}>
-                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                </svg>
-                {isEn ? 'Free Strategy Session' : 'Kostenloses Erstgespräch'}
-              </a>
             </div>
           </article>
 
-          {/* 3. PILLAR M¹: METABOLISM (Span 4 - Chapter 2A: The Internal Foundation) */}
+          {/* 2. PILLAR M¹: FOOD (Span 4 - The First Column) */}
           <Link
             to="/metabolism"
             className="bento-card bento-card--pillar bento-card--m1 bento-span-4"
             style={{ '--pillar-color': '#e8a14a' } as CSSProperties}
-            aria-label="Pillar M1 Metabolism"
+            aria-label="Pillar M1 Food Metabolism"
           >
             <div className="bento-molecule-visual" style={{ position: 'absolute', inset: 0, opacity: 0.9, pointerEvents: 'none' }}>
               <SystemMolecule />
             </div>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <h2 className="bento-title">
-                <span className="bento-pillar-accent" style={{ color: '#e8a14a' }}>M¹</span> {isEn ? 'Metabolism & Cellular Energy' : 'Metabolismus & Zellenergie'}
-              </h2>
+              <span className="bento-pillar-badge" style={{ borderColor: 'rgba(232, 161, 74, 0.45)', color: '#e8a14a' }}>
+                SÄULE M¹
+              </span>
+              <h2 className="bento-pillar-head">Food.</h2>
+              <p className="bento-pillar-sub">
+                {isEn ? 'Metabolism & Cellular Energy' : 'Metabolismus & Zellenergie'}
+              </p>
               <p className="bento-desc">
                 {isEn
                   ? 'Stable blood sugar, gut health, and cellular nutrient absorption for sustained drive.'
                   : 'Stabiler Blutzucker, Darmgesundheit und optimale Nährstoffverwertung für konstante Tagesenergie.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{isEn ? 'Explore M¹ →' : 'Säule M¹ entdecken →'}</span>
+                <span>{isEn ? 'Explore Food (M¹) →' : 'Säule Food entdecken →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 4. PILLAR M²: BIOMECHANICS (Span 4 - Chapter 2B: The Physical Freedom) */}
+          {/* 3. PILLAR M²: MOVE (Span 4 - The Second Column) */}
           <Link
             to="/biomechanics"
             className="bento-card bento-card--pillar bento-card--m2 bento-span-4"
             style={{ '--pillar-color': '#2f9a72' } as CSSProperties}
-            aria-label="Pillar M2 Biomechanics"
+            aria-label="Pillar M2 Move Biomechanics"
           >
             <picture className="bento-bg">
               <source
@@ -148,26 +133,30 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <h2 className="bento-title">
-                <span className="bento-pillar-accent" style={{ color: '#2f9a72' }}>M²</span> {isEn ? 'Biomechanics & Pain Freedom' : 'Biomechanik & Schmerzfreiheit'}
-              </h2>
+              <span className="bento-pillar-badge" style={{ borderColor: 'rgba(47, 154, 114, 0.45)', color: '#2f9a72' }}>
+                SÄULE M²
+              </span>
+              <h2 className="bento-pillar-head">Move.</h2>
+              <p className="bento-pillar-sub">
+                {isEn ? 'Biomechanics & Pain Freedom' : 'Biomechanik & Schmerzfreiheit'}
+              </p>
               <p className="bento-desc">
                 {isEn
                   ? 'Joint stability, functional mobility, and full physical resilience under high demand.'
                   : 'Gelenkstabilität, funktionelle Mobilität und maximale Belastbarkeit im Alltag und Sport.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{isEn ? 'Explore M² →' : 'Säule M² entdecken →'}</span>
+                <span>{isEn ? 'Explore Move (M²) →' : 'Säule Move entdecken →'}</span>
               </div>
             </div>
           </Link>
 
-          {/* 5. PILLAR M³: MINDSET (Span 4 - Chapter 2C: The Mental Clarity) */}
+          {/* 4. PILLAR M³: REPEAT (Span 4 - The Third Column) */}
           <Link
             to="/mental"
             className="bento-card bento-card--pillar bento-card--m3 bento-span-4"
             style={{ '--pillar-color': '#4f6fd6' } as CSSProperties}
-            aria-label="Pillar M3 Mindset"
+            aria-label="Pillar M3 Repeat Mindset"
           >
             <picture className="bento-bg">
               <source
@@ -187,19 +176,61 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
-              <h2 className="bento-title">
-                <span className="bento-pillar-accent" style={{ color: '#4f6fd6' }}>M³</span> {isEn ? 'Mindset & Neural Clarity' : 'Mindset & neuronale Klarheit'}
-              </h2>
+              <span className="bento-pillar-badge" style={{ borderColor: 'rgba(79, 111, 214, 0.45)', color: '#4f6fd6' }}>
+                SÄULE M³
+              </span>
+              <h2 className="bento-pillar-head">Repeat.</h2>
+              <p className="bento-pillar-sub">
+                {isEn ? 'Mindset & Neural Clarity' : 'Mindset & neuronale Klarheit'}
+              </p>
               <p className="bento-desc">
                 {isEn
                   ? 'Decision economy, deep restorative sleep, and nervous system control under pressure.'
                   : 'Entscheidungsökonomie, tiefer Schlaf und Stressresilienz – trainiert wie ein Muskel.'}
               </p>
               <div className="bento-arrow-btn">
-                <span>{isEn ? 'Explore M³ →' : 'Säule M³ entdecken →'}</span>
+                <span>{isEn ? 'Explore Repeat (M³) →' : 'Säule Repeat entdecken →'}</span>
               </div>
             </div>
           </Link>
+
+          {/* 5. DAS FUNDAMENT (Span 12 - The Temple Base / Foundation) */}
+          <article className="bento-card bento-card--temple-base bento-span-12">
+            <div className="bento-base-content">
+              <div className="bento-base-text">
+                <span className="bento-audit-badge">{isEn ? 'THE FOUNDATION' : 'DAS FUNDAMENT'}</span>
+                <h2 className="bento-title" style={{ fontSize: 'clamp(21px, 2.6cqi, 30px)', marginTop: 4 }}>
+                  {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
+                </h2>
+                <p className="bento-desc" style={{ maxWidth: '68ch', marginTop: 6 }}>
+                  {isEn
+                    ? 'We evaluate your baseline across Food, Move & Repeat and uncover your primary leverage point. 100% confidential, direct, and zero guesswork.'
+                    : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt – synchronisiert über Ernährung (Food), Bewegung (Move) und Gewohnheiten (Repeat). Unverbindlich, diskret und auf Augenhöhe.'}
+                </p>
+              </div>
+              <div className="bento-base-actions">
+                <a
+                  href={wa.talk}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-white"
+                  style={{ padding: '12px 22px', fontSize: 14 }}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 16, height: 16, marginRight: 8 }}>
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                  </svg>
+                  {isEn ? 'Free Strategy Session' : 'Kostenloses Erstgespräch'}
+                </a>
+                <Link
+                  to="/system-start"
+                  className="btn-white-ghost"
+                  style={{ padding: '12px 20px', fontSize: 14 }}
+                >
+                  {t.systemStart} →
+                </Link>
+              </div>
+            </div>
+          </article>
 
         </section>
       </div>

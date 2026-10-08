@@ -3,6 +3,7 @@ import { Layout } from './components/Layout'
 import { About } from './pages/About'
 import { Article } from './pages/Article'
 import { Blog } from './pages/Blog'
+import { Booking } from './pages/Booking'
 import { Catalog } from './pages/Catalog'
 import { Contact } from './pages/Contact'
 import { Home } from './pages/Home'
@@ -17,6 +18,8 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="buchen" element={<Booking />} />
+          <Route path="booking" element={<Navigate to="/buchen" replace />} />
           <Route path="system-start" element={<SystemStart />} />
           <Route path="ueber-mich" element={<About />} />
           <Route path="kontakt" element={<Contact />} />
