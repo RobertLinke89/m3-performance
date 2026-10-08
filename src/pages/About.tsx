@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { BackLink } from '../components/BackLink'
+import { MichelShow } from '../components/MichelShow'
 import { ValueIcon } from '../components/ValueIcon'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
@@ -238,7 +239,26 @@ export function About() {
             </div>
           </article>
 
-          {/* 5. MASTER BOTTOM CTA BENTO (Span 12) - High Res Pushup Asset */}
+          {/* 5. ABOUT MICHÉL INTERACTIVE SHOWREEL (Span 12) */}
+          <article className="bento-card bento-span-12" style={{ padding: 'clamp(24px, 3.5vw, 40px)', background: 'var(--bg-2)', border: '1px solid var(--line)' }}>
+            <div className="michel-split" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 32, alignItems: 'center', width: '100%' }}>
+              <div className="michel-visual">
+                <MichelShow />
+              </div>
+              <div className="michel-copy">
+                <p className="eyebrow">{t.michelEyebrow}</p>
+                <h2 style={{ fontSize: 'clamp(26px, 3.2cqi, 38px)', margin: '10px 0 16px' }}>{t.michelH}</h2>
+                <div className="michel-block" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <p>{t.michelLead}</p>
+                  <p>{t.michelLead2}</p>
+                  <p style={{ fontStyle: 'italic', color: 'var(--gold)' }}>„{t.michelQuote}“</p>
+                  <p className="michel-meta" style={{ fontSize: 13, color: 'var(--muted)' }}>{t.michelMeta}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* 6. MASTER BOTTOM CTA BENTO (Span 12) - High Res Pushup Asset */}
           <article className="bento-card bento-card--start bento-span-12">
             <picture className="bento-bg">
               <source

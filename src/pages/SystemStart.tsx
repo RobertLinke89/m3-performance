@@ -10,8 +10,9 @@ export function SystemStart() {
   const t = useUi()
   const { lang } = useLocale()
   const isEn = lang === 'en'
-  const { compass, contact, modules, pillars, startProof, wa } = useContent()
+  const { audience, compass, contact, faqs, modules, pillars, startProof, wa } = useContent()
   const [pick, setPick] = useState<string>('m1')
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
   const picked = pillars.find((p) => p.id === pick) || pillars[0]
   const next = picked ? modules.filter((m) => m.pillar === picked.id).slice(0, 3) : []
 
@@ -267,6 +268,7 @@ export function SystemStart() {
           </article>
 
           {/* 7 & 8. THE PROOF & METHODOLOGY (Span 6 + Span 6) */}
+          {/* 7 & 8. THE PROOF & METHODOLOGY (Span 6 + Span 6) */}
           <article className="bento-card bento-card--audit-step bento-span-6">
             <h2 className="bento-title" style={{ fontSize: 19 }}>
               {startProof[0]?.title || 'Ein Katalog fragt nach der Wahl. Ein Eingang nach dem Engpass.'}
@@ -285,7 +287,102 @@ export function SystemStart() {
             </p>
           </article>
 
-          {/* 9. EXECUTIVE DIRECT BOOKING CTA (Span 12) */}
+          {/* 9. DAS FUNDAMENT (Span 12 - The Temple Base / Foundation) */}
+          <article className="bento-card bento-card--temple-base bento-span-12">
+            <div className="bento-base-content">
+              <div className="bento-base-text">
+                <span className="bento-audit-badge">{isEn ? 'THE FOUNDATION' : 'DAS FUNDAMENT'}</span>
+                <h2 className="bento-title" style={{ fontSize: 'clamp(21px, 2.6cqi, 30px)', marginTop: 4 }}>
+                  {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
+                </h2>
+                <p className="bento-desc" style={{ maxWidth: '68ch', marginTop: 6 }}>
+                  {isEn
+                    ? 'We evaluate your baseline across Food, Move & Repeat and uncover your primary leverage point. 100% confidential, direct, and zero guesswork.'
+                    : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt – synchronisiert über Ernährung (Food), Bewegung (Move) und Gewohnheiten (Repeat). Unverbindlich, diskret und auf Augenhöhe.'}
+                </p>
+              </div>
+              <div className="bento-base-actions">
+                <a
+                  href={wa.talk}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-white"
+                  style={{ padding: '12px 22px', fontSize: 14 }}
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 16, height: 16, marginRight: 8 }}>
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                  </svg>
+                  {isEn ? 'Free Strategy Session' : 'Kostenloses Erstgespräch'}
+                </a>
+                <a
+                  href={contact.cal}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-white-ghost"
+                  style={{ padding: '12px 20px', fontSize: 14 }}
+                >
+                  {isEn ? 'Book Cal.com Slot →' : 'Cal.com Termin wählen →'}
+                </a>
+              </div>
+            </div>
+          </article>
+
+          {/* 10. AUDIENCE PERSONAS & DIALOGUES (Span 12) */}
+          <article className="bento-card bento-card--audience bento-span-12">
+            <div className="bento-card-header" style={{ marginBottom: 18 }}>
+              <div>
+                <span className="bento-audit-badge">{isEn ? 'PROFILES & PRACTICE' : 'ZIELGRUPPEN & PRAXIS'}</span>
+                <h2 className="bento-title" style={{ fontSize: 'clamp(20px, 2.4cqi, 28px)', marginTop: 4 }}>
+                  {isEn ? 'Who benefits most from the M³ System?' : 'Für wen das M³ System gebaut ist.'}
+                </h2>
+                <p className="bento-desc" style={{ maxWidth: '64ch' }}>
+                  {isEn
+                    ? 'Three real archetypes from executive practice and how we solve their biological bottlenecks.'
+                    : 'Drei reale Profile aus der unternehmerischen Praxis und wie wir ihre Engpässe biologisch lösen.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="bento-audience-grid">
+              {audience.map((a) => (
+                <div className="bento-persona-card" key={a.title}>
+                  <div className="bento-persona-head">
+                    <div className="bento-persona-avatar-wrap">
+                      <Img className="bento-persona-avatar" src={a.image} alt={a.persona || a.title} />
+                    </div>
+                    <div className="bento-persona-meta">
+                      <span className="bento-persona-role">{a.persona}</span>
+                      <h3 className="bento-persona-title">{a.title}</h3>
+                    </div>
+                  </div>
+
+                  <div className="bento-persona-chat">
+                    <div className="bento-chat-msg bento-chat-msg--client">
+                      <div className="bento-chat-header">
+                        <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
+                        <span className="bento-chat-time">08:42</span>
+                      </div>
+                      <div className="bento-chat-bubble bento-chat-bubble--client">
+                        <p>{a.dailyLife}</p>
+                      </div>
+                    </div>
+
+                    <div className="bento-chat-msg bento-chat-msg--michel">
+                      <div className="bento-chat-header bento-chat-header--michel">
+                        <span className="bento-chat-author">Michél · M³</span>
+                        <span className="bento-chat-time">08:45</span>
+                      </div>
+                      <div className="bento-chat-bubble bento-chat-bubble--michel">
+                        <p>{a.approach}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          {/* 11. EXECUTIVE DIRECT BOOKING CTA (Span 12) */}
           <article className="bento-card bento-card--hero bento-span-12" style={{ minHeight: 'clamp(380px, 42vh, 460px)' }}>
             <picture className="bento-bg">
               <source
@@ -327,6 +424,62 @@ export function SystemStart() {
             </div>
           </article>
 
+        </section>
+
+        {/* 12. FAQ STANDALONE SECTION */}
+        <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading" style={{ marginTop: 40 }}>
+          <div className="faq-standalone-container">
+            <header className="faq-standalone-header">
+              <span className="faq-standalone-kicker">FAQ</span>
+              <h2 id="faq-main-heading" className="faq-standalone-title">{t.faqH}</h2>
+              <p className="faq-standalone-lead">
+                {isEn
+                  ? 'Direct, transparent answers about our methodology, structure, and 1:1 mentorship.'
+                  : 'Direkte und ehrliche Antworten zu Ablauf, Betreuung und dem M³-System.'}
+              </p>
+            </header>
+
+            <div className="faq-standalone-list">
+              {faqs.map((f, i) => {
+                const isOpen = openFaq === i
+                return (
+                  <div
+                    key={f.q}
+                    className={`faq-standalone-item ${isOpen ? 'is-open' : ''}`}
+                  >
+                    <button
+                      type="button"
+                      className="faq-standalone-btn"
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                    >
+                      <span className="faq-standalone-q">{f.q}</span>
+                      <span className="faq-standalone-icon" aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="18"
+                          height="18"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`faq-chevron-icon ${isOpen ? 'is-rotated' : ''}`}
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
+                    </button>
+                    {isOpen && (
+                      <div className="faq-standalone-panel">
+                        <p className="faq-standalone-a">{f.a}</p>
+                      </div>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
         </section>
       </div>
     </main>

@@ -1,24 +1,26 @@
-import { useState, type CSSProperties } from 'react'
+import { useEffect, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { Img } from '../components/Img'
-import { MichelShow } from '../components/MichelShow'
 import { SystemMolecule } from '../components/SystemMolecule'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
-import { useContent } from '../useContent'
 
 export function Home() {
   const t = useUi()
   const { lang } = useLocale()
   const isEn = lang === 'en'
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
-  const { audience, faqs, pillars, posts, wa } = useContent()
+
+  useEffect(() => {
+    document.body.classList.add('page-landing')
+    return () => {
+      document.body.classList.remove('page-landing')
+    }
+  }, [])
 
   return (
-    <main className="bento-page">
-      <div className="wrap">
+    <main className="bento-page bento-page--landing">
+      <div className="wrap wrap--landing">
         {/* Bento Grid Master Universe */}
-        <section className="bento-grid" aria-label="M³ Performance System Bento Grid">
+        <section className="bento-grid bento-grid--landing" aria-label="M³ Performance System Bento Grid">
           
           {/* 1. HERO BENTO CARD (Span 12 - The Temple Roof / Dach) */}
           <article className="bento-card bento-card--hero bento-card--temple-roof bento-span-12">
@@ -66,7 +68,7 @@ export function Home() {
                   : 'Für Unternehmer, Macher & High-Performer: Wir verbinden Stoffwechsel, Biomechanik und Mindset zu einem biologisch fundierten System – nachhaltig & messbar.'}
               </p>
 
-              {/* Minimalistic Action Row */}
+              {/* Action Row */}
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 14, flexWrap: 'wrap' }}>
                 <Link to="/ueber-mich" className="hero-btn-showreel">
                   About
@@ -194,246 +196,8 @@ export function Home() {
             </div>
           </Link>
 
-          {/* 5. DAS FUNDAMENT (Span 12 - The Temple Base / Foundation) */}
-          <article className="bento-card bento-card--temple-base bento-span-12">
-            <div className="bento-base-content">
-              <div className="bento-base-text">
-                <span className="bento-audit-badge">{isEn ? 'THE FOUNDATION' : 'DAS FUNDAMENT'}</span>
-                <h2 className="bento-title" style={{ fontSize: 'clamp(21px, 2.6cqi, 30px)', marginTop: 4 }}>
-                  {isEn ? '20-Min. Strategy Call with Michél' : '20 Min. Orientierungsgespräch mit Michél'}
-                </h2>
-                <p className="bento-desc" style={{ maxWidth: '68ch', marginTop: 6 }}>
-                  {isEn
-                    ? 'We evaluate your baseline across Food, Move & Repeat and uncover your primary leverage point. 100% confidential, direct, and zero guesswork.'
-                    : 'Wir prüfen direkt und ehrlich, wo dein größter Hebel liegt – synchronisiert über Ernährung (Food), Bewegung (Move) und Gewohnheiten (Repeat). Unverbindlich, diskret und auf Augenhöhe.'}
-                </p>
-              </div>
-              <div className="bento-base-actions">
-                <a
-                  href={wa.talk}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-white"
-                  style={{ padding: '12px 22px', fontSize: 14 }}
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: 16, height: 16, marginRight: 8 }}>
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-                  </svg>
-                  {isEn ? 'Free Strategy Session' : 'Kostenloses Erstgespräch'}
-                </a>
-                <Link
-                  to="/system-start"
-                  className="btn-white-ghost"
-                  style={{ padding: '12px 20px', fontSize: 14 }}
-                >
-                  {t.systemStart} →
-                </Link>
-              </div>
-            </div>
-          </article>
-
         </section>
-      </div>
-
-      {/* 6. ABOUT MICHÉL SECTION (Particle Animated Show) */}
-      <section className="section michel-section" id="about-michel">
-        <div className="wrap michel-split">
-          <div className="michel-visual">
-            <MichelShow />
-          </div>
-          <div className="michel-copy">
-            <p className="eyebrow">{t.michelEyebrow}</p>
-            <h2>{t.michelH}</h2>
-            <div className="michel-block">
-              <p>{t.michelLead}</p>
-              <p>{t.michelLead2}</p>
-              <p>„{t.michelQuote}“</p>
-              <p className="michel-meta">{t.michelMeta}</p>
-            </div>
-            <Link className="btn btn-ghost" to="/ueber-mich" style={{ marginTop: 18, width: 'fit-content' }}>
-              {t.moreAbout}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <div className="wrap">
-        <section className="bento-grid" aria-label="M³ Personas & Dialogues">
-          {/* AUDIENCE BENTO SECTION (Span 12 - Who this is for) */}
-          <article className="bento-card bento-card--audience bento-span-12">
-            <div className="bento-audience-grid">
-              {audience.map((a) => (
-                <div className="bento-persona-card" key={a.title}>
-                  <div className="bento-persona-head">
-                    <div className="bento-persona-avatar-wrap">
-                      <Img className="bento-persona-avatar" src={a.image} alt={a.persona || a.title} />
-                    </div>
-                    <div className="bento-persona-meta">
-                      <span className="bento-persona-role">{a.persona}</span>
-                      <h3 className="bento-persona-title">{a.title}</h3>
-                    </div>
-                  </div>
-
-                  <div className="bento-persona-chat">
-                    {/* Chat Msg 1: Client / Persona */}
-                    <div className="bento-chat-msg bento-chat-msg--client">
-                      <div className="bento-chat-header">
-                        <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
-                        <span className="bento-chat-time">08:42</span>
-                      </div>
-                      <div className="bento-chat-bubble bento-chat-bubble--client">
-                        <p>{a.dailyLife}</p>
-                      </div>
-                    </div>
-
-                    {/* Chat Msg 2: Michél's Response & Solution */}
-                    <div className="bento-chat-msg bento-chat-msg--michel">
-                      <div className="bento-chat-header bento-chat-header--michel">
-                        <span className="bento-chat-author">Michél · M³</span>
-                        <span className="bento-chat-time">08:45</span>
-                      </div>
-                      <div className="bento-chat-bubble bento-chat-bubble--michel">
-                        <p>{a.approach}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </article>
-        </section>
-
-        {/* 11. STANDALONE JOURNAL SECTION (10 Science & Practice Articles) */}
-        <section className="journal-standalone-section" id="journal" aria-labelledby="journal-main-heading">
-          <div className="journal-standalone-header">
-            <span className="journal-standalone-kicker">
-              {isEn ? 'M³ System Journal & Science' : 'M³ Journal & Wissenschaft'}
-            </span>
-            <h2 id="journal-main-heading" className="journal-standalone-title">
-              {isEn ? (
-                <>If you want to understand <span className="journal-title-accent">how your body truly performs.</span></>
-              ) : (
-                <>Wenn du verstehen willst, <span className="journal-title-accent">wie dein Körper wirklich funktioniert.</span></>
-              )}
-            </h2>
-            <p className="journal-standalone-lead">
-              {isEn
-                ? 'Not theoretical fluff. 10 fundamental articles from real practice — why blood sugar crashes, why load without track causes wear, and how routines hold without hype.'
-                : 'Nicht Theorie für die Schublade. 10 fundamentale Texte aus der Praxis – warum der Blutzucker abstürzt, warum Last ohne saubere Bahn verschleißt und wie Routinen ohne Motivations-Hype halten.'}
-            </p>
-
-            <div className="journal-header-actions">
-              <Link to="/blog" className="journal-header-link">
-                {isEn ? 'View all 10 articles →' : 'Alle 10 Texte ansehen →'}
-              </Link>
-            </div>
-          </div>
-
-          <div className="journal-cards-container">
-            <div className="journal-cards-track">
-              {posts.map((post) => {
-                const pillar = pillars.find((p) => p.id === post.pillar)
-                return (
-                  <Link
-                    key={post.slug}
-                    to={`/blog/${post.slug}`}
-                    className="journal-feed-card"
-                  >
-                    <div className="journal-feed-media">
-                      <Img className="journal-feed-img" src={post.image} alt={post.title} />
-                      {pillar && (
-                        <span
-                          className="journal-feed-badge"
-                          style={{
-                            borderColor: colorMixPillar(pillar.color),
-                            color: pillar.color,
-                          }}
-                        >
-                          {pillar.mark} · {pillar.name}
-                        </span>
-                      )}
-                    </div>
-                    <div className="journal-feed-body">
-                      <h3 className="journal-feed-title">{post.title}</h3>
-                      <p className="journal-feed-excerpt">{post.excerpt}</p>
-                      <div className="journal-feed-footer">
-                        <span className="journal-feed-cta">
-                          {isEn ? 'Read article' : 'Lesen'}
-                          <span className="journal-feed-arrow" aria-hidden="true">→</span>
-                        </span>
-                        <span className="journal-feed-min">{post.minutes} Min.</span>
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* 12. STANDALONE FAQ SECTION (Centered on Page, Left-Aligned Typography) */}
-        <section className="faq-standalone-section" id="faq" aria-labelledby="faq-main-heading">
-          <div className="faq-standalone-container">
-            <header className="faq-standalone-header">
-              <span className="faq-standalone-kicker">FAQ</span>
-              <h2 id="faq-main-heading" className="faq-standalone-title">{t.faqH}</h2>
-              <p className="faq-standalone-lead">
-                {isEn
-                  ? 'Direct, transparent answers about our methodology, structure, and 1:1 mentorship.'
-                  : 'Direkte und ehrliche Antworten zu Ablauf, Betreuung und dem M³-System.'}
-              </p>
-            </header>
-
-            <div className="faq-standalone-list">
-              {faqs.map((f, i) => {
-                const isOpen = openFaq === i
-                return (
-                  <div
-                    key={f.q}
-                    className={`faq-standalone-item ${isOpen ? 'is-open' : ''}`}
-                  >
-                    <button
-                      type="button"
-                      className="faq-standalone-btn"
-                      onClick={() => setOpenFaq(isOpen ? null : i)}
-                      aria-expanded={isOpen}
-                    >
-                      <span className="faq-standalone-q">{f.q}</span>
-                      <span className="faq-standalone-icon" aria-hidden="true">
-                        <svg
-                          viewBox="0 0 24 24"
-                          width="18"
-                          height="18"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className={`faq-chevron-icon ${isOpen ? 'is-rotated' : ''}`}
-                        >
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                      </span>
-                    </button>
-                    {isOpen && (
-                      <div className="faq-standalone-panel">
-                        <p className="faq-standalone-a">{f.a}</p>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
       </div>
     </main>
   )
 }
-
-function colorMixPillar(color: string) {
-  return `color-mix(in srgb, ${color} 45%, var(--line))`
-}
-
-
