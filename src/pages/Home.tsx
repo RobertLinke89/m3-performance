@@ -1,11 +1,9 @@
 import { useEffect, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
 import { SystemMolecule } from '../components/SystemMolecule'
-import { useUi } from '../copy'
 import { useLocale } from '../locale'
 
 export function Home() {
-  const t = useUi()
   const { lang } = useLocale()
   const isEn = lang === 'en'
 
@@ -28,22 +26,22 @@ export function Home() {
               <source
                 media="(max-width: 860px)"
                 type="image/webp"
-                srcSet="/images/hero-system-mobile.webp 1x, /images/hero-system-mobile.webp 2x"
+                srcSet="/images/hero-system-mobile.webp 2x, /images/hero-system-mobile.webp 1x"
               />
               <source
                 media="(max-width: 860px)"
-                srcSet="/images/hero-system-mobile-1x.jpg 1x, /images/hero-system-mobile.jpg 2x"
+                srcSet="/images/hero-system-mobile.jpg 2x, /images/hero-system-mobile.jpg 1x"
               />
               <source
                 type="image/webp"
-                srcSet="/images/hero-system.webp 1x, /images/hero-system.webp 2x"
+                srcSet="/images/hero-system.webp 2x, /images/hero-system.webp 1x"
               />
               <source
-                srcSet="/images/hero-system-1x.jpg 1x, /images/hero-system.jpg 2x"
+                srcSet="/images/hero-system.jpg 2x, /images/hero-system.jpg 1x"
               />
               <img
                 src="/images/hero-system.jpg"
-                alt={t.problemAlt}
+                alt="Leistung durch Gesundheit"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
