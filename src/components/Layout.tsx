@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import { BrandMark } from './BrandMark'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
-import { ThemeSwitch } from './ThemeSwitch'
+
 
 function scrollToPageStart() {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
@@ -78,7 +78,6 @@ export function Layout() {
             <span className="nav-burger-line" />
           </div>
           <LangSwitch />
-          <ThemeSwitch />
         </div>
         <Link className="brand" to="/" aria-label="M³ Performance">
           <BrandMark />
