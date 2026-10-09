@@ -3459,12 +3459,31 @@ picture.bento-bg img,
   transition: none !important;
 }
 
-.bento-card--m2 .bento-bg-img {
+.bento-card--m1 .bento-bg-img {
   object-position: center 30% !important;
 }
 
+.bento-card--m2 .bento-bg-img {
+  object-position: center 25% !important;
+}
+
 .bento-card--m3 .bento-bg-img {
-  object-position: center 40% !important;
+  object-position: center 35% !important;
+}
+
+.bento-card--pillar .bento-bg-img {
+  image-rendering: -webkit-optimize-contrast !important;
+  transform: translateZ(0) !important;
+  -webkit-backface-visibility: hidden !important;
+}
+
+.bento-card--pillar .bento-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.88) 100%
+  ) !important;
 }
 
 .bento-card--michel .bento-bg-img {

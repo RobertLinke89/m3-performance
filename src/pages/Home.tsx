@@ -1,6 +1,5 @@
 import { useEffect, type CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
-import { SystemMolecule } from '../components/SystemMolecule'
 import { useLocale } from '../locale'
 
 export function Home() {
@@ -63,9 +62,22 @@ export function Home() {
             style={{ '--pillar-color': '#e8a14a' } as CSSProperties}
             aria-label="Pillar M1 Food Metabolism"
           >
-            <div className="bento-molecule-visual" style={{ position: 'absolute', inset: 0, opacity: 0.9, pointerEvents: 'none' }}>
-              <SystemMolecule />
-            </div>
+            <picture className="bento-bg">
+              <source
+                type="image/webp"
+                srcSet="/images/moodboard/mood-kitchen@2x.webp 2x, /images/moodboard/mood-kitchen.webp 1x"
+              />
+              <source
+                srcSet="/images/moodboard/mood-kitchen@2x.jpg 2x, /images/moodboard/mood-kitchen.jpg 1x"
+              />
+              <img
+                src="/images/moodboard/mood-kitchen@2x.jpg"
+                alt="M1 Food Metabolismus & Zellenergie"
+                loading="lazy"
+                decoding="async"
+                className="bento-bg-img"
+              />
+            </picture>
             <div className="bento-overlay" />
             <div className="bento-content">
               <span className="bento-pillar-badge" style={{ borderColor: 'rgba(232, 161, 74, 0.45)', color: '#e8a14a' }}>
@@ -96,14 +108,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-limitless.webp 1x, /images/moodboard/mood-limitless@2x.webp 2x"
+                srcSet="/images/moodboard/mood-limitless@2x.webp 2x, /images/moodboard/mood-limitless.webp 1x"
               />
               <source
-                srcSet="/images/moodboard/mood-limitless.jpg 1x, /images/moodboard/mood-limitless.jpg 2x"
+                srcSet="/images/moodboard/mood-limitless@2x.jpg 2x, /images/moodboard/mood-limitless.jpg 1x"
               />
               <img
-                src="/images/moodboard/mood-limitless.jpg"
-                alt="M2 Biomechanics Mobilität & Schmerzfreiheit"
+                src="/images/moodboard/mood-limitless@2x.jpg"
+                alt="M2 Move Biomechanik & Schmerzfreiheit"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
@@ -139,14 +151,14 @@ export function Home() {
             <picture className="bento-bg">
               <source
                 type="image/webp"
-                srcSet="/images/moodboard/mood-focus.webp 1x, /images/moodboard/mood-focus@2x.webp 2x"
+                srcSet="/images/moodboard/mood-focus@2x.webp 2x, /images/moodboard/mood-focus.webp 1x"
               />
               <source
-                srcSet="/images/moodboard/mood-focus.jpg 1x, /images/moodboard/mood-focus.jpg 2x"
+                srcSet="/images/moodboard/mood-focus@2x.jpg 2x, /images/moodboard/mood-focus.jpg 1x"
               />
               <img
-                src="/images/moodboard/mood-focus.jpg"
-                alt="M3 Mindset Fokus & neuronale Klarheit"
+                src="/images/moodboard/mood-focus@2x.jpg"
+                alt="M3 Repeat Mindset Fokus & neuronale Klarheit"
                 loading="lazy"
                 decoding="async"
                 className="bento-bg-img"
