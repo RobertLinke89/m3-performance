@@ -52,31 +52,9 @@ export function Home() {
             </picture>
             <div className="bento-overlay" />
             <div className="bento-content bento-content--hero" style={{ maxWidth: 760 }}>
-              <div className="bento-tag bento-tag--gold" style={{ marginBottom: 8 }}>
-                {isEn ? 'THE ARCHITECTURE · FOOD · MOVE · REPEAT' : 'DAS ARCHITEKTUR-SYSTEM · FOOD · MOVE · REPEAT'}
-              </div>
               <h1 className="bento-hero-h1">
-                {isEn ? (
-                  <>M¹–M³ Performance. <span>Holistic, Pain-Free &amp; Sharp.</span></>
-                ) : (
-                  <>M¹ · M² · M³ Performance. <span>Schmerzfrei &amp; Klar.</span></>
-                )}
+                {isEn ? 'Performance through Health' : 'Leistung durch Gesundheit'}
               </h1>
-              <p className="bento-lead">
-                {isEn
-                  ? 'For leaders, entrepreneurs & high performers: We link metabolism, biomechanics, and mindset into one biologically proven system.'
-                  : 'Für Unternehmer, Macher & High-Performer: Wir verbinden Stoffwechsel, Biomechanik und Mindset zu einem biologisch fundierten System – nachhaltig & messbar.'}
-              </p>
-
-              {/* Action Row */}
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginTop: 14, flexWrap: 'wrap' }}>
-                <Link to="/ueber-mich" className="hero-btn-showreel">
-                  About
-                </Link>
-                <Link to="/system-start" className="btn-white-ghost" style={{ padding: '0 18px', minHeight: 38, fontSize: 13 }}>
-                  {t.systemStart} →
-                </Link>
-              </div>
             </div>
           </article>
 

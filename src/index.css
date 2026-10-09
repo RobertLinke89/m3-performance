@@ -3340,11 +3340,14 @@ picture {
     justify-content: flex-end !important;
   }
 
-  /* Compact typography inside zero-scroll landing cards */
+  /* Typography inside zero-scroll landing cards */
   .bento-grid--landing .bento-hero-h1 {
-    font-size: clamp(24px, 2.6vw, 38px) !important;
-    line-height: 1.08 !important;
-    margin: 4px 0 6px !important;
+    font-size: clamp(28px, 3.4vw, 48px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.035em !important;
+    margin: 0 !important;
+    color: #ffffff !important;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
   }
 
   .bento-grid--landing .bento-lead {
