@@ -20,7 +20,12 @@ export function Home() {
         <section className="bento-grid bento-grid--landing" aria-label="M³ Performance System Bento Grid">
           
           {/* 1. HERO BENTO CARD (Span 12 - The Temple Roof / Dach) */}
-          <article className="bento-card bento-card--hero bento-card--temple-roof bento-span-12">
+          <Link
+            to="/system-start"
+            className="bento-card bento-card--hero bento-card--temple-roof bento-span-12"
+            style={{ textDecoration: 'none' }}
+            aria-label={isEn ? 'System Start: Performance through Health' : 'System Start: Leistung durch Gesundheit'}
+          >
             <picture className="bento-bg">
               <source
                 media="(max-width: 860px)"
@@ -53,7 +58,7 @@ export function Home() {
                 {isEn ? 'Performance through Health' : 'Leistung durch Gesundheit'}
               </h1>
             </div>
-          </article>
+          </Link>
 
           {/* 2. PILLAR M¹: FOOD (Span 4 - The First Column) */}
           <Link

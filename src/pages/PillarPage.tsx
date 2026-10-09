@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { BackLink } from '../components/BackLink'
+import { BentoDisclosure } from '../components/BentoDisclosure'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
@@ -166,38 +167,44 @@ export function PillarPage() {
           <article className="bento-card bento-card--audit-step bento-span-6" style={{ padding: 'clamp(22px, 3vw, 32px)' }}>
             <div>
               <span className="bento-audit-badge">{isEn ? 'PHYSIOLOGICAL PRINCIPLES' : 'BIOLOGISCHE LOGIK'}</span>
-              <h2 className="bento-title" style={{ fontSize: 20 }}>
+              <h2 className="bento-title" style={{ fontSize: 20, marginBottom: 12 }}>
                 {t.scienceH}
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 16 }}>
-                {pillar.science.map((s) => (
-                  <div key={s.title} style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: 14 }}>
-                    <h3 style={{ margin: '0 0 4px', fontSize: 15, fontWeight: 700, color: '#111111' }}>
-                      {s.title}
-                    </h3>
-                    <p style={{ margin: 0, fontSize: 13, color: '#444444', lineHeight: 1.45 }}>
-                      {s.text}
-                    </p>
-                  </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {pillar.science.map((s, idx) => (
+                  <BentoDisclosure
+                    key={s.title}
+                    title={s.title}
+                    badge={`0${idx + 1}`}
+                    theme="light"
+                  >
+                    <p style={{ margin: 0 }}>{s.text}</p>
+                  </BentoDisclosure>
                 ))}
               </div>
             </div>
           </article>
 
           {/* 5. EXPERIENCE & REAL-WORLD CODEX (Span 6) */}
-          <article className="bento-card bento-card--audit-step bento-span-6" style={{ padding: 'clamp(22px, 3vw, 32px)' }}>
+          <article className="bento-card bento-card--audit-step bento-span-6" style={{ padding: 'clamp(22px, 3vw, 32px)', justifyContent: 'space-between' }}>
             <div>
               <span className="bento-audit-badge">{isEn ? 'PRACTICE OVER THEORY' : 'PRAXIS-ERFAHRUNG'}</span>
               <h2 className="bento-title" style={{ fontSize: 20 }}>
                 {pillar.experience.title}
               </h2>
-              <p style={{ margin: '14px 0 0', fontSize: 13.5, color: '#333333', lineHeight: 1.55 }}>
-                {pillar.experience.text}
-              </p>
-              <div style={{ marginTop: 18, padding: 14, borderRadius: 12, background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.08)' }}>
+              <div style={{ marginTop: 14, padding: 14, borderRadius: 12, background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.08)' }}>
                 <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: '#111111', lineHeight: 1.45 }}>
                   „{pillar.experience.quote}“
                 </p>
+              </div>
+              <div style={{ marginTop: 12 }}>
+                <BentoDisclosure
+                  title={isEn ? 'Deep Dive: Michél’s Case & Findings' : 'Hintergrund: Michéls Fall & Befund'}
+                  subtitle={isEn ? 'Bandscheibenvorfall C6/C7 and the systematic way back' : 'Bandscheibenvorfall C6/C7 und der Weg zurück'}
+                  theme="light"
+                >
+                  <p style={{ margin: 0 }}>{pillar.experience.text}</p>
+                </BentoDisclosure>
               </div>
             </div>
           </article>
@@ -206,19 +213,19 @@ export function PillarPage() {
           <article className="bento-card bento-card--audit-step bento-span-6" style={{ padding: 'clamp(22px, 3vw, 32px)' }}>
             <div>
               <span className="bento-audit-badge">{isEn ? 'CORE TENETS' : 'LEITPRINZIPIEN'}</span>
-              <h2 className="bento-title" style={{ fontSize: 20 }}>
+              <h2 className="bento-title" style={{ fontSize: 20, marginBottom: 12 }}>
                 {t.principlesH}
               </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 16 }}>
-                {pillar.principles.map((pr) => (
-                  <div key={pr.title} style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: 12 }}>
-                    <strong style={{ display: 'block', fontSize: 14, color: '#111111', marginBottom: 2 }}>
-                      {pr.title}
-                    </strong>
-                    <span style={{ fontSize: 12.5, color: '#555555', lineHeight: 1.4 }}>
-                      {pr.text}
-                    </span>
-                  </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {pillar.principles.map((pr, idx) => (
+                  <BentoDisclosure
+                    key={pr.title}
+                    title={pr.title}
+                    badge={`PRINZIP 0${idx + 1}`}
+                    theme="light"
+                  >
+                    <p style={{ margin: 0 }}>{pr.text}</p>
+                  </BentoDisclosure>
                 ))}
               </div>
             </div>

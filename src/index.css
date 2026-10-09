@@ -4598,6 +4598,178 @@ picture.bento-bg img,
   background: rgba(0, 0, 0, 0.06) !important;
 }
 
+/* ==========================================================================
+   BENTO DISCLOSURE (3-KLICK-REGEL / EBENE 3 ACCORDION)
+   ========================================================================== */
+.bento-disclosure {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.bento-disclosure:last-child {
+  border-bottom: none;
+}
+
+.bento-disclosure-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  user-select: none;
+}
+
+.bento-disclosure-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+}
+
+.bento-disclosure-badge {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111111;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.bento-disclosure-title-group {
+  flex: 1;
+}
+
+.bento-disclosure-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+
+.bento-disclosure-btn:hover .bento-disclosure-title {
+  color: #000000;
+}
+
+.bento-disclosure-teaser {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: #666666;
+  line-height: 1.4;
+}
+
+.bento-disclosure-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #444444;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+}
+
+.bento-disclosure-btn:hover .bento-disclosure-icon {
+  background: rgba(0, 0, 0, 0.1);
+  color: #111111;
+}
+
+.bento-disclosure.is-open .bento-disclosure-icon {
+  transform: rotate(180deg);
+  background: #111111;
+  color: #ffffff;
+}
+
+.bento-disclosure-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-disclosure.is-open .bento-disclosure-body {
+  grid-template-rows: 1fr;
+}
+
+.bento-disclosure-inner {
+  overflow: hidden;
+}
+
+.bento-disclosure-content {
+  padding: 4px 0 16px;
+  font-size: 13.5px;
+  color: #333333;
+  line-height: 1.55;
+}
+
+.bento-disclosure-content p {
+  margin: 0 0 10px;
+}
+
+.bento-disclosure-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark variant (for dark bento cards) */
+.bento-disclosure--dark,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.bento-disclosure--dark .bento-disclosure-badge,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-badge {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.bento-disclosure--dark .bento-disclosure-title,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-title {
+  color: #ffffff !important;
+}
+
+.bento-disclosure--dark .bento-disclosure-btn:hover .bento-disclosure-title,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-btn:hover .bento-disclosure-title {
+  color: #ffffff !important;
+}
+
+.bento-disclosure--dark .bento-disclosure-teaser,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-teaser {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.bento-disclosure--dark .bento-disclosure-icon,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bento-disclosure--dark.is-open .bento-disclosure-icon,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto.is-open .bento-disclosure-icon {
+  background: #ffffff;
+  color: #111111;
+}
+
+.bento-disclosure--dark .bento-disclosure-content,
+.bento-card:not(.bento-card--audit-step) .bento-disclosure--auto .bento-disclosure-content {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+
 /* Compass Interactive Items */
 .bento-compass-grid {
   display: grid;

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BackLink } from '../components/BackLink'
+import { BentoDisclosure } from '../components/BentoDisclosure'
 import { Img } from '../components/Img'
 import { useUi } from '../copy'
 import { useLocale } from '../locale'
@@ -216,55 +217,76 @@ export function SystemStart() {
           </article>
 
           {/* 4, 5, 6. THE 3 AUDIT DIMENSIONS (Span 4 Each) */}
-          <article className="bento-card bento-card--audit-step bento-span-4">
-            <span className="bento-audit-badge">M¹ · METABOLISMUS</span>
-            <h2 className="bento-title" style={{ fontSize: 19 }}>
-              {isEn ? 'Zellenergie & Mikrobiom-Audit' : 'Zellenergie & Mikrobiom-Audit'}
-            </h2>
-            <p className="bento-desc">
-              {isEn
-                ? 'We check nutrient absorption, blood sugar balance, and gut inflammation markers.'
-                : 'Wir analysieren Nährstoffresorption, Blutzuckerschwankungen, Darmimmunität und stille Entzündungen.'}
-            </p>
-            <ul className="bento-audit-points">
-              <li>Keine Nachmittagstiefs & Heißhunger mehr</li>
-              <li>Optimale mitochondriale ATP-Produktion</li>
-              <li>Stabiler Stoffwechsel ohne Verzichtsdogmen</li>
-            </ul>
+          <article className="bento-card bento-card--audit-step bento-span-4" style={{ justifyContent: 'space-between' }}>
+            <div>
+              <span className="bento-audit-badge">M¹ · METABOLISMUS</span>
+              <h2 className="bento-title" style={{ fontSize: 19 }}>
+                {isEn ? 'Zellenergie & Mikrobiom-Audit' : 'Zellenergie & Mikrobiom-Audit'}
+              </h2>
+              <p className="bento-desc" style={{ marginBottom: 12 }}>
+                {isEn
+                  ? 'We check nutrient absorption, blood sugar balance, and gut inflammation markers.'
+                  : 'Wir analysieren Nährstoffresorption, Blutzuckerschwankungen, Darmimmunität und stille Entzündungen.'}
+              </p>
+            </div>
+            <BentoDisclosure
+              title={isEn ? 'Audit scope & targets' : 'Prüffelder & Ziel-Outcomes'}
+              theme="light"
+            >
+              <ul className="bento-audit-points" style={{ margin: 0 }}>
+                <li>Keine Nachmittagstiefs & Heißhunger mehr</li>
+                <li>Optimale mitochondriale ATP-Produktion</li>
+                <li>Stabiler Stoffwechsel ohne Verzichtsdogmen</li>
+              </ul>
+            </BentoDisclosure>
           </article>
 
-          <article className="bento-card bento-card--audit-step bento-span-4">
-            <span className="bento-audit-badge">M² · BIOMECHANIK</span>
-            <h2 className="bento-title" style={{ fontSize: 19 }}>
-              {isEn ? 'Gelenk- & Schmerz-Screening' : 'Gelenk- & Schmerz-Screening'}
-            </h2>
-            <p className="bento-desc">
-              {isEn
-                ? 'Full range of motion audit, muscular imbalances, and functional joint decompression.'
-                : 'Prüfung von Gelenkwinkeln, myofaszialen Ketten, Wirbelsäulenbelastung und Asymmetrien.'}
-            </p>
-            <ul className="bento-audit-points">
-              <li>Schmerzfreie Beweglichkeit im Berufsalltag</li>
-              <li>Gezielte Dekompression geschädigter Segmente</li>
-              <li>Athletische Belastbarkeit & Gelenkschutz</li>
-            </ul>
+          <article className="bento-card bento-card--audit-step bento-span-4" style={{ justifyContent: 'space-between' }}>
+            <div>
+              <span className="bento-audit-badge">M² · BIOMECHANIK</span>
+              <h2 className="bento-title" style={{ fontSize: 19 }}>
+                {isEn ? 'Gelenk- & Schmerz-Screening' : 'Gelenk- & Schmerz-Screening'}
+              </h2>
+              <p className="bento-desc" style={{ marginBottom: 12 }}>
+                {isEn
+                  ? 'Full range of motion audit, muscular imbalances, and functional joint decompression.'
+                  : 'Prüfung von Gelenkwinkeln, myofaszialen Ketten, Wirbelsäulenbelastung und Asymmetrien.'}
+              </p>
+            </div>
+            <BentoDisclosure
+              title={isEn ? 'Audit scope & targets' : 'Prüffelder & Ziel-Outcomes'}
+              theme="light"
+            >
+              <ul className="bento-audit-points" style={{ margin: 0 }}>
+                <li>Schmerzfreie Beweglichkeit im Berufsalltag</li>
+                <li>Gezielte Dekompression geschädigter Segmente</li>
+                <li>Athletische Belastbarkeit & Gelenkschutz</li>
+              </ul>
+            </BentoDisclosure>
           </article>
 
-          <article className="bento-card bento-card--audit-step bento-span-4">
-            <span className="bento-audit-badge">M³ · MINDSET</span>
-            <h2 className="bento-title" style={{ fontSize: 19 }}>
-              {isEn ? 'Neuro-Stress & Tiefschlaf-Audit' : 'Neuro-Stress & Tiefschlaf-Audit'}
-            </h2>
-            <p className="bento-desc">
-              {isEn
-                ? 'Analysis of decision fatigue, restorative sleep architecture, and neural recovery under pressure.'
-                : 'Analyse von Stressachsen, Tiefschlafphasen, Entscheidungsökonomie und mentalem Fokus.'}
-            </p>
-            <ul className="bento-audit-points">
-              <li>Tiefer, erholsamer Schlaf ab Nacht eins</li>
-              <li>Glasklare Entscheidungsfähigkeit unter Last</li>
-              <li>Stabile Routinen, die bei Stress nicht kippen</li>
-            </ul>
+          <article className="bento-card bento-card--audit-step bento-span-4" style={{ justifyContent: 'space-between' }}>
+            <div>
+              <span className="bento-audit-badge">M³ · MINDSET</span>
+              <h2 className="bento-title" style={{ fontSize: 19 }}>
+                {isEn ? 'Neuro-Stress & Tiefschlaf-Audit' : 'Neuro-Stress & Tiefschlaf-Audit'}
+              </h2>
+              <p className="bento-desc" style={{ marginBottom: 12 }}>
+                {isEn
+                  ? 'Analysis of decision fatigue, restorative sleep architecture, and neural recovery under pressure.'
+                  : 'Analyse von Stressachsen, Tiefschlafphasen, Entscheidungsökonomie und mentalem Fokus.'}
+              </p>
+            </div>
+            <BentoDisclosure
+              title={isEn ? 'Audit scope & targets' : 'Prüffelder & Ziel-Outcomes'}
+              theme="light"
+            >
+              <ul className="bento-audit-points" style={{ margin: 0 }}>
+                <li>Tiefer, erholsamer Schlaf ab Nacht eins</li>
+                <li>Glasklare Entscheidungsfähigkeit unter Last</li>
+                <li>Stabile Routinen, die bei Stress nicht kippen</li>
+              </ul>
+            </BentoDisclosure>
           </article>
 
           {/* 7 & 8. THE PROOF & METHODOLOGY (Span 6 + Span 6) */}
@@ -356,26 +378,33 @@ export function SystemStart() {
                     </div>
                   </div>
 
-                  <div className="bento-persona-chat">
-                    <div className="bento-chat-msg bento-chat-msg--client">
-                      <div className="bento-chat-header">
-                        <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
-                        <span className="bento-chat-time">08:42</span>
-                      </div>
-                      <div className="bento-chat-bubble bento-chat-bubble--client">
-                        <p>{a.dailyLife}</p>
-                      </div>
-                    </div>
+                  <div style={{ marginTop: 12 }}>
+                    <BentoDisclosure
+                      title={isEn ? 'View real case dialogue' : 'Praxis-Dialog & Fallanalyse'}
+                      theme="dark"
+                    >
+                      <div className="bento-persona-chat" style={{ marginTop: 8 }}>
+                        <div className="bento-chat-msg bento-chat-msg--client">
+                          <div className="bento-chat-header">
+                            <span className="bento-chat-author">{a.persona.split('·')[0].trim()}</span>
+                            <span className="bento-chat-time">08:42</span>
+                          </div>
+                          <div className="bento-chat-bubble bento-chat-bubble--client">
+                            <p>{a.dailyLife}</p>
+                          </div>
+                        </div>
 
-                    <div className="bento-chat-msg bento-chat-msg--michel">
-                      <div className="bento-chat-header bento-chat-header--michel">
-                        <span className="bento-chat-author">Michél · M³</span>
-                        <span className="bento-chat-time">08:45</span>
+                        <div className="bento-chat-msg bento-chat-msg--michel">
+                          <div className="bento-chat-header bento-chat-header--michel">
+                            <span className="bento-chat-author">Michél · M³</span>
+                            <span className="bento-chat-time">08:45</span>
+                          </div>
+                          <div className="bento-chat-bubble bento-chat-bubble--michel">
+                            <p>{a.approach}</p>
+                          </div>
+                        </div>
                       </div>
-                      <div className="bento-chat-bubble bento-chat-bubble--michel">
-                        <p>{a.approach}</p>
-                      </div>
-                    </div>
+                    </BentoDisclosure>
                   </div>
                 </div>
               ))}
